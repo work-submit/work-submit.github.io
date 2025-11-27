@@ -88,7 +88,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <img src="./3MTI_fig/fig_abs.jpg" alt="Main Results">
+        <img src="./static/3MTI_fig/fig_abs.jpg" alt="Main Results">
       </div>
     </div>
   </div>
@@ -106,7 +106,7 @@
             At its core, 3M-TI integrates a cross-modal self-attention module (CSM) into the diffusion UNet, replacing the original self-attention layers to adaptively align thermal and RGB features throughout the denoising process, without requiring explicit camera calibration. This design enables the diffusion network to leverage its generative prior to enhance spatial resolution, structural fidelity, and texture detail in the super-resolved thermal images. Extensive evaluations on real-world mobile thermal cameras and public benchmarks validate our superior performance, achieving state-of-the-art results in both visual quality and quantitative metrics. 
             More importantly, the thermal images enhanced by 3M-TI lead to substantial gains in critical downstream tasks like object detection and segmentation, underscoring its practical value for robust mobile thermal perception systems.
           </p>
-          <!-- <img src="./3MTI_fig/fig_abs.jpg" alt="Abstract figure"> -->
+          <!-- <img src="./static/3MTI_fig/fig_abs.jpg" alt="Abstract figure"> -->
         </div>
       </div>
     </div>
@@ -127,9 +127,9 @@
             To establish cross-modal correspondence and fusion in the latent space, we introduce the cross-modal self-attention module (CSM). This module replaces the original self-attention layers in the diffusion UNet with our cross-modal self-attention layers, which are designed to learn multiscale correspondences between the RGB and thermal latents (Fig. (b)). 
             During training, we apply misalignment augmentation to the RGB images to enhance robustness against uncalibration and temporal unsynchronization (Fig. (c)). Furthermore, a skip connection is incorporated to enhance structural consistency and mitigate geometric distortions.
           </p>
-          <!-- <img src="./images/multipath_diffusion_model.jpg" alt="Overview for our method">
+          <!-- <img src="./static/images/multipath_diffusion_model.jpg" alt="Overview for our method">
           <br><br> -->
-          <img src="./3MTI_fig/fig_3m-ti.jpg" alt="Overview for 3MTI">
+          <img src="./static/3MTI_fig/fig_3m-ti.jpg" alt="Overview for 3MTI">
       </div>
     </div>
   </div>
@@ -156,13 +156,13 @@
             For fair comparison, all baseline models are retrained on our dataset using their publicly released codes.
           </p>
           <figure>
-            <img src="./3MTI_fig/sota.jpg" alt="Qualitative results on synthetic dataset">
+            <img src="./static/3MTI_fig/sota.jpg" alt="Qualitative results on synthetic dataset">
             <figcaption>Qualitative comparisons of different methods on unseen synthetic dataset, zoom in for details.</figcaption>
           </figure>
         </div>
         <div class="content has-text-justified">
           <figure>
-            <img src="./3MTI_fig/val.jpg" alt="Qualitative results on real-world mobile dataset">
+            <img src="./static/3MTI_fig/val.jpg" alt="Qualitative results on real-world mobile dataset">
             <figcaption>Qualitative comparisons of different methods on real-world mobile dataset, zoom in for details.</figcaption>
           </figure>
         </div>
@@ -182,13 +182,13 @@
             we apply the pretrained <a href="https://arxiv.org/abs/2401.14159" target="_blank">Grounded-SAM</a> model in a zero-shot manner (no fine-tuning) and use identical text prompts for all methods to ensure fair comparisons.
           </p>
           <figure>
-            <img src="./3MTI_fig/Detect.jpg" alt="Qualitative results on object detection">
+            <img src="./static/3MTI_fig/Detect.jpg" alt="Qualitative results on object detection">
             <figcaption>Visualization of detection results, where green bounding boxes indicate the correct detection, red bounding boxes indicate the wrong detection.</figcaption>
           </figure>
         </div>
         <div class="content has-text-justified">
           <figure>
-            <img src="./3MTI_fig/segment.jpg" alt="Qualitative results on semantic segmentation">
+            <img src="./static/3MTI_fig/segment.jpg" alt="Qualitative results on semantic segmentation">
             <figcaption>Visualization of segmentation results, where different colors represent different object categories.</figcaption>
           </figure>
         </div>
@@ -218,7 +218,7 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-        href="./videos/nerfies_paper.pdf">
+        href="./static/videos/nerfies_paper.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
