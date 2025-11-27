@@ -15,4 +15,8 @@ def simple_png_to_jpg(folder_path, quality=95):
             print(f"错误: {png_file} - {e}")
 
 # 使用示例
-simple_png_to_jpg("./projects/DMDiff_fig")  # 替换为你的文件夹路径
+simple_png_to_jpg("./projects/DMDiff_fig/images")  # 替换为你的文件夹路径
+simple_png_to_jpg("./projects/DMDiff_fig/interpolation/img_1")  # 替换为你的文件夹路径
+simple_png_to_jpg("./projects/DMDiff_fig/interpolation/img_2")  # 替换为你的文件夹路径
+simple_png_to_jpg("./projects/DMDiff_fig/interpolation/img_3")  # 替换为你的文件夹路径
+simple_png_to_jpg("./projects/DMDiff_fig/interpolation/img_4")  # 替换为你的文件夹路径
