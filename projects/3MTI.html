@@ -3,7 +3,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title"><span style="color: #5ab0c5; font-weight: bolder;">3M-TI</span>: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion <br></h1>
+          <h1 class="title is-1 publication-title"><span style="color: #5ab0c5  ;font-weight: bolder;">3M-TI</span>: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion <br></h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://scholar.google.com.hk/citations?user=UX2ZtJcAAAAJ&hl=zh-CN">Minchong Chen</a><sup>1</sup></span>&nbsp;&nbsp;
@@ -25,42 +25,64 @@
             <span class="email-link">
               <a href="mailto:yuanxiaoyun@sjtu.edu.cn">yuanxiaoyun@sjtu.edu.cn</a>
               &nbsp;&nbsp;
+              <!-- <a href="mailto:tonghe90@gmail.com">tonghe90@gmail.com</a> -->
             </span>
           </div>
 
+          <!-- <div class="is-size-4 publication-title"><span style="color: #ee7e61; font-weight: bolder;">ICCV 2025</span><br></div> -->
+
           <div class="column has-text-centered">
             <div class="publication-links">
+              <!-- PDF Link. -->
+
+              <!-- <span class="link-block">
+                <a href="./paper/3MTI.pdf"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>PDF</span>
+                </a>
+              </span> -->
+
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2511.19117" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org/abs/2511.19117"
+                  class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
                 </a>
               </span>
+
               <span class="link-block">
-                <a href="https://github.com/work-submit/3MTI" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://github.com/work-submit/3MTI"
+                  class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
-                </a>
+                  </a>
               </span>
+
               <span class="link-block">
-                <a href="https://pan.sjtu.edu.cn/web/share/7df7f0df32ac4cd4eecc243f5ff95483" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://pan.sjtu.edu.cn/web/share/7df7f0df32ac4cd4eecc243f5ff95483"
+                  class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fa fa-camera-retro"></i>
                   </span>
                   <span>Data and Model</span>
-                </a>
+                  </a>
               </span>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
@@ -74,6 +96,7 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -83,10 +106,134 @@
             At its core, 3M-TI integrates a cross-modal self-attention module (CSM) into the diffusion UNet, replacing the original self-attention layers to adaptively align thermal and RGB features throughout the denoising process, without requiring explicit camera calibration. This design enables the diffusion network to leverage its generative prior to enhance spatial resolution, structural fidelity, and texture detail in the super-resolved thermal images. Extensive evaluations on real-world mobile thermal cameras and public benchmarks validate our superior performance, achieving state-of-the-art results in both visual quality and quantitative metrics. 
             More importantly, the thermal images enhanced by 3M-TI lead to substantial gains in critical downstream tasks like object detection and segmentation, underscoring its practical value for robust mobile thermal perception systems.
           </p>
+          <!-- <img src="./3MTI_fig/fig_abs.jpg" alt="Abstract figure"> -->
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 其他3M-TI项目内容... -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Framework Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            The 3M-TI framework reconstructs a high-resolution thermal image from a low-resolution thermal input and an uncalibrated high-resolution RGB reference, as illustrated in Fig. (a). Our approach is built upon the one-step diffusion model, 
+            <a href="https://link.springer.com/chapter/10.1007/978-3-031-73016-0_6" target="_blank">SD-Turbo</a>, 
+            to ensure efficient inference. The process begins by encoding the thermal and RGB images into latent representations using the frozen VAE encoder. 
+            To establish cross-modal correspondence and fusion in the latent space, we introduce the cross-modal self-attention module (CSM). This module replaces the original self-attention layers in the diffusion UNet with our cross-modal self-attention layers, which are designed to learn multiscale correspondences between the RGB and thermal latents (Fig. (b)). 
+            During training, we apply misalignment augmentation to the RGB images to enhance robustness against uncalibration and temporal unsynchronization (Fig. (c)). Furthermore, a skip connection is incorporated to enhance structural consistency and mitigate geometric distortions.
+          </p>
+          <!-- <img src="./images/multipath_diffusion_model.jpg" alt="Overview for our method">
+          <br><br> -->
+          <img src="./3MTI_fig/fig_3m-ti.jpg" alt="Overview for 3MTI">
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experimental Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            We compare our model against 5 representative baselines: 
+            <a href="https://openaccess.thecvf.com/content/CVPR2023W/PBVS/html/Kasliwal_CoReFusion_Contrastive_Regularized_Fusion_for_Guided_Thermal_Super-Resolution_CVPRW_2023_paper.html" target="_blank">CoReFusion</a>, 
+            <a href="https://openaccess.thecvf.com/content/CVPR2024W/PBVS/papers/Arnold_SwinFuSR_An_Image_Fusion-inspired_Model_for_RGB-guided_Thermal_Image_Super-resolution_CVPRW_2024_paper.pdf" target="_blank">SwinFuSR</a>, 
+            <a href="https://openaccess.thecvf.com/content/CVPR2025W/PBVS/html/Zhong_SwinPaste_A_Swin_Transformer-Based_Framework_for_RGB-Guided_Thermal_Image_Super-Resolution_CVPRW_2025_paper.html" target="_blank">SwinPaste</a>, 
+            <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Wu_SeeSR_Towards_Semantics-Aware_Real-World_Image_Super-Resolution_CVPR_2024_paper.html" target="_blank">SeeSR</a>, 
+            and <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/a8223b0ad64007423ffb308b0dd92298-Abstract-Conference.html" target="_blank">OSEDiff</a>. 
+
+            CoReFusion is an RGB-guided super-resolution model built upon the UNet architecture. 
+            SwinFuSR employs a Swin Transformer backbone with RGB guidance, while SwinPaste is an enhanced variant. 
+            SeeSR and OSEDiff are diffusion-based image super-resolution methods without reference guidance.
+            For fair comparison, all baseline models are retrained on our dataset using their publicly released codes.
+          </p>
+          <figure>
+            <img src="./3MTI_fig/sota.jpg" alt="Qualitative results on synthetic dataset">
+            <figcaption>Qualitative comparisons of different methods on unseen synthetic dataset, zoom in for details.</figcaption>
+          </figure>
+        </div>
+        <div class="content has-text-justified">
+          <figure>
+            <img src="./3MTI_fig/val.jpg" alt="Qualitative results on real-world mobile dataset">
+            <figcaption>Qualitative comparisons of different methods on real-world mobile dataset, zoom in for details.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+<section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Downstream Applications</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this experiment, we evaluate two representative tasks: open-vocabulary object detection and semantic segmentation. 
+            we apply the pretrained <a href="https://arxiv.org/abs/2401.14159" target="_blank">Grounded-SAM</a> model in a zero-shot manner (no fine-tuning) and use identical text prompts for all methods to ensure fair comparisons.
+          </p>
+          <figure>
+            <img src="./3MTI_fig/Detect.jpg" alt="Qualitative results on object detection">
+            <figcaption>Visualization of detection results, where green bounding boxes indicate the correct detection, red bounding boxes indicate the wrong detection.</figcaption>
+          </figure>
+        </div>
+        <div class="content has-text-justified">
+          <figure>
+            <img src="./3MTI_fig/segment.jpg" alt="Qualitative results on semantic segmentation">
+            <figcaption>Visualization of segmentation results, where different colors represent different object categories.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+<section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @misc{3MTI,
+        title={3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion}, 
+        author={Minchong Chen and Xiaoyun Yuan and Junzhe Wan and Jianing Zhang and Jun Zhang},
+        year={2025},
+        eprint={2511.19117},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2511.19117}, 
+      }
+      </code></pre>
+  </div>
+</section>
+
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+        href="./videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            We thank <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies</a> for their amazing template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+ -->
