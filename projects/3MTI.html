@@ -1,0 +1,92 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span style="color: #5ab0c5; font-weight: bolder;">3M-TI</span>: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion <br></h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=UX2ZtJcAAAAJ&hl=zh-CN">Minchong Chen</a><sup>1</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://xiaoyunyuan.net/">Xiaoyun Yuan</a><sup>1</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=QbbWdzEAAAAJ">Junzhe Wan</a><sup>1</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Jianing Zhang</a><sup>2, 3</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Jun Zhang</a><sup>3</sup></span>&nbsp;&nbsp;
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>MoE Key Lab of Artificial Intelligence, AI Institute, Shanghai Jiao Tong University</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>Fudan University</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>3</sup>Tsinghua University</span>
+            <br>
+            <span class="email-link">
+              <a href="mailto:yuanxiaoyun@sjtu.edu.cn">yuanxiaoyun@sjtu.edu.cn</a>
+              &nbsp;&nbsp;
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2511.19117" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/work-submit/3MTI" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://pan.sjtu.edu.cn/web/share/7df7f0df32ac4cd4eecc243f5ff95483" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-camera-retro"></i>
+                  </span>
+                  <span>Data and Model</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <img src="./3MTI_fig/fig_abs.jpg" alt="Main Results">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The miniaturization of thermal sensors for mobile platforms inherently limits their spatial resolution and textural fidelity, leading to blurry and less informative images. Existing thermal super-resolution (SR) methods can be grouped into single-image and RGB-guided approaches: the former struggles to recover fine structures from limited information, while the latter relies on accurate and laborious cross-camera calibration, which hinders practical deployment and robustness. Here, we propose 3M-TI, a calibration-free Multi-camera cross-Modality diffusion framework for Mobile Thermal Imaging. 
+            At its core, 3M-TI integrates a cross-modal self-attention module (CSM) into the diffusion UNet, replacing the original self-attention layers to adaptively align thermal and RGB features throughout the denoising process, without requiring explicit camera calibration. This design enables the diffusion network to leverage its generative prior to enhance spatial resolution, structural fidelity, and texture detail in the super-resolved thermal images. Extensive evaluations on real-world mobile thermal cameras and public benchmarks validate our superior performance, achieving state-of-the-art results in both visual quality and quantitative metrics. 
+            More importantly, the thermal images enhanced by 3M-TI lead to substantial gains in critical downstream tasks like object detection and segmentation, underscoring its practical value for robust mobile thermal perception systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 其他3M-TI项目内容... -->
