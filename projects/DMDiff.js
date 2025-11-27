@@ -1,9 +1,9 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
-var INTERP_BASE = "./static/interpolation/img_1";
-var INTERP_BASE2 = "./static/interpolation/img_2";
-var INTERP_BASE3 = "./static/interpolation/img_3";
-var INTERP_BASE4 = "./static/interpolation/img_4";
+var INTERP_BASE = "./projects/DMDiff_fig/interpolation/img_1";
+var INTERP_BASE2 = "./projects/DMDiff_fig/interpolation/img_2";
+var INTERP_BASE3 = "./projects/DMDiff_fig/interpolation/img_3";
+var INTERP_BASE4 = "./projects/DMDiff_fig/interpolation/img_4";
 var NUM_INTERP_FRAMES = 14;
 
 var interp_images = [];
