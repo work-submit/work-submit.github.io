@@ -60,13 +60,25 @@
       text-align: center;
       padding: 5rem;
     }
+    /* 自定义导航栏居中样式 */
+    .centered-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 确保导航菜单不会被挤到一边 */
+    .centered-nav .navbar-menu {
+      flex-grow: 0; /* 取消 flex-grow，让菜单只占自身大小 */
+    }
+
   </style>
 </head>
 <body>
 
 
 <!-- 导航栏 - 修改为居中对齐 -->
-<nav class="navbar is-flex is-justify-content-center" role="navigation" aria-label="main navigation">
+<nav class="navbar centered-nav" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="./index.html">
       <strong>OpticAI Lab</strong>
