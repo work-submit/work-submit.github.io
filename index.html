@@ -40,6 +40,7 @@
       background-color: #e9ecef;
       color: #007bff;
     }
+    /* 确保下拉菜单中的激活项样式正确 */
     .navbar-dropdown .navbar-item.is-active {
       background-color: #007bff;
       color: white;
@@ -63,9 +64,13 @@
 </head>
 <body>
 
+
 <!-- 导航栏 - 修改为居中对齐 -->
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
+    <a class="navbar-item" href="./index.html">
+      <strong>OpticAI Lab</strong>
+    </a>
     <!-- 移动端菜单按钮 -->
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
