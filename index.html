@@ -63,12 +63,10 @@
 </head>
 <body>
 
-<!-- 导航栏 -->
+<!-- 导航栏 - 修改为居中对齐 -->
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="./index.html">
-      <strong>AI + Optics</strong>
-    </a>
+    <!-- 移动端菜单按钮 -->
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -76,7 +74,8 @@
     </a>
   </div>
   
-  <div class="navbar-menu">
+  <!-- 使用 Bulma 的 Flexbox 工具类进行居中 -->
+  <div class="navbar-menu is-flex is-justify-content-center">
     <div class="navbar-start">
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link" id="project-dropdown-link">
@@ -88,6 +87,7 @@
         </div>
       </div>
       <a class="navbar-item" data-target="about" href="./index.html?project=about">About</a>
+    </div>
     </div>
   </div>
 </nav>
