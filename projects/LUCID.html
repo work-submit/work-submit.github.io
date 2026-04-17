@@ -1,0 +1,170 @@
+<!-- <section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span style="color: #5ab0c5  ;font-weight: bolder;">DMDiff</span>: Degradation-Modeled Multipath Diffusion for Tunable Metalens Photography<br></h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Jianing Zhang</a><sup>2, 3</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Jiayi Zhu</a><sup>1</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Feiyu Ji</a><sup>1</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=yDEavdMAAAAJ&hl=en">Xiaokang Yang</a><sup>1</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://xiaoyunyuan.net/">Xiaoyun Yuan</a><sup>1</sup></span>&nbsp;&nbsp;
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>MoE Key Lab of Artificial Intelligence, AI Institute, Shanghai Jiao Tong University</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>Fudan University</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>3</sup>Tsinghua University</span>
+            <br>
+            <span class="email-link">
+              <a href="mailto:yuanxiaoyun@sjtu.edu.cn">yuanxiaoyun@sjtu.edu.cn</a>
+              &nbsp;&nbsp;
+            </span>
+          </div>
+
+          <div class="is-size-4 publication-title"><span style="color: #ee7e61; font-weight: bolder;">ICCV 2025</span><br></div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+              <span class="link-block">
+                <a href="./paper/ICCV2025.pdf"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>PDF</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2506.22753"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/yuanxy92/DMDiff_ICCV2025"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://pan.sjtu.edu.cn/web/share/ebafd0ff28a601db09b58744a5b914d1"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-camera-retro"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <img src="./projects/DMDiff_fig/images/teaser.jpg" alt="Main Results">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Metalenses offer significant potential for ultra-compact computational imaging but face challenges from complex optical degradation and computational restoration difficulties. 
+            Existing methods typically rely on precise optical calibration or massive paired datasets, which are non-trivial for real-world imaging systems. Furthermore, a lack of control over the inference process often results in undesirable hallucinated artifacts.
+            We introduce Degradation-Modeled Multipath Diffusion for tunable metalens photography, leveraging powerful natural image priors from pretrained models instead of large datasets. Our framework uses positive, neutral, and negative-prompt paths to balance high-frequency detail generation, structural fidelity, and suppression of metalens-specific degradation, alongside <i>pseudo</i> data augmentation. A tunable decoder enables controlled trade-offs between fidelity and perceptual quality. Additionally, a spatially varying degradation-aware attention (SVDA) module adaptively models complex optical and sensor-induced degradation.
+            Finally, we design and build a millimeter-scale MetaCamera for real-world validation. Extensive results show that our approach outperforms state-of-the-art methods, achieving high-fidelity and sharp image reconstruction. More materials: <i><a href="https://dmdiff.github.io/">https://dmdiff.github.io/</a></i>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            To tackle the challenges of metalens-based imaging, we propose a degradation-modeled multipath diffusion framework that leverages pretrained large-scale generative diffusion models for tunable metalens photography. Our approach addresses three key challenges: complex metalens degradations, limited paired training data, and hallucinations in generative models.
+
+            With the powerful natural image priors from the base generative diffusion model, our method reconstructs vivid and realistic images using a small training dataset. To further enhance restoration, we propose a Spatially Varying Degradation-Aware (SVDA) attention module, which quantifies optical aberrations and sensor-induced noise to guide the restoration process. Additionally, we introduce a Degradation-modeled Multipath Diffusion (DMDiff) framework, incorporating positive, neutral, and negative-prompt paths to balance detail enhancement and structural fidelity while mitigating metalens-specific distortions. Finally, we design an instantly tunable decoder, enabling dynamic control over reconstruction quality to suppress hallucinations.
+          </p>
+          <img src="./projects/DMDiff_fig/images/multipath_diffusion_model.jpg" alt="Overview for our method">
+          <br><br>
+          <img src="./projects/DMDiff_fig/images/training_and_inference.jpg" alt="Overview for our method">
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">More Results</h2>
+        <div class="content has-text-justified">
+          <figure>
+            <img src="./projects/DMDiff_fig/images/supp_exp_1.jpg" alt="Qualitative results for our method">
+            <figcaption>Qualitative comparisons of different methods on real-world images captured by our system.</figcaption>
+          </figure>
+        </div>
+        <div class="content has-text-justified">
+          <figure>
+            <img src="./projects/DMDiff_fig/images/supp_exp_2.jpg" alt="Qualitative results for our method">
+            <figcaption>Qualitative comparisons of different methods on our unseen test dataset, zoom in for details.</figcaption>
+          </figure>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @article{zhang2025dmdiff,
+        title={Degradation-Modeled Multipath Diffusion for Tunable Metalens Photography},
+        author={Jianing Zhang, Jiayi Zhu, Feiyu Ji, Xiaokang Yang, and Xiaoyun Yuan},
+        booktitle={arxiv preprint arxiv:2506.22753}, 
+        year={2025}
+      }
+      </code></pre>
+  </div>
+</section>
+-->
+
+This page is under construction. Please check back later for updates on our project, LUCID: Learning Unified Control for Image Deflaring and Exposure Mastery in Nighttime Photography. Thank you for your interest!
