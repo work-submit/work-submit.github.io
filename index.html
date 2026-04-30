@@ -221,7 +221,73 @@
     }
     
     function initScripts() {
-      // 初始化脚本
+      initLucidControls();
+    }
+
+    function initLucidControls() {
+      const panels = document.querySelectorAll('.lucid-control-panel[data-lucid-base]');
+
+      if (!panels.length) {
+        return;
+      }
+
+      const cfgStates = [
+        { beta: 0.25, file: 'cfg_025.png' },
+        { beta: 0.50, file: 'cfg_050.png' },
+        { beta: 0.75, file: 'cfg_075.png' },
+        { beta: 0.95, file: 'cfg_095.png' },
+        { beta: 1.05, file: 'cfg_105.png' },
+        { beta: 1.25, file: 'cfg_125.png' },
+        { beta: 1.50, file: 'cfg_150.png' }
+      ];
+
+      function lerp(a, b, t) {
+        return a + (b - a) * t;
+      }
+
+      panels.forEach(panel => {
+        const base = panel.getAttribute('data-lucid-base');
+        const slider = panel.querySelector('.lucid-panel-slider');
+        const value = panel.querySelector('.lucid-slider-value');
+        const current = panel.querySelector('.lucid-interp-current');
+        const next = panel.querySelector('.lucid-interp-next');
+        const label = panel.querySelector('.lucid-mini-caption');
+
+        if (!base || !slider || !value || !current || !next) {
+          return;
+        }
+
+        function updatePanel(rawValue) {
+          const normalized = Number(rawValue) / 100;
+          const lowerIndex = Math.max(0, Math.min(cfgStates.length - 1, Math.floor(normalized)));
+          const upperIndex = Math.max(0, Math.min(cfgStates.length - 1, Math.ceil(normalized)));
+          const frac = Math.max(0, Math.min(1, normalized - lowerIndex));
+          const lower = cfgStates[lowerIndex];
+          const upper = cfgStates[upperIndex];
+          const beta = upperIndex === lowerIndex ? lower.beta : lerp(lower.beta, upper.beta, frac);
+          const captionBase = label ? label.textContent : 'LUCID result';
+
+          current.src = `${base}${lower.file}`;
+          current.alt = `${captionBase} at beta ${beta.toFixed(2)}`;
+
+          if (upperIndex === lowerIndex) {
+            next.src = `${base}${lower.file}`;
+            next.style.opacity = '0';
+          } else {
+            next.src = `${base}${upper.file}`;
+            next.alt = `${captionBase} interpolated toward beta ${upper.beta.toFixed(2)}`;
+            next.style.opacity = String(frac);
+          }
+
+          value.textContent = `β = ${beta.toFixed(2)}`;
+        }
+
+        slider.addEventListener('input', function(event) {
+          updatePanel(event.target.value);
+        });
+
+        updatePanel(slider.value);
+      });
     }
     
     // 初始化页面
