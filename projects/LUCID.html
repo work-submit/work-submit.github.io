@@ -1,79 +1,226 @@
-<!-- <section class="hero">
+<style>
+  .lucid-hero-panel {
+    background: linear-gradient(180deg, #eef8fa 0%, #f8fbfc 100%);
+    border-radius: 24px;
+    padding: 2rem 1.5rem;
+  }
+
+  .lucid-logo-top {
+    width: min(280px, 50vw);
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+  }
+
+  .lucid-wordmark {
+    color: #2ba8b7;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  .lucid-venue {
+    color: #ee7e61;
+    font-weight: 800;
+    margin-top: 0.9rem;
+  }
+
+  .lucid-plain-figure {
+    margin: 1rem 0 0;
+  }
+
+  .lucid-plain-figure img {
+    width: 100%;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .lucid-control-gallery,
+  .lucid-result-grid-6,
+  .lucid-result-grid-5,
+  .lucid-result-grid-3 {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .lucid-control-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 1rem;
+    gap: 1.1rem;
+  }
+
+  .lucid-result-grid-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .lucid-result-grid-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lucid-result-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lucid-control-panel {
+    border: 1px solid #e6edf0;
+    background: #fcfefe;
+    padding: 0.85rem;
+  }
+
+  .lucid-control-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    align-items: start;
+  }
+
+  .lucid-control-panel figure,
+  .lucid-result-grid-6 figure,
+  .lucid-result-grid-5 figure,
+  .lucid-result-grid-3 figure {
+    margin: 0;
+  }
+
+  .lucid-control-panel img,
+  .lucid-result-grid-6 img,
+  .lucid-result-grid-5 img,
+  .lucid-result-grid-3 img {
+    width: 100%;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .lucid-interp-stage {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lucid-interp-next {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .lucid-slider-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 0.8rem;
+  }
+
+  .lucid-range {
+    width: calc(100% - 0.8rem);
+    margin: 0 0.4rem;
+    accent-color: #2aa7b6;
+  }
+
+  .lucid-slider-value {
+    min-width: 4.8rem;
+    color: #157a87;
+    font-weight: 700;
+    text-align: right;
+  }
+
+  .lucid-mini-caption {
+    text-align: center;
+    margin-top: 0.45rem;
+    font-size: 0.92rem;
+    color: #5b6571;
+  }
+
+  .lucid-task-block + .lucid-task-block {
+    margin-top: 2rem;
+  }
+
+  .lucid-result-stack + .lucid-result-stack {
+    margin-top: 1rem;
+  }
+
+  .lucid-bibtex {
+    border-radius: 14px;
+    background: #f7fafb;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+  }
+
+  @media (max-width: 900px) {
+    .lucid-control-gallery,
+    .lucid-control-pair,
+    .lucid-result-grid-3 {
+      grid-template-columns: 1fr;
+    }
+
+    .lucid-result-grid-6 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .lucid-result-grid-5 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .lucid-result-grid-6,
+    .lucid-result-grid-5 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
+
+<section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title"><span style="color: #5ab0c5  ;font-weight: bolder;">DMDiff</span>: Degradation-Modeled Multipath Diffusion for Tunable Metalens Photography<br></h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="">Jianing Zhang</a><sup>2, 3</sup></span>&nbsp;&nbsp;
-            <span class="author-block">
-              <a href="">Jiayi Zhu</a><sup>1</sup></span>&nbsp;&nbsp;
-            <span class="author-block">
-              <a href="">Feiyu Ji</a><sup>1</sup></span>&nbsp;&nbsp;
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=yDEavdMAAAAJ&hl=en">Xiaokang Yang</a><sup>1</sup></span>&nbsp;&nbsp;
-            <span class="author-block">
-              <a href="https://xiaoyunyuan.net/">Xiaoyun Yuan</a><sup>1</sup></span>&nbsp;&nbsp;
-          </div>
+          <div class="lucid-hero-panel">
+            <img class="lucid-logo-top" src="./projects/LUCID_fig/LUCID_logo.png" alt="LUCID logo">
+            <h1 class="title is-1 publication-title">
+              <span class="lucid-wordmark">LUCID</span>: Learning Unified Control for Image Deflaring and Exposure Mastery in Nighttime Photography
+            </h1>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>MoE Key Lab of Artificial Intelligence, AI Institute, Shanghai Jiao Tong University</span>&nbsp;&nbsp;
-            <span class="author-block"><sup>2</sup>Fudan University</span>&nbsp;&nbsp;
-            <span class="author-block"><sup>3</sup>Tsinghua University</span>
-            <br>
-            <span class="email-link">
-              <a href="mailto:yuanxiaoyun@sjtu.edu.cn">yuanxiaoyun@sjtu.edu.cn</a>
-              &nbsp;&nbsp;
-            </span>
-          </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Tingyu Yang<sup>1</sup></span>&nbsp;&nbsp;
+              <span class="author-block"><a href="https://cyuan328.github.io/">Yuan Cheng</a><sup>1</sup></span>&nbsp;&nbsp;
+              <span class="author-block"><a href="https://xiaoyunyuan.net/">Xiaoyun Yuan</a><sup>1</sup></span>
+            </div>
 
-          <div class="is-size-4 publication-title"><span style="color: #ee7e61; font-weight: bolder;">ICCV 2025</span><br></div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-
-              <span class="link-block">
-                <a href="./paper/ICCV2025.pdf"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>PDF</span>
-                </a>
-              </span>
-
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2506.22753"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-
-              <span class="link-block">
-                <a href="https://github.com/yuanxy92/DMDiff_ICCV2025"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-
-              <span class="link-block">
-                <a href="https://pan.sjtu.edu.cn/web/share/ebafd0ff28a601db09b58744a5b914d1"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fa fa-camera-retro"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University, Shanghai, China</span>
+              <br>
+              <span class="email-link">
+                <a href="mailto:yuanxiaoyun@sjtu.edu.cn">yuanxiaoyun@sjtu.edu.cn</a>
               </span>
             </div>
 
+            <div class="is-size-4 publication-title">
+              <span class="lucid-venue">Accepted to ACM SIGGRAPH 2026</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>PDF</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -81,28 +228,26 @@
   </div>
 </section>
 
-
-<section class="hero teaser">
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <img src="./projects/DMDiff_fig/images/teaser.jpg" alt="Main Results">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <figure class="lucid-plain-figure">
+          <img src="./projects/LUCID_fig/teaser.png" alt="LUCID teaser figure">
+        </figure>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="overview">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Metalenses offer significant potential for ultra-compact computational imaging but face challenges from complex optical degradation and computational restoration difficulties. 
-            Existing methods typically rely on precise optical calibration or massive paired datasets, which are non-trivial for real-world imaging systems. Furthermore, a lack of control over the inference process often results in undesirable hallucinated artifacts.
-            We introduce Degradation-Modeled Multipath Diffusion for tunable metalens photography, leveraging powerful natural image priors from pretrained models instead of large datasets. Our framework uses positive, neutral, and negative-prompt paths to balance high-frequency detail generation, structural fidelity, and suppression of metalens-specific degradation, alongside <i>pseudo</i> data augmentation. A tunable decoder enables controlled trade-offs between fidelity and perceptual quality. Additionally, a spatially varying degradation-aware attention (SVDA) module adaptively models complex optical and sensor-induced degradation.
-            Finally, we design and build a millimeter-scale MetaCamera for real-world validation. Extensive results show that our approach outperforms state-of-the-art methods, achieving high-fidelity and sharp image reconstruction. More materials: <i><a href="https://dmdiff.github.io/">https://dmdiff.github.io/</a></i>.
+            Photography is the art of painting with light, yet nighttime scenes are shaped by competing degradations: intense flares obscure scene structure, while photon-limited regions collapse into noise. Conventional approaches address these factors in isolation, overlooking the fact that these degradations are fundamentally entangled. To bridge this gap, we introduce LUCID, a unified framework that reframes nighttime restoration as a continuous and controllable process rather than a fixed correction. LUCID enables users to restore challenging nighttime images with flexible control over exposure, light sources, flare, and ghosting artifacts, while also supporting high dynamic range (HDR) reconstruction. Extensive experiments demonstrate that LUCID consistently outperforms state-of-the-art methods across diverse real-world nighttime scenarios.
           </p>
         </div>
       </div>
@@ -110,61 +255,237 @@
   </div>
 </section>
 
-<section class="section">
+<!-- Method overview hidden while patent review is pending. -->
+
+<section class="section" id="controls">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Method Overview</h2>
+        <h2 class="title is-3">Continuous Exposure Control</h2>
         <div class="content has-text-justified">
           <p>
-            To tackle the challenges of metalens-based imaging, we propose a degradation-modeled multipath diffusion framework that leverages pretrained large-scale generative diffusion models for tunable metalens photography. Our approach addresses three key challenges: complex metalens degradations, limited paired training data, and hallucinations in generative models.
-
-            With the powerful natural image priors from the base generative diffusion model, our method reconstructs vivid and realistic images using a small training dataset. To further enhance restoration, we propose a Spatially Varying Degradation-Aware (SVDA) attention module, which quantifies optical aberrations and sensor-induced noise to guide the restoration process. Additionally, we introduce a Degradation-modeled Multipath Diffusion (DMDiff) framework, incorporating positive, neutral, and negative-prompt paths to balance detail enhancement and structural fidelity while mitigating metalens-specific distortions. Finally, we design an instantly tunable decoder, enabling dynamic control over reconstruction quality to suppress hallucinations.
+            LUCID provides continuous exposure control for nighttime restoration, allowing users to smoothly adjust output brightness while maintaining structural consistency and natural appearance across challenging scenes.
           </p>
-          <img src="./projects/DMDiff_fig/images/multipath_diffusion_model.jpg" alt="Overview for our method">
-          <br><br>
-          <img src="./projects/DMDiff_fig/images/training_and_inference.jpg" alt="Overview for our method">
+        </div>
+
+        <div class="lucid-control-gallery">
+          <div class="lucid-control-panel" data-lucid-base="./projects/LUCID_fig/control_06773/">
+            <div class="lucid-control-pair">
+              <figure>
+                <img src="./projects/LUCID_fig/control_06773/input.jpg" alt="Control input 2015_06773">
+                <div class="lucid-mini-caption">Input</div>
+              </figure>
+              <figure class="lucid-interp-stage">
+                <img class="lucid-interp-current" src="./projects/LUCID_fig/control_06773/cfg_105.png" alt="CFG output current state">
+                <img class="lucid-interp-next" src="./projects/LUCID_fig/control_06773/cfg_125.png" alt="CFG output next state">
+              </figure>
+            </div>
+            <div class="lucid-slider-row">
+              <input class="lucid-range lucid-panel-slider" type="range" min="0" max="600" step="1" value="400">
+              <div class="lucid-slider-value">β = 1.05</div>
+            </div>
+          </div>
+
+          <div class="lucid-control-panel" data-lucid-base="./projects/LUCID_fig/control_03600/">
+            <div class="lucid-control-pair">
+              <figure>
+                <img src="./projects/LUCID_fig/control_03600/input.jpg" alt="Control input 2015_03600">
+                <div class="lucid-mini-caption">Input</div>
+              </figure>
+              <figure class="lucid-interp-stage">
+                <img class="lucid-interp-current" src="./projects/LUCID_fig/control_03600/cfg_105.png" alt="CFG output current state">
+                <img class="lucid-interp-next" src="./projects/LUCID_fig/control_03600/cfg_125.png" alt="CFG output next state">
+              </figure>
+            </div>
+            <div class="lucid-slider-row">
+              <input class="lucid-range lucid-panel-slider" type="range" min="0" max="600" step="1" value="400">
+              <div class="lucid-slider-value">β = 1.05</div>
+            </div>
+          </div>
+
+          <div class="lucid-control-panel" data-lucid-base="./projects/LUCID_fig/control_02697/">
+            <div class="lucid-control-pair">
+              <figure>
+                <img src="./projects/LUCID_fig/control_02697/input.jpg" alt="Control input 2015_02697">
+                <div class="lucid-mini-caption">Input</div>
+              </figure>
+              <figure class="lucid-interp-stage">
+                <img class="lucid-interp-current" src="./projects/LUCID_fig/control_02697/cfg_105.png" alt="CFG output current state">
+                <img class="lucid-interp-next" src="./projects/LUCID_fig/control_02697/cfg_125.png" alt="CFG output next state">
+              </figure>
+            </div>
+            <div class="lucid-slider-row">
+              <input class="lucid-range lucid-panel-slider" type="range" min="0" max="600" step="1" value="400">
+              <div class="lucid-slider-value">β = 1.05</div>
+            </div>
+          </div>
+
+          <div class="lucid-control-panel" data-lucid-base="./projects/LUCID_fig/control_02443/">
+            <div class="lucid-control-pair">
+              <figure>
+                <img src="./projects/LUCID_fig/control_02443/input.png" alt="Control input 2015_02443">
+                <div class="lucid-mini-caption">Input</div>
+              </figure>
+              <figure class="lucid-interp-stage">
+                <img class="lucid-interp-current" src="./projects/LUCID_fig/control_02443/cfg_105.png" alt="CFG output current state">
+                <img class="lucid-interp-next" src="./projects/LUCID_fig/control_02443/cfg_125.png" alt="CFG output next state">
+              </figure>
+            </div>
+            <div class="lucid-slider-row">
+              <input class="lucid-range lucid-panel-slider" type="range" min="0" max="600" step="1" value="400">
+              <div class="lucid-slider-value">β = 1.05</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: 1.5rem;">
+          <p>
+            LUCID also supports selective manipulation of scene illuminants, allowing users to preserve visible light sources or suppress them together with associated flare and ghosting artifacts.
+          </p>
+        </div>
+        <div class="lucid-result-grid-3">
+          <figure>
+            <img src="./projects/LUCID_fig/light_input.png" alt="Input with light source">
+            <div class="lucid-mini-caption">Input</div>
+          </figure>
+          <figure>
+            <img src="./projects/LUCID_fig/light_preserve.png" alt="Preserve light source">
+            <div class="lucid-mini-caption">Preserve Source</div>
+          </figure>
+          <figure>
+            <img src="./projects/LUCID_fig/light_remove.png" alt="Suppress source and flare">
+            <div class="lucid-mini-caption">Suppress Source</div>
+          </figure>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </section>
 
-<section class="section">
+<section class="section" id="results">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">More Results</h2>
-        <div class="content has-text-justified">
-          <figure>
-            <img src="./projects/DMDiff_fig/images/supp_exp_1.jpg" alt="Qualitative results for our method">
-            <figcaption>Qualitative comparisons of different methods on real-world images captured by our system.</figcaption>
+        <h2 class="title is-3">Representative Results</h2>
+
+        <div class="lucid-task-block">
+          <div class="content has-text-justified">
+            <p><strong>Holistic Nighttime Restoration.</strong> These examples cover four diverse nighttime regimes from ExDark. LUCID restores structure and visibility more consistently across these challenging cases.</p>
+          </div>
+          <div class="lucid-result-stack lucid-result-grid-6">
+            <figure><img src="./projects/LUCID_fig/results_exdark_04400/input.png" alt="ExDark 04400 input"><div class="lucid-mini-caption">Input</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_04400/zerodce.png" alt="ExDark 04400 ZeroDCE"><div class="lucid-mini-caption">ZeroDCE</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_04400/retinexformer.png" alt="ExDark 04400 Retinexformer"><div class="lucid-mini-caption">Retinexformer</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_04400/reti_diff.png" alt="ExDark 04400 Reti-Diff"><div class="lucid-mini-caption">Reti-Diff</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_04400/darkir.png" alt="ExDark 04400 DarkIR"><div class="lucid-mini-caption">DarkIR</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_04400/lucid.png" alt="ExDark 04400 LUCID"><div class="lucid-mini-caption">LUCID</div></figure>
+          </div>
+          <div class="lucid-result-stack lucid-result-grid-6">
+            <figure><img src="./projects/LUCID_fig/results_exdark_03035/input.png" alt="ExDark 03035 input"><div class="lucid-mini-caption">Input</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_03035/zerodce.png" alt="ExDark 03035 ZeroDCE"><div class="lucid-mini-caption">ZeroDCE</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_03035/retinexformer.png" alt="ExDark 03035 Retinexformer"><div class="lucid-mini-caption">Retinexformer</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_03035/reti_diff.png" alt="ExDark 03035 Reti-Diff"><div class="lucid-mini-caption">Reti-Diff</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_03035/darkir.png" alt="ExDark 03035 DarkIR"><div class="lucid-mini-caption">DarkIR</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_03035/lucid.png" alt="ExDark 03035 LUCID"><div class="lucid-mini-caption">LUCID</div></figure>
+          </div>
+          <div class="lucid-result-stack lucid-result-grid-6">
+            <figure><img src="./projects/LUCID_fig/results_exdark_01383/input.png" alt="ExDark 01383 input"><div class="lucid-mini-caption">Input</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_01383/zerodce.png" alt="ExDark 01383 ZeroDCE"><div class="lucid-mini-caption">ZeroDCE</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_01383/retinexformer.png" alt="ExDark 01383 Retinexformer"><div class="lucid-mini-caption">Retinexformer</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_01383/reti_diff.png" alt="ExDark 01383 Reti-Diff"><div class="lucid-mini-caption">Reti-Diff</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_01383/darkir.png" alt="ExDark 01383 DarkIR"><div class="lucid-mini-caption">DarkIR</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_01383/lucid.png" alt="ExDark 01383 LUCID"><div class="lucid-mini-caption">LUCID</div></figure>
+          </div>
+          <div class="lucid-result-stack lucid-result-grid-6">
+            <figure><img src="./projects/LUCID_fig/results_exdark_04059/input.png" alt="ExDark 04059 input"><div class="lucid-mini-caption">Input</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_04059/zerodce.png" alt="ExDark 04059 ZeroDCE"><div class="lucid-mini-caption">ZeroDCE</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_04059/retinexformer.png" alt="ExDark 04059 Retinexformer"><div class="lucid-mini-caption">Retinexformer</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_04059/reti_diff.png" alt="ExDark 04059 Reti-Diff"><div class="lucid-mini-caption">Reti-Diff</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_04059/darkir.png" alt="ExDark 04059 DarkIR"><div class="lucid-mini-caption">DarkIR</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_exdark_04059/lucid.png" alt="ExDark 04059 LUCID"><div class="lucid-mini-caption">LUCID</div></figure>
+          </div>
+        </div>
+
+        <div class="lucid-task-block">
+          <div class="content has-text-justified">
+            <p><strong>Flare Mitigation.</strong> These examples focus on removing scattering artifacts while preserving plausible light-source appearance. LUCID achieves a cleaner balance between removal and preservation than prior flare-removal baselines.</p>
+          </div>
+          <div class="lucid-result-stack lucid-result-grid-6">
+            <figure><img src="./projects/LUCID_fig/results_flare_000023/input.png" alt="Flare 000023 input"><div class="lucid-mini-caption">Input</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000023/gt.png" alt="Flare 000023 GT"><div class="lucid-mini-caption">GT</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000023/flare7k.png" alt="Flare 000023 Flare7K"><div class="lucid-mini-caption">Flare7K</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000023/mfdnet.png" alt="Flare 000023 MFDNet"><div class="lucid-mini-caption">MFDNet</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000023/zhou.png" alt="Flare 000023 Zhou et al."><div class="lucid-mini-caption">Zhou et al.</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000023/lucid.png" alt="Flare 000023 LUCID"><div class="lucid-mini-caption">LUCID</div></figure>
+          </div>
+          <div class="lucid-result-stack lucid-result-grid-6">
+            <figure><img src="./projects/LUCID_fig/results_flare_000067/input.png" alt="Flare 000067 input"><div class="lucid-mini-caption">Input</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000067/gt.png" alt="Flare 000067 GT"><div class="lucid-mini-caption">GT</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000067/flare7k.png" alt="Flare 000067 Flare7K"><div class="lucid-mini-caption">Flare7K</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000067/mfdnet.png" alt="Flare 000067 MFDNet"><div class="lucid-mini-caption">MFDNet</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000067/zhou.png" alt="Flare 000067 Zhou et al."><div class="lucid-mini-caption">Zhou et al.</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000067/lucid.png" alt="Flare 000067 LUCID"><div class="lucid-mini-caption">LUCID</div></figure>
+          </div>
+          <div class="lucid-result-stack lucid-result-grid-6">
+            <figure><img src="./projects/LUCID_fig/results_flare_000009/input.png" alt="Flare 000009 input"><div class="lucid-mini-caption">Input</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000009/gt.png" alt="Flare 000009 GT"><div class="lucid-mini-caption">GT</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000009/flare7k.png" alt="Flare 000009 Flare7K"><div class="lucid-mini-caption">Flare7K</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000009/mfdnet.png" alt="Flare 000009 MFDNet"><div class="lucid-mini-caption">MFDNet</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000009/zhou.png" alt="Flare 000009 Zhou et al."><div class="lucid-mini-caption">Zhou et al.</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_flare_000009/lucid.png" alt="Flare 000009 LUCID"><div class="lucid-mini-caption">LUCID</div></figure>
+          </div>
+        </div>
+
+        <div class="lucid-task-block">
+          <div class="content has-text-justified">
+            <p><strong>Single-Image HDR Reconstruction.</strong> LUCID extends naturally to HDR reconstruction through controllable exposure synthesis. These examples show stronger structural fidelity and more natural luminance than specialized HDR baselines.</p>
+          </div>
+          <div class="lucid-result-stack lucid-result-grid-5">
+            <figure><img src="./projects/LUCID_fig/results_hdr_006/input.png" alt="HDR 006 input"><div class="lucid-mini-caption">Input</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_hdr_006/intrinsichdr.png" alt="HDR 006 IntrinsicHDR"><div class="lucid-mini-caption">IntrinsicHDR</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_hdr_006/lediff.png" alt="HDR 006 LEDiff"><div class="lucid-mini-caption">LEDiff</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_hdr_006/gaslight.png" alt="HDR 006 GasLight"><div class="lucid-mini-caption">GasLight</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_hdr_006/lucid.png" alt="HDR 006 LUCID"><div class="lucid-mini-caption">LUCID</div></figure>
+          </div>
+          <div class="lucid-result-stack lucid-result-grid-5">
+            <figure><img src="./projects/LUCID_fig/results_hdr_079/input.png" alt="HDR 079 input"><div class="lucid-mini-caption">Input</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_hdr_079/intrinsichdr.png" alt="HDR 079 IntrinsicHDR"><div class="lucid-mini-caption">IntrinsicHDR</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_hdr_079/lediff.png" alt="HDR 079 LEDiff"><div class="lucid-mini-caption">LEDiff</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_hdr_079/gaslight.png" alt="HDR 079 GasLight"><div class="lucid-mini-caption">GasLight</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_hdr_079/lucid.png" alt="HDR 079 LUCID"><div class="lucid-mini-caption">LUCID</div></figure>
+          </div>
+          <div class="lucid-result-stack lucid-result-grid-5">
+            <figure><img src="./projects/LUCID_fig/results_hdr_135/input.png" alt="HDR 135 input"><div class="lucid-mini-caption">Input</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_hdr_135/intrinsichdr.png" alt="HDR 135 IntrinsicHDR"><div class="lucid-mini-caption">IntrinsicHDR</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_hdr_135/lediff.png" alt="HDR 135 LEDiff"><div class="lucid-mini-caption">LEDiff</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_hdr_135/gaslight.png" alt="HDR 135 GasLight"><div class="lucid-mini-caption">GasLight</div></figure>
+            <figure><img src="./projects/LUCID_fig/results_hdr_135/lucid.png" alt="HDR 135 LUCID"><div class="lucid-mini-caption">LUCID</div></figure>
+          </div>
+        </div>
+
+        <div class="lucid-task-block">
+          <div class="content has-text-justified">
+            <p><strong>Downstream Creative Applications.</strong> LUCID can be used both before and after downstream editing or generation. It removes interfering flare while preserving controllable exposure and lighting behavior.</p>
+          </div>
+          <figure class="lucid-plain-figure">
+            <img src="./projects/LUCID_fig/creative.png" alt="Creative workflow results">
           </figure>
         </div>
-        <div class="content has-text-justified">
-          <figure>
-            <img src="./projects/DMDiff_fig/images/supp_exp_2.jpg" alt="Qualitative results for our method">
-            <figcaption>Qualitative comparisons of different methods on our unseen test dataset, zoom in for details.</figcaption>
-          </figure>
-        </div>
-        <hr>
       </div>
     </div>
   </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>
-      @article{zhang2025dmdiff,
-        title={Degradation-Modeled Multipath Diffusion for Tunable Metalens Photography},
-        author={Jianing Zhang, Jiayi Zhu, Feiyu Ji, Xiaokang Yang, and Xiaoyun Yuan},
-        booktitle={arxiv preprint arxiv:2506.22753}, 
-        year={2025}
-      }
-      </code></pre>
+    <div class="lucid-bibtex">
+<pre><code>@misc{lucid2026,
+  title        = {LUCID: Learning Unified Control for Image Deflaring and Exposure Mastery in Nighttime Photography},
+  author       = {Tingyu Yang and Yuan Cheng and Xiaoyun Yuan},
+  year         = {2026},
+  note         = {Accepted to ACM SIGGRAPH 2026}
+}</code></pre>
+    </div>
   </div>
 </section>
--->
-
-This page is under construction. Please check back later for updates on our project, LUCID: Learning Unified Control for Image Deflaring and Exposure Mastery in Nighttime Photography. Thank you for your interest!
