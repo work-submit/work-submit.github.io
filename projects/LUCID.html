@@ -255,7 +255,25 @@
   </div>
 </section>
 
-<!-- Method overview hidden while patent review is pending. -->
+<!-- Temporarily hidden while patent review is pending.
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            The pipeline begins with the flare disentangle stage, where the degraded input is decomposed into a background estimate and a flare component. These components are selectively concatenated along the state dimension to form multi-state inputs for the mixing-state diffusion module. Inside the network, cross-state interactions guide the diffusion process to achieve fine-grained restoration. Rather than introducing four unrelated functions, the four training regimes are designed to establish controllability: LUCID alternates between positive modes, which use the original nighttime image as reference for enhancement, and negative modes, which use the flare component as reference for suppression, with optional <i>light source</i> prompts to enforce semantic controllability over high-intensity regions. This design allows CFG and prompt conditioning to control the restoration behavior within a single unified model.
+          </p>
+        </div>
+        <figure class="lucid-plain-figure">
+          <img src="./projects/LUCID_fig/pipeline.png" alt="LUCID pipeline">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+-->
 
 <section class="section" id="controls">
   <div class="container is-max-desktop">
@@ -480,11 +498,16 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <div class="lucid-bibtex">
-<pre><code>@misc{lucid2026,
-  title        = {LUCID: Learning Unified Control for Image Deflaring and Exposure Mastery in Nighttime Photography},
-  author       = {Tingyu Yang and Yuan Cheng and Xiaoyun Yuan},
-  year         = {2026},
-  note         = {Accepted to ACM SIGGRAPH 2026}
+<pre><code>@inproceedings{yang2026lucid,
+  title     = {LUCID: Learning Unified Control for Image Deflaring and Exposure Mastery in Nighttime Photography},
+  author    = {Yang, Tingyu and Cheng, Yuan and Yuan, Xiaoyun},
+  booktitle = {Special Interest Group on Computer Graphics and Interactive Techniques Conference Conference Papers (SIGGRAPH Conference Papers '26)},
+  year      = {2026},
+  location  = {Los Angeles, CA, USA},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  doi       = {10.1145/3799902.3811133},
+  isbn      = {979-8-4007-2554-8}
 }</code></pre>
     </div>
   </div>
