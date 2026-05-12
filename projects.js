@@ -40,7 +40,7 @@ const projects = [
         fullTitle: '<b>Xiaoyun Yuan*</b>, Jianing Zhang*, Youhai Liu, Yichen Wang, Lu Fang<span style="font-size:1.6em; font-weight:bold;">✉</span>',
         direction: 'intelligent-imaging',
         directionLabel: 'Intelligent Imaging',
-        status: '<b style="color: #3b8276;">Nature Communications</b> 2026',
+        status: '<b style="color: #1a202c; border-bottom: 3px solid #3b8276; padding-bottom: 1px;">Nature Communications</b> 2026',
         image: './projects/SkinSight_fig/teaser.jpg',
         summary: 'By integrating miniaturized cameras with stretchable interconnects, this skin-conformal rigid-in-soft system endows dynamic surfaces with high-fidelity visual capabilities, augmenting perception for wearables and embodied artificial intelligence.',
         tags: ['Intelligent Imaging', 'Wearable Imaging', 'Embodied AI'],
