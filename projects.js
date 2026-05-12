@@ -55,7 +55,7 @@ const projects = [
         direction: 'intelligent-imaging',
         directionLabel: 'Photoacoustic Computed Tomography',
         status: 'Nature Biomedical Engineering 2022',
-        image: 'https://xiaoyunyuan.net/mypaper/paper_icon/nbme_2022.jpg',
+        image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/nbme_2022.jpg',
         summary: 'Arrays of ultrasonic transducers arranged hemispherically around the head enable the mapping of haemodynamic changes in the brain via photoacoustic computed tomography at resolutions down to 350 micrometres and 2 seconds.',
         tags: ['Functional Brain Imaging', 'Photoacoustic Computed Tomography'],
         links: [
@@ -69,7 +69,7 @@ const projects = [
         direction: 'intelligent-imaging',
         directionLabel: 'Gigapixel Imaging',
         status: 'Light: Science & Applications 2021',
-        image: 'https://xiaoyunyuan.net/mypaper/paper_icon/light_2021.jpg',
+        image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/light_2021.jpg',
         summary: 'Arrays of ultrasonic transducers arranged hemispherically around the head enable the mapping of haemodynamic changes in the brain via photoacoustic computed tomography at resolutions down to 350 micrometres and 2 seconds.',
         tags: ['Gigapixel Videography', 'Unstructured Camera Arrays', 'Computational Imaging'],
         links: [
@@ -83,7 +83,7 @@ const projects = [
         direction: 'intelligent-imaging',
         directionLabel: 'Hyperspectral Imaging',
         status: 'Nature 2025',
-        image: 'https://xiaoyunyuan.net/mypaper/paper_icon/nature_2025.jpg',
+        image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/nature_2025.jpg',
         summary: 'A sub-ångström ultra-high-transmittance snapshot spectroscopic technique, which targets this trade-off with integrated and reconfigurable photonics based on lithium niobate.',
         tags: ['Hyperspectral Imaging', 'Reconfigurable Imaging', 'Lithium Niobate Photonics'],
         links: [
@@ -144,7 +144,7 @@ const projects = [
         direction: 'ai-vision',
         directionLabel: 'Generative AI for Gaussian Splatting',
         status: 'IEEE TCSVT 2025',
-        image: 'https://xiaoyunyuan.net/mypaper/paper_icon/csvt2025_GBR.jpg',
+        image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/csvt2025_GBR.jpg',
         summary: 'A method for high-fidelity Gaussian splatting and meshing using only 4—6 input views.',
         tags: ['Gaussian Splatting', 'Mesh Reconstruction', 'Diffusion'],
         links: [
@@ -161,7 +161,7 @@ const projects = [
         direction: 'ai-optics',
         directionLabel: 'Optical Neural Networks',
         status: 'Nature Communications 2023',
-        image: 'https://xiaoyunyuan.net/mypaper/paper_icon/nc_2023.jpg',
+        image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/nc_2023.jpg',
         summary: 'A dual-neuron optical-artificial learning approach for training large-scale diffractive neural networks, achieving VGG-level performance on ImageNet in simulation with a network that is 10 times larger than existing ones.',
         tags: ['Optics + AI', 'Intelligent Computing', 'Optical Neural Networks'],
         links: [
@@ -176,7 +176,7 @@ const projects = [
         direction: 'ai-optics',
         directionLabel: 'Optical Neural Networks',
         status: 'Light: Science & Applications 2022',
-        image: 'https://xiaoyunyuan.net/mypaper/paper_icon/light_2022.jpg',
+        image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/light_2022.jpg',
         summary: 'A multichannel optical neural network architecture for a universal multiple-input multiple-channel optical computing, which can be optically implemented with high-efficiency, enabling real-world intelligent multichannel-processing tasks solved via optical computing, including 3D/motion detections. ',
         tags: ['Optics + AI', 'Intelligent Computing', 'Optical Neural Networks'],
         links: [
