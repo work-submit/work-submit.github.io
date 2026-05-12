@@ -1,328 +1,429 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <link rel="icon" type="image/png" href="./static/OpticAI_s.png" sizes="32x32">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI + Optics</title>
+  <meta name="description" content="Open-source research projects from OpticAI Lab on intelligent imaging, generative AI for vision, and optics + AI.">
+  <title>OpticAI Lab | Open-Source Research Projects</title>
 
-  <!-- Google tag (gtag.js) -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
-
+  <link rel="icon" type="image/png" href="./static/images/OpticAI_s.png" sizes="32x32">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-
-  <style>
-    .navbar {
-      background-color: #f8f9fa;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .navbar-item {
-      color: #333;
-      font-weight: 500;
-    }
-    .navbar-item:hover {
-      background-color: #e9ecef;
-      color: #007bff;
-    }
-    /* 确保下拉菜单中的激活项样式正确 */
-    .navbar-dropdown .navbar-item.is-active {
-      background-color: #007bff;
-      color: white;
-    }
-    #content-container {
-      min-height: calc(100vh - 200px);
-      padding: 2rem 0;
-    }
-    .content-section {
-      animation: fadeIn 0.5s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .loading {
-      text-align: center;
-      padding: 5rem;
-    }
-    /* 自定义导航栏居中样式 */
-    .centered-nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* 确保导航菜单不会被挤到一边 */
-    .centered-nav .navbar-menu {
-      flex-grow: 0; /* 取消 flex-grow，让菜单只占自身大小 */
-    }
-
-  </style>
 </head>
 <body>
+  <nav class="site-nav" role="navigation" aria-label="main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="./index.html" aria-label="OpticAI Lab home">
+        <img src="./static/images/OpticAI.png" alt="OpticAI Lab">
+        <span>OpticAI Lab</span>
+      </a>
 
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-<!-- 导航栏 - 修改为居中对齐 -->
-<nav class="navbar centered-nav" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <!-- 添加小图片 -->
-    <a class="navbar-item" href="./index.html">
-      <img src="./static/images/OpticAI.png" alt="Logo" style="height: 1.5em; margin-right: 0.05em;">
-    </a>
-    <a class="navbar-item" href="./index.html">
-      <strong>OpticAI Lab</strong>
-    </a>
-    <!-- 移动端菜单按钮 -->
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  
-  <!-- 使用 Bulma 的 Flexbox 工具类进行居中 -->
-  <div class="navbar-menu is-flex is-justify-content-center">
-    <div class="navbar-start">
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link" id="project-dropdown-link">
-          AI + Imaging
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item project-item" data-target="3m-ti" href="./index.html?project=3m-ti">3M-TI: Thermal Imaging + Generative Diffusion</a>
-          <a class="navbar-item project-item" data-target="dmdiff" href="./index.html?project=dmdiff">DMDiff: Metalens Imaging + Generative Diffusion</a>
-          <a class="navbar-item project-item" data-target="lucid" href="./index.html?project=lucid">LUCID: Learning Unified Control for Image Deflaring and Exposure Mastery in Nighttime Photography</a>
-        </div>
+      <div class="nav-links" id="nav-links">
+        <a class="nav-link" href="./index.html">Projects</a>
+        <a class="nav-link" href="https://xiaoyunyuan.net/">PI</a>
+        <a class="nav-link" href="./index.html#intelligent-imaging">Intelligent Imaging</a>
+        <a class="nav-link" href="./index.html#ai-vision">Generative AI</a>
+        <a class="nav-link" href="./index.html#ai-optics">Optics + AI</a>
+        <a class="nav-link" href="./index.html#datasets">Datasets</a>
+        <!-- <a class="nav-link" data-target="about" href="./index.html?project=about">About</a> -->
       </div>
-      <a class="navbar-item" data-target="about" href="./index.html?project=about">About</a>
     </div>
-    </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- 内容容器 -->
-<div class="container is-max-desktop">
-  <div id="content-container">
+  <main id="content-container" aria-live="polite">
     <div class="loading">
-      <i class="fas fa-spinner fa-spin fa-3x"></i>
-      <p class="is-size-4 mt-4">Loading content...</p>
+      <i class="fas fa-spinner fa-spin fa-2x"></i>
+      <p>Loading content...</p>
     </div>
-  </div>
-</div>
+  </main>
 
-<footer class="footer">
-  <center>
-  <div style="width: 50%">
-  <a href="https://info.flagcounter.com/tVNZ"><img src="https://s01.flagcounter.com/map/tVNZ/size_s/txt_000000/border_CCCCCC/pageviews_1/viewers_0/flags_0/" alt="Flag Counter" border="0"></a>
-  </div>
-  </center>
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            We thank <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies</a> for their amazing template.
-          </p>
-        </div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>OpticAI Lab</strong>
+        <p>Open-source research projects in intelligent imaging, generative AI for vision, and optics + AI.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://xiaoyunyuan.net/" target="_blank" rel="noopener noreferrer">Homepage</a>
+        <a href="mailto:yuanxiaoyun@sjtu.edu.cn">Email</a>
       </div>
     </div>
-  </div>
-</footer>
+    <p class="template-credit">Built on GitHub Pages. Original project-page inspiration from the Nerfies template.</p>
+  </footer>
 
-<!-- 脚本 -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const contentContainer = document.getElementById('content-container');
-    const projectItems = document.querySelectorAll('.project-item');
-    const navbarItems = document.querySelectorAll('.navbar-item[data-target]');
-    const projectDropdownLink = document.getElementById('project-dropdown-link');
-    const CONTENT_BASE_PATH = '.';
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const contentContainer = document.getElementById('content-container');
+      const navLinks = document.querySelectorAll('.nav-link[data-target]');
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.getElementById('nav-links');
 
-    const contentPaths = {
-      '3m-ti': `${CONTENT_BASE_PATH}/projects/3MTI.html`,
-      'dmdiff': `${CONTENT_BASE_PATH}/projects/DMDiff.html`,
-      'lucid': `${CONTENT_BASE_PATH}/projects/LUCID.html`,
-      'about': `${CONTENT_BASE_PATH}/about.html`
-    };
-    
-    // 从URL获取项目名称
-    function getProjectFromUrl() {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get('project');
-    }
-    
-    // 加载内容
-    function loadContent(target) {
-      const filePath = contentPaths[target];
-      
-      if (!filePath) {
-          contentContainer.innerHTML = `<div class="has-text-centered"><p class="is-size-4 mt-4">Content not found for '${target}'</p></div>`;
-          return;
-      }
+      const contentPaths = {
+        '3m-ti': './projects/3MTI.html',
+        'dmdiff': './projects/DMDiff.html',
+        'lucid': './projects/LUCID.html',
+        'about': './about.html'
+      };
 
-      contentContainer.innerHTML = `
-        <div class="loading">
-          <i class="fas fa-spinner fa-spin fa-3x"></i>
-          <p class="is-size-4 mt-4">Loading ${target}...</p>
-        </div>
-      `;
-      
-      fetch(filePath)
-        .then(response => {
-          if (!response.ok) {
-            console.error(`HTTP error! status: ${response.status} for URL: ${filePath}`);
-            throw new Error(`Failed to load (${response.status})`);
-          }
-          return response.text();
-        })
-        .then(html => {
-          contentContainer.innerHTML = `<div class="content-section">${html}</div>`;
-          
-          if (window.MathJax) {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-          }
-          
-          initScripts();
-        })
-        .catch(error => {
-          console.error('Error loading content:', error);
-          contentContainer.innerHTML = `
-            <div class="has-text-centered">
-              <i class="fas fa-exclamation-triangle fa-3x" style="color: #ff0000;"></i>
-              <p class="is-size-4 mt-4">Error loading content</p>
-              <p class="is-size-5 mt-2">Please check the console for details. Ensure you are running a local server.</p>
-              <p class="is-size-6 mt-1">Path attempted: <code>${filePath}</code></p>
-            </div>
-          `;
-        });
-    }
-    
-    function initScripts() {
-      initLucidControls();
-    }
-
-    function initLucidControls() {
-      const panels = document.querySelectorAll('.lucid-control-panel[data-lucid-base]');
-
-      if (!panels.length) {
-        return;
-      }
-
-      const cfgStates = [
-        { beta: 0.25, file: 'cfg_025.png' },
-        { beta: 0.50, file: 'cfg_050.png' },
-        { beta: 0.75, file: 'cfg_075.png' },
-        { beta: 0.95, file: 'cfg_095.png' },
-        { beta: 1.05, file: 'cfg_105.png' },
-        { beta: 1.25, file: 'cfg_125.png' },
-        { beta: 1.50, file: 'cfg_150.png' }
+      const projects = [
+        {
+          id: 'SkinSight',
+          title: 'A skin-conformal rigid-in-soft array-based imaging system',
+          fullTitle: '<b>Xiaoyun Yuan*</b>, Jianing Zhang*, Youhai Liu, Yichen Wang, Lu Fang<span style="font-size:1.6em; font-weight:bold;">✉</span>',
+          direction: 'intelligent-imaging',
+          directionLabel: 'Intelligent Imaging',
+          status: 'Nature Communications 2026',
+          image: './projects/SkinSight_fig/teaser.jpg',
+          summary: 'By integrating miniaturized cameras with stretchable interconnects, this skin-conformal rigid-in-soft system endows dynamic surfaces with high-fidelity visual capabilities, augmenting perception for wearables and embodied artificial intelligence.',
+          tags: ['Intelligent Imaging', 'Wearable Imaging', 'Embodied AI'],
+          links: [
+            { label: 'Comming Soon', href: '', icon: 'fas fa-file-pdf' }
+          ]
+        },
+        {
+          id: 'brainpact',
+          title: 'Massively parallel functional photoacoustic computed tomography of the human brain',
+          fullTitle: 'Shuai Na*, Jonathan J. Russin*, Li Lin*, <b>Xiaoyun Yuan*</b>, Peng Hu, Kay B. Jann, Lirong Yan, Konstantin Maslov, Junhui Shi, Danny J. Wang, Charles Y. Liu<span style="font-size:1.6em; font-weight:bold;">✉</span>, Lihong V. Wang<span style="font-size:1.6em; font-weight:bold;">✉</span>',
+          direction: 'intelligent-imaging',
+          directionLabel: 'Photoacoustic Computed Tomography',
+          status: 'Nature Biomedical Engineering 2022',
+          image: 'https://xiaoyunyuan.net/mypaper/paper_icon/nbme_2022.jpg',
+          summary: 'Arrays of ultrasonic transducers arranged hemispherically around the head enable the mapping of haemodynamic changes in the brain via photoacoustic computed tomography at resolutions down to 350 micrometres and 2 seconds.',
+          tags: ['Functional Brain Imaging', 'Photoacoustic Computed Tomography'],
+          links: [
+            { label: 'Paper', href: 'https://www.nature.com/articles/s41551-021-00735-8', icon: 'fas fa-file-pdf' }
+          ]
+        },
+        {
+          id: 'unstructuredcam',
+          title: 'A modular hierarchical array camera',
+          fullTitle: '<b>Xiaoyun Yuan*</b>, Mengqi Ji*, Jiamin Wu, David J. Brady, Qionghai Dai, Lu Fang<span style="font-size:1.6em; font-weight:bold;">✉</span>',
+          direction: 'intelligent-imaging',
+          directionLabel: 'Gigapixel Imaging',
+          status: 'Light: Science & Applications 2021',
+          image: 'https://xiaoyunyuan.net/mypaper/paper_icon/light_2021.jpg',
+          summary: 'Arrays of ultrasonic transducers arranged hemispherically around the head enable the mapping of haemodynamic changes in the brain via photoacoustic computed tomography at resolutions down to 350 micrometres and 2 seconds.',
+          tags: ['Gigapixel Videography', 'Unstructured Camera Arrays', 'Computational Imaging'],
+          links: [
+            { label: 'Paper', href: 'https://www.nature.com/articles/s41377-021-00485-x', icon: 'fas fa-file-pdf' }
+          ]
+        },
+        {
+          id: 'rafael',
+          title: 'Integrated lithium niobate photonics for sub-ångström snapshot spectroscopy',
+          fullTitle: 'Zhiyang Yao*, Shuyang Liu*, Yingce Wang*, <b>Xiaoyun Yuan</b>, Lu Fang<span style="font-size:1.6em; font-weight:bold;">✉</span>',
+          direction: 'intelligent-imaging',
+          directionLabel: 'Hyperspectral Imaging',
+          status: 'Nature 2025',
+          image: 'https://xiaoyunyuan.net/mypaper/paper_icon/nature_2025.jpg',
+          summary: 'A sub-ångström ultra-high-transmittance snapshot spectroscopic technique, which targets this trade-off with integrated and reconfigurable photonics based on lithium niobate.',
+          tags: ['Hyperspectral Imaging', 'Reconfigurable Imaging', 'Lithium Niobate Photonics'],
+          links: [
+            { label: 'Paper', href: 'https://www.nature.com/articles/s41586-025-09591-x', icon: 'fas fa-file-pdf' }
+          ]
+        },
+        {
+          id: '3m-ti',
+          title: 'High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion',
+          fullTitle: 'Minchong Chen*, <b>Xiaoyun Yuan*</b><span style="font-size:1.6em; font-weight:bold;">✉</span>, Junzhe Wan, Jianing Zhang, Jun Zhang',
+          direction: 'ai-vision',
+          directionLabel: 'Generative AI for Vision',
+          status: 'CVPR 2026',
+          image: './projects/3MTI_fig/fig_abs_square.jpg',
+          summary: 'Calibration-free multi-camera thermal enhancement that uses RGB guidance and diffusion priors for mobile thermal perception.',
+          tags: ['Thermal Imaging', 'Diffusion', 'Cross-Modal Fusion', 'Diffusion'],
+          links: [
+            { label: 'Project', href: './index.html?project=3m-ti', icon: 'fas fa-arrow-right' },
+            { label: 'Code', href: 'https://github.com/work-submit/3MTI', icon: 'fab fa-github' },
+            { label: 'arXiv', href: 'https://arxiv.org/abs/2511.19117', icon: 'ai ai-arxiv' }
+          ]
+        },
+        {
+          id: 'dmdiff',
+          title: 'Degradation-Modeled Multipath Diffusion for Tunable Metalens Photography',
+          fullTitle: 'Jianing Zhang, Jiayi Zhu, Feiyu Ji, Xiaokang Yang, <b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">✉</span>',
+          direction: 'ai-vision',
+          directionLabel: 'Generative AI for Vision',
+          status: 'ICCV 2025',
+          image: './projects/DMDiff_fig/images/teaser_square.jpg',
+          summary: 'A tunable diffusion framework for compact metalens photography, balancing perceptual detail with optical fidelity.',
+          tags: ['Metalens', 'Computational Optics', 'Generative Restoration', 'Diffusion'],
+          links: [
+            { label: 'Project', href: './index.html?project=dmdiff', icon: 'fas fa-arrow-right' },
+            { label: 'Code', href: 'https://github.com/yuanxy92/DMDiff_ICCV2025', icon: 'fab fa-github' },
+            { label: 'arXiv', href: 'https://arxiv.org/abs/2506.22753', icon: 'ai ai-arxiv' }
+          ]
+        },
+        {
+          id: 'lucid',
+          title: 'LUCID: Learning Unified Control for Image Deflaring and Exposure Mastery in Nighttime Photography',
+          fullTitle: 'Tingyu Yang, Yuan Cheng, <b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">✉</span>',
+          direction: 'ai-vision',
+          directionLabel: 'Generative AI for Vision',
+          status: 'Siggraph 2026',
+          image: './projects/LUCID_fig/LUCID_logo.png',
+          summary: 'A nighttime photography project on controllable restoration, deflaring, and exposure mastery.',
+          tags: ['Night Photography', 'Image Restoration', 'Exposure Control', 'Diffusion'],
+          links: [
+            { label: 'Project', href: './index.html?project=lucid', icon: 'fas fa-arrow-right' }
+          ]
+        },
+        {
+          id: 'gbr',
+          title: 'GBR: Generative Bundle Refinement for High-fidelity Gaussian Splatting with Enhanced Mesh Reconstruction',
+          fullTitle: 'Jianing Zhang, Yuchao Zheng, Ziwei Li, Qionghai Dai, <b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">✉</span>',
+          direction: 'ai-vision',
+          directionLabel: 'Generative AI for Gaussian Splatting',
+          status: 'IEEE TCSVT 2025',
+          image: 'https://xiaoyunyuan.net/mypaper/paper_icon/csvt2025_GBR.jpg',
+          summary: 'A method for high-fidelity Gaussian splatting and meshing using only 4—6 input views.',
+          tags: ['Gaussian Splatting', 'Mesh Reconstruction', 'Diffusion'],
+          links: [
+            { label: 'Project', href: 'https://gbrnvs.github.io/', icon: 'fas fa-arrow-right' },
+            { label: 'Paper', href: 'https://ieeexplore.ieee.org/document/11119723', icon: 'fas fa-file-pdf' },
+            { label: 'arXiv', href: 'https://arxiv.org/abs/2412.05908', icon: 'ai ai-arxiv' }
+          ]
+        },
+        {
+          id: 'Dante',
+          title: 'Training large-scale optoelectronic neural networks with dual-neuron optical-artificial learning',
+          fullTitle: '<b>Xiaoyun Yuan</b>, Yong Wang, Zhihao Xu, Tiankuang Zhou, Lu Fang<span style="font-size:1.6em; font-weight:bold;">✉</span>',
+          direction: 'ai-optics',
+          directionLabel: 'Optical Neural Networks',
+          status: 'Nature Communications 2023',
+          image: 'https://xiaoyunyuan.net/mypaper/paper_icon/nc_2023.jpg',
+          summary: 'A dual-neuron optical-artificial learning approach for training large-scale diffractive neural networks, achieving VGG-level performance on ImageNet in simulation with a network that is 10 times larger than existing ones.',
+          tags: ['Optics + AI', 'Intelligent Computing', 'Optical Neural Networks'],
+          links: [
+            { label: 'Paper', href: 'https://www.nature.com/articles/s41467-023-42984-y', icon: 'fas fa-file-pdf' }
+          ]
+        },
+        {
+          id: 'Monet',
+          title: 'A multichannel optical computing architecture for advanced machine vision',
+          fullTitle: 'Zhihao Xu*, <b>Xiaoyun Yuan*</b>, Tiankuang Zhou, Lu Fang<span style="font-size:1.6em; font-weight:bold;">✉</span>',
+          direction: 'ai-optics',
+          directionLabel: 'Optical Neural Networks',
+          status: 'Light: Science & Applications 2022',
+          image: 'https://xiaoyunyuan.net/mypaper/paper_icon/light_2022.jpg',
+          summary: 'A multichannel optical neural network architecture for a universal multiple-input multiple-channel optical computing, which can be optically implemented with high-efficiency, enabling real-world intelligent multichannel-processing tasks solved via optical computing, including 3D/motion detections. ',
+          tags: ['Optics + AI', 'Intelligent Computing', 'Optical Neural Networks'],
+          links: [
+            { label: 'Paper', href: 'https://www.nature.com/articles/s41377-022-00945-y', icon: 'fas fa-file-pdf' }
+          ]
+        }
       ];
 
-      function lerp(a, b, t) {
-        return a + (b - a) * t;
+      const directions = [
+        {
+          id: 'intelligent-imaging',
+          title: 'Intelligent Imaging',
+          kicker: 'Learning to see beyond sensor limits',
+          description: 'Enhancing image quality and scene understanding by combining physical sensing, multi-modal signals, and generative priors.'
+        },
+        {
+          id: 'ai-vision',
+          title: 'Generative AI for Vision',
+          kicker: 'Toward Controllable and Physics-Aware Perception in Adverse Environments',
+          description: 'Advancing robust vision through generative models that bridge the gap between degraded signals and high-fidelity reconstruction, enabling precise semantic understanding under extreme conditions.'
+        },
+        {
+          id: 'ai-optics',
+          title: 'Optics + AI',
+          kicker: 'Co-designing optical imaging hardware and learned reconstruction',
+          description: 'Computational imaging systems where compact optics, camera design, and AI reconstruction are treated as one research problem.'
+        },
+        {
+          id: 'datasets',
+          title: 'Datasets',
+          kicker: 'Public datasets',
+          description: 'Datasets for research'
+        }
+      ];
+
+      function getProjectFromUrl() {
+        return new URLSearchParams(window.location.search).get('project');
       }
 
-      panels.forEach(panel => {
-        const base = panel.getAttribute('data-lucid-base');
-        const slider = panel.querySelector('.lucid-panel-slider');
-        const value = panel.querySelector('.lucid-slider-value');
-        const current = panel.querySelector('.lucid-interp-current');
-        const next = panel.querySelector('.lucid-interp-next');
-        const label = panel.querySelector('.lucid-mini-caption');
+      function setActive(target) {
+        navLinks.forEach(function(link) {
+          link.classList.toggle('is-active', link.getAttribute('data-target') === target);
+        });
+      }
 
-        if (!base || !slider || !value || !current || !next) {
+      function closeMobileNav() {
+        navToggle.classList.remove('is-active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navMenu.classList.remove('is-open');
+      }
+
+      function linkMarkup(link) {
+        const external = link.href.startsWith('http');
+        return `
+          <a class="project-link" href="${link.href}" ${external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+            <i class="${link.icon}" aria-hidden="true"></i>
+            <span>${link.label}</span>
+          </a>
+        `;
+      }
+
+      function projectCard(project) {
+        return `
+          <article class="project-card">
+            <a class="project-image" href="./index.html?project=${project.id}" aria-label="Open ${project.title}">
+              <img src="${project.image}" alt="${project.title} preview">
+            </a>
+            <div class="project-content">
+              <div class="project-meta">
+                <span>${project.directionLabel}</span>
+                <span>${project.status}</span>
+              </div>
+              <h3><a href="./index.html?project=${project.id}">${project.title}</a></h3>
+              <p class="project-title">${project.fullTitle}</p>
+              <p>${project.summary}</p>
+              <div class="tag-list">
+                ${project.tags.map(function(tag) { return `<span>${tag}</span>`; }).join('')}
+              </div>
+              <div class="project-actions">
+                ${project.links.map(linkMarkup).join('')}
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      function renderHome() {
+        setActive('home');
+        const directionSections = directions.map(function(direction) {
+          const directionProjects = projects.filter(function(project) {
+            return project.direction === direction.id;
+          });
+
+          return `
+            <section class="research-section" id="${direction.id}">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">${direction.kicker}</p>
+                  <h2>${direction.title}</h2>
+                </div>
+                <p>${direction.description}</p>
+              </div>
+              <div class="project-grid">
+                ${directionProjects.map(projectCard).join('')}
+              </div>
+            </section>
+          `;
+        }).join('');
+
+        contentContainer.innerHTML = `
+          <section class="lab-hero">
+            <div class="hero-copy">
+              <p class="eyebrow">MoE Key Lab of Artificial Intelligence, AI Institute, Shanghai Jiao Tong University</p>
+              <h1>OpticAI Lab</h1>
+              <p class="hero-lede">
+                <b> Reprogramming light. Computing the invisible. </b> Decoding multidimensional dynamics through AI-driven photonics. We build next-generation imaging architectures to capture what traditional optics cannot. This hub hosts our latest algorithms, datasets, and reproducible codebases.
+              </p>
+              <div class="hero-actions">
+                <a class="button-primary" href="#intelligent-imaging">
+                  <i class="fas fa-layer-group" aria-hidden="true"></i>
+                  <span>Explore Projects</span>
+                </a>
+                <a class="button-secondary" href="https://xiaoyunyuan.net/" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-user-graduate" aria-hidden="true"></i>
+                  <span>PI Homepage - Xiaoyun Yuan</span>
+                </a>
+              </div>
+            </div>
+            <div class="hero-visual" aria-label="AI and optics visual">
+              <img src="./static/images/ai_plus_optics.jpg" alt="AI optics helix illustration">
+            </div>
+          </section>
+
+          ${directionSections}
+        `;
+
+        if (window.location.hash) {
+          const targetSection = document.querySelector(window.location.hash);
+          if (targetSection) {
+            requestAnimationFrame(function() {
+              targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+          }
+        }
+      }
+
+      function loadContent(target) {
+        const filePath = contentPaths[target];
+
+        if (!filePath) {
+          renderHome();
           return;
         }
 
-        function updatePanel(rawValue) {
-          const normalized = Number(rawValue) / 100;
-          const lowerIndex = Math.max(0, Math.min(cfgStates.length - 1, Math.floor(normalized)));
-          const upperIndex = Math.max(0, Math.min(cfgStates.length - 1, Math.ceil(normalized)));
-          const frac = Math.max(0, Math.min(1, normalized - lowerIndex));
-          const lower = cfgStates[lowerIndex];
-          const upper = cfgStates[upperIndex];
-          const beta = upperIndex === lowerIndex ? lower.beta : lerp(lower.beta, upper.beta, frac);
-          const captionBase = label ? label.textContent : 'LUCID result';
+        setActive(target === 'about' ? 'about' : '');
+        contentContainer.innerHTML = `
+          <div class="loading">
+            <i class="fas fa-spinner fa-spin fa-2x"></i>
+            <p>Loading ${target}...</p>
+          </div>
+        `;
 
-          current.src = `${base}${lower.file}`;
-          current.alt = `${captionBase} at beta ${beta.toFixed(2)}`;
+        fetch(filePath)
+          .then(function(response) {
+            if (!response.ok) {
+              throw new Error('Failed to load ' + filePath);
+            }
+            return response.text();
+          })
+          .then(function(html) {
+            contentContainer.innerHTML = `<div class="project-detail">${html}</div>`;
 
-          if (upperIndex === lowerIndex) {
-            next.src = `${base}${lower.file}`;
-            next.style.opacity = '0';
-          } else {
-            next.src = `${base}${upper.file}`;
-            next.alt = `${captionBase} interpolated toward beta ${upper.beta.toFixed(2)}`;
-            next.style.opacity = String(frac);
-          }
+            if (window.MathJax) {
+              MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+            }
+          })
+          .catch(function(error) {
+            console.error(error);
+            contentContainer.innerHTML = `
+              <section class="empty-state">
+                <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                <h1>Content could not be loaded</h1>
+                <p>Please run this site through a local server or GitHub Pages so project files can be fetched correctly.</p>
+                <code>${filePath}</code>
+              </section>
+            `;
+          });
+      }
 
-          value.textContent = `β = ${beta.toFixed(2)}`;
-        }
-
-        slider.addEventListener('input', function(event) {
-          updatePanel(event.target.value);
-        });
-
-        updatePanel(slider.value);
+      navToggle.addEventListener('click', function() {
+        const isOpen = navMenu.classList.toggle('is-open');
+        navToggle.classList.toggle('is-active', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
-    }
-    
-    // 初始化页面
-    function initPage() {
-      const project = getProjectFromUrl() || '3m-ti'; // 默认项目
-      
-      // 更新导航栏激活状态
-      navbarItems.forEach(item => {
-        if (item.getAttribute('data-target') === project) {
-          item.classList.add('is-active');
-          if (item.classList.contains('project-item')) {
-            projectDropdownLink.textContent = item.textContent;
-          }
-        } else {
-          item.classList.remove('is-active');
-        }
+
+      document.querySelectorAll('.nav-links a').forEach(function(link) {
+        link.addEventListener('click', closeMobileNav);
       });
-      
-      // 加载内容
-      loadContent(project);
-    }
-    
-    // 初始化
-    initPage();
-    
-    // 移动端导航菜单
-    const burger = document.querySelector('.navbar-burger');
-    const menu = document.querySelector('.navbar-menu');
-    
-    burger.addEventListener('click', function() {
-      burger.classList.toggle('is-active');
-      menu.classList.toggle('is-active');
+
+      const target = getProjectFromUrl();
+      if (target) {
+        loadContent(target);
+      } else {
+        renderHome();
+      }
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
