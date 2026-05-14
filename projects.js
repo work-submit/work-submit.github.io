@@ -2,7 +2,8 @@ const contentPaths = {
         '3m-ti': './projects/3MTI.html',
         'dmdiff': './projects/DMDiff.html',
         'lucid': './projects/LUCID.html',
-        'about': './about.html'
+        'about': './about.html',
+        'team': './team.html',
     };
 
 const directions = [

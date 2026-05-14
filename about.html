@@ -1,20 +1,243 @@
-<style>
-  body {
-    font-size: 18px;      /* 调大字体 */
-    line-height: 1.7;
-  }
-  a {
-    color: #0b66c3;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(11,102,195,0.3);
-  }
-</style>
+<!-- ============================================================
+RESEARCH NEWS MODULE - HTML & CSS (V5 - 边界居中修复版)
+============================================================ -->
 
-<p>
-This page serves as a dedicated space to showcase selected projects, including technical details, demonstrations, and code resources. It is intended to provide a clearer view of the ideas, implementations, and progress behind each work.
-</p>
+<div class="custom-research-wrapper">
+  
+  <style>
+    .custom-research-wrapper {
+      /* 颜色定义 */
+      --accent-color: rgb(67, 137, 147);
+      --accent-glow: rgba(67, 137, 147, 0.4);
+      --text-main: #2c3e50;
+      --text-muted: #546e7a;
+      --timeline-line: #cfd8dc;
+      
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+      line-height: 1.6 !important;
+      color: var(--text-main) !important;
+      
+      /* 核心修复：控制宽度，居中显示，增加内边距 */
+      display: block !important;
+      max-width: 1000px !important; /* 限制最大宽度，不再顶满全屏 */
+      width: 92% !important; /* 移动端也能保留 8% 的安全边距 */
+      margin: 0 auto !important; /* 保证内容在页面中水平居中 */
+      padding: 20px 20px 40px 20px !important; /* 上 右 下 左 的内部留白，增加呼吸感 */
+      box-sizing: border-box !important;
+      clear: both !important;
+    }
 
-<p>
-If you would like to learn more about me, my research interests, or other academic activities, please visit my main homepage:
-<a href="https://xiaoyunyuan.net/" target="_blank" rel="noopener noreferrer">https://xiaoyunyuan.net/</a>
-</p>
+    /* 统一的标题样式 */
+    .unified-heading-block {
+      display: block !important;
+      width: 100% !important;
+      font-size: 1.1rem !important;
+      font-weight: 700 !important;
+      color: var(--accent-color) !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.08em !important;
+      border-bottom: 2px solid var(--timeline-line) !important;
+      padding-bottom: 8px !important;
+      margin-top: 30px !important;
+      margin-bottom: 15px !important;
+      float: none !important;
+    }
+    
+    /* 简介段落 */
+    .intro-text-block {
+      display: block !important;
+      width: 100% !important;
+      font-size: 1.05rem !important;
+      color: var(--text-muted) !important;
+      margin: 0 0 40px 0 !important;
+      float: none !important;
+      text-align: left !important;
+    }
+    
+    .intro-text-block a {
+      color: var(--accent-color) !important;
+      text-decoration: none !important;
+      font-weight: 600 !important;
+    }
+    .intro-text-block a:hover {
+      text-decoration: underline !important;
+    }
+
+    /* 紧凑型时间轴布局 */
+    .news-timeline-block {
+      display: block !important;
+      width: 100% !important;
+      position: relative !important;
+      padding-left: 20px !important;
+    }
+    .news-timeline-block::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      bottom: 0;
+      width: 2px;
+      background: var(--timeline-line);
+    }
+
+    .timeline-item-row {
+      display: block !important;
+      width: 100% !important;
+      position: relative !important;
+      padding-left: 20px !important;
+      margin-bottom: 14px !important; 
+    }
+
+    .timeline-item-row::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      background: white;
+      border: 2px solid var(--accent-color);
+      border-radius: 50%;
+      z-index: 1;
+      box-shadow: 0 0 6px var(--accent-glow);
+    }
+
+    .news-date-text {
+      font-weight: 700 !important;
+      font-size: 0.95rem !important;
+      color: var(--text-main) !important;
+      margin-right: 8px !important;
+    }
+
+    .news-content-text {
+      font-size: 0.95rem !important;
+      color: #333 !important;
+    }
+
+    .new-badge-icon {
+      display: inline-block !important;
+      background-color: var(--accent-color) !important;
+      color: white !important;
+      font-size: 0.7rem !important;
+      font-weight: 700 !important;
+      padding: 1px 6px !important;
+      border-radius: 12px !important;
+      margin-right: 8px !important;
+      vertical-align: middle !important;
+      position: relative !important;
+      top: -1px !important;
+    }
+
+    /* 文字与链接高亮 */
+    .paper-title-hl {
+      color: var(--accent-color) !important;
+      font-weight: 600 !important;
+    }
+    .venue-tag-hl {
+      font-weight: 700 !important;
+      color: #222 !important;
+    }
+    .btn-link-sm {
+      display: inline-block !important;
+      margin-left: 6px !important;
+      padding: 0px 6px !important;
+      border: 1px solid var(--accent-color) !important;
+      border-radius: 4px !important;
+      color: var(--accent-color) !important;
+      text-decoration: none !important;
+      font-weight: 500 !important;
+      font-size: 0.8rem !important;
+    }
+    .btn-link-sm:hover {
+      background-color: var(--accent-color) !important;
+      color: white !important;
+    }
+    .congrats-text-sm {
+      color: #78909c !important;
+      font-style: italic !important;
+      margin-left: 5px !important;
+    }
+  </style>
+
+  <!-- About This Page -->
+  <div class="unified-heading-block">About This Page</div>
+  
+  <div class="intro-text-block">
+    This page showcases selected projects, technical details, and code resources. For more information, please visit my <a href="https://pi.xiaoyunyuan.net/" target="_blank" rel="noopener noreferrer">homepage (pi.xiaoyunyuan.net)</a> or contact me via <a href="mailto:your_email@sjtu.edu.cn">Email (yuanxiaoyun AT sjtu.edu.cn)</a>.
+  </div>
+
+  <!-- Latest News -->
+  <div class="unified-heading-block">Latest News</div>
+
+  <div class="news-timeline-block">
+
+    <!-- 2026 -->
+    <div class="timeline-item-row">
+      <span class="news-date-text">May 1, 2026</span><span class="new-badge-icon">New</span>
+      <span class="news-content-text">One paper has been accepted in principle by <span class="venue-tag-hl">Nature Communications</span>.</span> details will be announced after the official acceptance notification is received.
+    </div>
+
+    <div class="timeline-item-row">
+      <span class="news-date-text">Mar. 31, 2026</span><span class="new-badge-icon">New</span>
+      <span class="news-content-text">
+        Our paper "<span class="paper-title-hl">LUCID: Learning Unified Control for Image Deflaring and Exposure Mastery in Nighttime Photography</span>" has been accepted by <span class="venue-tag-hl">SIGGRAPH 2026</span>.<span class="congrats-text-sm">Congratulations to first author Tingyu Yang (杨庭语，SJTU 大三).</span><a href="https://xiaoyunyuan.net/index.html?project=lucid" class="btn-link-sm">Project Page</a>
+      </span>
+    </div>
+
+    <div class="timeline-item-row">
+      <span class="news-date-text">Feb. 21, 2026</span><span class="new-badge-icon">New</span>
+      <span class="news-content-text">
+        Our paper "<span class="paper-title-hl">3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion</span>" has been accepted by <span class="venue-tag-hl">CVPR 2026</span>.<span class="congrats-text-sm">Special congratulations to undergraduate Junzhe Wan (万骏哲, SJTU 大四) and Ph.D. candidate Minchong Chen.</span><a href="https://xiaoyunyuan.net/index.html?project=3m-ti" class="btn-link-sm">Code & Data</a>
+      </span>
+    </div>
+
+    <!-- 2025 -->
+    <div class="timeline-item-row">
+      <span class="news-date-text">Sep. 4, 2025</span>
+      <span class="news-content-text">Our paper "<span class="paper-title-hl">Integrated lithium niobate photonics for sub-angstrom snapshot spectroscopy</span>" has been accepted by <span class="venue-tag-hl">Nature</span>.</span>
+    </div>
+
+    <div class="timeline-item-row">
+      <span class="news-date-text">Jul. 31, 2025</span>
+      <span class="news-content-text">
+        Our paper "<span class="paper-title-hl">GBR: Generative Bundle Refinement for High-fidelity Gaussian Splatting with Enhanced Mesh Reconstruction</span>" has been accepted by <span class="venue-tag-hl">IEEE Trans. on CSVT</span>.<a href="https://gbrnvs.github.io/" class="btn-link-sm">Project Page</a>
+      </span>
+    </div>
+
+    <div class="timeline-item-row">
+      <span class="news-date-text">Jun. 26, 2025</span>
+      <span class="news-content-text">
+        Our paper "<span class="paper-title-hl">DMDiff: Degradation-Modeled Multipath Diffusion for Tunable Metalens Photography</span>" has been accepted by <span class="venue-tag-hl">ICCV 2025</span>.<span class="congrats-text-sm">Special congratulations to undergraduate Jiayi Zhu (朱嘉熠, SJTU 大三) and Ph.D. candidate Feiyu Ji.</span>
+      </span><a href="https://dmdiff.github.io/" class="btn-link-sm">Project Page</a>
+    </div>
+
+    <!-- 2024 -->
+    <div class="timeline-item-row">
+      <span class="news-date-text">Nov. 11, 2024</span>
+      <span class="news-content-text">I joined the <a href="https://ai.sjtu.edu.cn/" style="color:var(--accent-color) !important; font-weight:600 !important; text-decoration:none !important;">Artificial Intelligence Institute, Shanghai Jiao Tong University</a> as an associate professor.</span>
+    </div>
+
+    <div class="timeline-item-row">
+      <span class="news-date-text">Mar. 9, 2024</span>
+      <span class="news-content-text">
+        Our paper "<a href="https://openaccess.thecvf.com/content/CVPR2024/html/Yao_SPECAT_SPatial-spEctral_Cumulative-Attention_Transformer_for_High-Resolution_Hyperspectral_Image_Reconstruction_CVPR_2024_paper.html" class="paper-title-hl" style="text-decoration:none !important;">SPECAT: SPatial-spEctral Cumulative-Attention Transformer for High-Resolution Hyperspectral Image Reconstruction</a>" has been accepted by <span class="venue-tag-hl">CVPR 2024</span>.
+      </span>
+    </div>
+
+    <div class="timeline-item-row">
+      <span class="news-date-text">Jan. 24, 2024</span>
+      <span class="news-content-text">
+        Our paper "<a href="https://www.nature.com/articles/s41377-024-01395-4" class="paper-title-hl" style="text-decoration:none !important;">Photonic neuromorphic architecture for tens-of-task lifelong learning</a>" has been accepted by <span class="venue-tag-hl">Light: Science & Applications</span>.
+      </span>
+    </div>
+
+    <!-- 2023 -->
+    <div class="timeline-item-row">
+      <span class="news-date-text">Oct. 25, 2023</span>
+      <span class="news-content-text">
+        Our paper "<a href="https://www.nature.com/articles/s41467-023-42984-y" class="paper-title-hl" style="text-decoration:none !important;">Training large-scale optoelectronic neural networks with dual-neuron optical-artificial learning</a>" has been accepted by <span class="venue-tag-hl">Nature Communications</span>.
+      </span>
+    </div>
+
+  </div>
+</div>
