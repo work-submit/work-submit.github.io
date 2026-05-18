@@ -91,6 +91,7 @@ const projects = [
         { label: 'Paper', href: 'https://www.nature.com/articles/s41586-025-09591-x', icon: 'fas fa-file-pdf' }
         ]
     },
+    
     // Generative AI for Vision
     {
         id: 'lucid',
@@ -154,6 +155,7 @@ const projects = [
         { label: 'arXiv', href: 'https://arxiv.org/abs/2412.05908', icon: 'ai ai-arxiv' }
         ]
     },
+
     // Optics + AI
     {
         id: 'Dante',
@@ -184,6 +186,7 @@ const projects = [
         { label: 'Paper', href: 'https://www.nature.com/articles/s41377-022-00945-y', icon: 'fas fa-file-pdf' }
         ]
     },
+
     // Datasets
     {
         id: 'metalens-dataset',
@@ -214,6 +217,34 @@ const projects = [
         { label: 'Project', href: './index.html?project=3m-ti', icon: 'fas fa-arrow-right' },
         { label: 'Dataset', href: 'https://pan.sjtu.edu.cn/web/share/7df7f0df32ac4cd4eecc243f5ff95483', icon: 'fas fa-database' }
         ]
-    }
+    },
+    {
+        id: 'panda-dataset',
+        title: 'PANDA Gigapixel Dataset',
+        fullTitle: '<b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">✉</span>',
+        direction: 'datasets',
+        directionLabel: 'Panda: A gigapixel-level human-centric video dataset',
+        status: 'Gigapixel Visual Analysis',
+        image: 'https://yuanxy92.github.io/mypaper/paper_icon/cvpr_panda.jpg',
+        summary: 'We present PANDA, the first gigaPixel-level humAN-centric viDeo dAtaset, for large-scale, long-term, and multi-object visual analysis.',
+        tags: ['Computer Vision', 'VLM', 'Gigapixel'],
+        links: [
+        { label: 'Project and Dataset', href: 'https://gigavision.cn/data/news?nav=DataSet%20Panda&type=nav&t=1731982080864', icon: 'fas fa-database' },
+        ]
+    },
+    {
+        id: 'gigamvs-dataset',
+        title: 'GigaMVS Dataset',
+        fullTitle: '<b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">✉</span>',
+        direction: 'datasets',
+        directionLabel: 'GigaMVS: A Benchmark for Ultra-Large-Scale Gigapixel-Level 3D Reconstruction',
+        status: 'Gigapixel 3D Reconstruction',
+        image: 'https://yuanxy92.github.io/mypaper/paper_icon/pami_gigamvs.jpg',
+        summary: 'The first gigapixel-image-based 3D reconstruction benchmark for ultra-large-scale scenes.',
+        tags: ['3D Reconstruction', 'Multi-View Stereo', 'Gigapixel'],
+        links: [
+        { label: 'Project and Dataset', href: 'https://gigavision.cn/data/news?nav=GigaMVS%20RAWDATA&type=nav&t=1731982252980', icon: 'fas fa-database' }
+        ]
+    },
     ];
 
