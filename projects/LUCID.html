@@ -35,6 +35,14 @@
     box-shadow: none;
   }
 
+  .lucid-teaser-caption {
+    margin-top: 0.85rem;
+    color: #4f5d6a;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    text-align: justify;
+  }
+
   .lucid-control-gallery,
   .lucid-result-grid-6,
   .lucid-result-grid-5,
@@ -234,6 +242,9 @@
       <div class="column">
         <figure class="lucid-plain-figure">
           <img src="./projects/LUCID_fig/teaser.png" alt="LUCID teaser figure">
+          <figcaption class="lucid-teaser-caption">
+            <strong>Unveiling the night with LUCID.</strong> We present a unified diffusion framework that jointly addresses severe underexposure and intense lens flares. By enabling continuous exposure modulation from a single view, LUCID facilitates the synthesis of pseudo-exposure sequences for HDR reconstruction (top). Bottom examples demonstrate robust generalization across complex in-the-wild illumination and cinematic footage (images courtesy of ShotDeck).
+          </figcaption>
         </figure>
       </div>
     </div>
@@ -299,7 +310,7 @@
               </figure>
             </div>
             <div class="lucid-slider-row">
-              <input class="lucid-range lucid-panel-slider" type="range" min="0" max="600" step="1" value="400">
+              <input class="lucid-range lucid-panel-slider" type="range" min="0" max="600" step="1" value="400" oninput="(function(slider){var states=[[0.25,'cfg_025.png'],[0.50,'cfg_050.png'],[0.75,'cfg_075.png'],[0.95,'cfg_095.png'],[1.05,'cfg_105.png'],[1.25,'cfg_125.png'],[1.50,'cfg_150.png']];var panel=slider.closest('.lucid-control-panel');var base=panel.dataset.lucidBase;var value=Number(slider.value)/100;var lower=Math.max(0,Math.min(states.length-1,Math.floor(value)));var upper=Math.max(0,Math.min(states.length-1,Math.ceil(value)));var frac=Math.max(0,Math.min(1,value-lower));var beta=upper===lower?states[lower][0]:states[lower][0]+(states[upper][0]-states[lower][0])*frac;var current=panel.querySelector('.lucid-interp-current');var next=panel.querySelector('.lucid-interp-next');current.src=base+states[lower][1];next.src=base+states[upper][1];next.style.opacity=upper===lower?'0':String(frac);panel.querySelector('.lucid-slider-value').textContent='β = '+beta.toFixed(2);})(this)">
               <div class="lucid-slider-value">β = 1.05</div>
             </div>
           </div>
@@ -316,7 +327,7 @@
               </figure>
             </div>
             <div class="lucid-slider-row">
-              <input class="lucid-range lucid-panel-slider" type="range" min="0" max="600" step="1" value="400">
+              <input class="lucid-range lucid-panel-slider" type="range" min="0" max="600" step="1" value="400" oninput="(function(slider){var states=[[0.25,'cfg_025.png'],[0.50,'cfg_050.png'],[0.75,'cfg_075.png'],[0.95,'cfg_095.png'],[1.05,'cfg_105.png'],[1.25,'cfg_125.png'],[1.50,'cfg_150.png']];var panel=slider.closest('.lucid-control-panel');var base=panel.dataset.lucidBase;var value=Number(slider.value)/100;var lower=Math.max(0,Math.min(states.length-1,Math.floor(value)));var upper=Math.max(0,Math.min(states.length-1,Math.ceil(value)));var frac=Math.max(0,Math.min(1,value-lower));var beta=upper===lower?states[lower][0]:states[lower][0]+(states[upper][0]-states[lower][0])*frac;var current=panel.querySelector('.lucid-interp-current');var next=panel.querySelector('.lucid-interp-next');current.src=base+states[lower][1];next.src=base+states[upper][1];next.style.opacity=upper===lower?'0':String(frac);panel.querySelector('.lucid-slider-value').textContent='β = '+beta.toFixed(2);})(this)">
               <div class="lucid-slider-value">β = 1.05</div>
             </div>
           </div>
@@ -333,7 +344,7 @@
               </figure>
             </div>
             <div class="lucid-slider-row">
-              <input class="lucid-range lucid-panel-slider" type="range" min="0" max="600" step="1" value="400">
+              <input class="lucid-range lucid-panel-slider" type="range" min="0" max="600" step="1" value="400" oninput="(function(slider){var states=[[0.25,'cfg_025.png'],[0.50,'cfg_050.png'],[0.75,'cfg_075.png'],[0.95,'cfg_095.png'],[1.05,'cfg_105.png'],[1.25,'cfg_125.png'],[1.50,'cfg_150.png']];var panel=slider.closest('.lucid-control-panel');var base=panel.dataset.lucidBase;var value=Number(slider.value)/100;var lower=Math.max(0,Math.min(states.length-1,Math.floor(value)));var upper=Math.max(0,Math.min(states.length-1,Math.ceil(value)));var frac=Math.max(0,Math.min(1,value-lower));var beta=upper===lower?states[lower][0]:states[lower][0]+(states[upper][0]-states[lower][0])*frac;var current=panel.querySelector('.lucid-interp-current');var next=panel.querySelector('.lucid-interp-next');current.src=base+states[lower][1];next.src=base+states[upper][1];next.style.opacity=upper===lower?'0':String(frac);panel.querySelector('.lucid-slider-value').textContent='β = '+beta.toFixed(2);})(this)">
               <div class="lucid-slider-value">β = 1.05</div>
             </div>
           </div>
@@ -350,7 +361,7 @@
               </figure>
             </div>
             <div class="lucid-slider-row">
-              <input class="lucid-range lucid-panel-slider" type="range" min="0" max="600" step="1" value="400">
+              <input class="lucid-range lucid-panel-slider" type="range" min="0" max="600" step="1" value="400" oninput="(function(slider){var states=[[0.25,'cfg_025.png'],[0.50,'cfg_050.png'],[0.75,'cfg_075.png'],[0.95,'cfg_095.png'],[1.05,'cfg_105.png'],[1.25,'cfg_125.png'],[1.50,'cfg_150.png']];var panel=slider.closest('.lucid-control-panel');var base=panel.dataset.lucidBase;var value=Number(slider.value)/100;var lower=Math.max(0,Math.min(states.length-1,Math.floor(value)));var upper=Math.max(0,Math.min(states.length-1,Math.ceil(value)));var frac=Math.max(0,Math.min(1,value-lower));var beta=upper===lower?states[lower][0]:states[lower][0]+(states[upper][0]-states[lower][0])*frac;var current=panel.querySelector('.lucid-interp-current');var next=panel.querySelector('.lucid-interp-next');current.src=base+states[lower][1];next.src=base+states[upper][1];next.style.opacity=upper===lower?'0':String(frac);panel.querySelector('.lucid-slider-value').textContent='β = '+beta.toFixed(2);})(this)">
               <div class="lucid-slider-value">β = 1.05</div>
             </div>
           </div>
