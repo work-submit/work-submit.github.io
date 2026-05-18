@@ -8,30 +8,30 @@ const contentPaths = {
 
 const directions = [
     {
-        id: 'intelligent-imaging',
-        title: 'Intelligent Imaging',
-        kicker: 'Learning to see beyond sensor limits',
-        description: 'Enhancing image quality and scene understanding by combining physical sensing, multi-modal signals, and generative priors.'
+    id: 'intelligent-imaging',
+    title: 'Intelligent Imaging',
+    kicker: 'Learning to see beyond sensor limits',
+    description: 'Pushing the boundaries of imaging performance and scene perception through the fusion of physical sensing and AI.'
     },
     {
-        id: 'ai-vision',
-        title: 'Generative AI for Vision',
-        kicker: 'Toward Controllable and Physics-Aware Perception in Adverse Environments',
-        description: 'Advancing robust vision through generative models that bridge the gap between degraded signals and high-fidelity reconstruction, enabling precise semantic understanding under extreme conditions.'
+    id: 'ai-vision',
+    title: 'Generative AI for Vision',
+    kicker: 'Reconstruction with Generative Priors',
+    description: 'Advancing high-fidelity reconstruction and controllable perception by integrating physics-aware generative models.'
     },
     {
-        id: 'ai-optics',
-        title: 'Optics + AI',
-        kicker: 'Co-designing optical imaging hardware and learned reconstruction',
-        description: 'Computational imaging systems where compact optics, camera design, and AI reconstruction are treated as one research problem.'
+    id: 'ai-optics',
+    title: 'Optics + AI',
+    kicker: 'Co-designing hardware and algorithms',
+    description: 'Harnessing AI to solve fundamental scientific challenges through the joint optimization of optical systems and AI.'
     },
     {
-        id: 'datasets',
-        title: 'Datasets',
-        kicker: 'Public datasets',
-        description: 'Datasets for academic research'
+    id: 'datasets',
+    title: 'Datasets',
+    kicker: 'Open-access benchmarks',
+    description: 'Datasets and benchmarks.'
     }
-    ];
+];
 
 const projects = [
     // Intelligent Imaging
