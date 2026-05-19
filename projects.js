@@ -221,7 +221,7 @@ const projects = [
     {
         id: 'panda-dataset',
         title: 'Panda: A gigapixel-level human-centric video dataset',
-        fullTitle: '<b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">✉</span>',
+        fullTitle: '<b>GigaVision</b>',
         direction: 'datasets',
         directionLabel: 'Gigapixel Dataset',
         status: 'Gigapixel Visual Analysis',
@@ -235,7 +235,7 @@ const projects = [
     {
         id: 'gigamvs-dataset',
         title: 'GigaMVS: A Benchmark for Ultra-Large-Scale Gigapixel-Level 3D Reconstruction',
-        fullTitle: '<b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">✉</span>',
+        fullTitle: '<b>GigaVision</b>',
         direction: 'datasets',
         directionLabel: 'Gigapixel Dataset',
         status: 'Gigapixel 3D Reconstruction',
