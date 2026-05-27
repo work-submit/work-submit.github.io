@@ -28,8 +28,14 @@ const directions = [
     {
     id: 'datasets',
     title: 'Datasets',
-    kicker: 'Open-access benchmarks',
+    kicker: 'Open-access datasets and benchmarks',
     description: 'Datasets and benchmarks.'
+    },
+    {
+    id: 'resources',
+    title: 'Resources',
+    kicker: 'Tools and resources',
+    description: 'Utilities, resources, and fun interactive mini-games.'
     }
 ];
 
@@ -244,6 +250,22 @@ const projects = [
         tags: ['3D Reconstruction', 'Multi-View Stereo', 'Gigapixel'],
         links: [
         { label: 'Project and Dataset', href: 'https://gigavision.cn/data/news?nav=GigaMVS%20RAWDATA&type=nav&t=1731982252980', icon: 'fas fa-database' }
+        ]
+    },
+
+    // Datasets
+    {
+        id: 'rl-flappy-bird',
+        title: 'Playing Flappy Bird via Reinforcement Learning',
+        fullTitle: '<b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">✉</span>',
+        direction: 'resources',
+        directionLabel: 'Reinforcement Learning',
+        status: 'Game AI',
+        image: './projects/RL_flappybird/flappy_bird.png',
+        summary: 'A reinforcement learning implementation of the popular Flappy Bird game. (Q learning)',
+        tags: ['Reinforcement Learning', 'Game AI'],
+        links: [
+        { label: 'Web Game', href: 'https://rlbird.xiaoyunyuan.net', icon: 'fas fa-arrow-right' }
         ]
     },
     ];
