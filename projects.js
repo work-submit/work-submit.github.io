@@ -257,7 +257,7 @@ const projects = [
     {
         id: 'rl-flappy-bird',
         title: 'Playing Flappy Bird via Reinforcement Learning',
-        fullTitle: '<b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">✉</span>',
+        fullTitle: '<b>Xiaoyun Yuan</b>',
         direction: 'resources',
         directionLabel: 'Reinforcement Learning',
         status: 'Game AI',
