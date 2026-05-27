@@ -102,7 +102,7 @@
       function projectCard(project) {
         return `
           <article class="project-card">
-            <a class="project-image" href="./index.html?project=${project.id}" aria-label="Open ${project.title}">
+            <a class="project-image" aria-label="Open ${project.title}">
               <img src="${project.image}" alt="${project.title} preview">
             </a>
             <div class="project-content">
@@ -110,7 +110,7 @@
                 <span>${project.directionLabel}</span>
                 <span>${project.status}</span>
               </div>
-              <h3><a href="./index.html?project=${project.id}">${project.title}</a></h3>
+              <h3><a>${project.title}</a></h3>
               <p class="project-title">${project.fullTitle}</p>
               <p>${project.summary}</p>
               <div class="tag-list">
