@@ -265,7 +265,8 @@ const projects = [
         summary: 'A reinforcement learning implementation of the popular Flappy Bird game. (Q learning)',
         tags: ['Reinforcement Learning', 'Game AI'],
         links: [
-        { label: 'Web Game', href: 'https://rlbird.xiaoyunyuan.net', icon: 'fas fa-arrow-right' }
+        { label: 'Online Game', href: 'https://rlbird.xiaoyunyuan.net', icon: 'fas fa-arrow-right' },
+        { label: 'GitHub', href: 'https://github.com/yuanxy92/rl-flappybird', icon: 'fab fa-github' }
         ]
     },
     ];
