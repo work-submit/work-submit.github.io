@@ -253,7 +253,7 @@ const projects = [
         ]
     },
 
-    // Datasets
+    // Resources
     {
         id: 'rl-flappy-bird',
         title: 'Playing Flappy Bird via Reinforcement Learning',
@@ -267,6 +267,20 @@ const projects = [
         links: [
         { label: 'Online Game', href: 'https://rlbird.xiaoyunyuan.net', icon: 'fas fa-arrow-right' },
         { label: 'GitHub', href: 'https://github.com/yuanxy92/rl-flappybird', icon: 'fab fa-github' }
+        ]
+    },
+    {
+        id: 'rl-dp-vs-mc',
+        title: 'Dynamic Programming vs. Monte Carlo Methods in Reinforcement Learning',
+        fullTitle: '<b>Xiaoyun Yuan</b>',
+        direction: 'resources',
+        directionLabel: 'Reinforcement Learning',
+        status: 'Educational Resources',
+        image: './projects/Resources/images/DP_vs_MC.png',
+        summary: 'An interactive gridworld demo that compares dynamic programming and Monte Carlo methods for estimating state values under the same policy.',
+        tags: ['Reinforcement Learning'],
+        links: [
+        { label: 'Online Game', href: 'https://pi.xiaoyunyuan.net/resources/RL/DP_vs_MC.html', icon: 'fas fa-arrow-right' },
         ]
     },
     ];
