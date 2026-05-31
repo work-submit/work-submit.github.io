@@ -277,7 +277,7 @@ const projects = [
         directionLabel: 'Reinforcement Learning',
         status: 'Educational Resources',
         image: './projects/Resources/images/DP_vs_MC.png',
-        summary: 'An interactive gridworld demo that compares dynamic programming and Monte Carlo methods for estimating state values under the same policy.',
+        summary: 'An interactive demo that compares dynamic programming and Monte Carlo methods.',
         tags: ['Reinforcement Learning'],
         links: [
         { label: 'Online Game', href: 'https://pi.xiaoyunyuan.net/resources/RL/DP_vs_MC.html', icon: 'fas fa-arrow-right' },
