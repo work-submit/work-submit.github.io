@@ -43,6 +43,22 @@
     text-align: justify;
   }
 
+  .lucid-video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-top: 1.35rem;
+    background: #000;
+  }
+
+  .lucid-video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
   .lucid-control-gallery,
   .lucid-result-grid-6,
   .lucid-result-grid-5,
@@ -246,6 +262,14 @@
             <strong>Unveiling the night with LUCID.</strong> We present a unified diffusion framework that jointly addresses severe underexposure and intense lens flares. By enabling continuous exposure modulation from a single view, LUCID facilitates the synthesis of pseudo-exposure sequences for HDR reconstruction (top). Bottom examples demonstrate robust generalization across complex in-the-wild illumination and cinematic footage (images courtesy of ShotDeck).
           </figcaption>
         </figure>
+        <div class="lucid-video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/AGPLSiZcK_I"
+            title="LUCID project video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </div>
   </div>
