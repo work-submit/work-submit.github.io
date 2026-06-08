@@ -2,6 +2,8 @@ const contentPaths = {
         'fsdvs': './projects/intelligent_imaging_2606_06856.html',
         // backward-compatible old id
         'ii-2606-06856': './projects/intelligent_imaging_2606_06856.html',
+        'SkinSight': './projects/SkinSight.html',
+        'skinsight': './projects/SkinSight.html',
         '3m-ti': './projects/3MTI.html',
         'dmdiff': './projects/DMDiff.html',
         'lucid': './projects/LUCID.html',
@@ -70,7 +72,7 @@ const directions = [
         summary: 'By integrating miniaturized cameras with stretchable interconnects, this skin-conformal rigid-in-soft system endows dynamic surfaces with high-fidelity visual capabilities, augmenting perception for wearables and embodied artificial intelligence.',
         tags: ['Intelligent Imaging', 'Wearable Imaging', 'Embodied AI'],
         links: [
-        { label: 'Comming Soon', href: '', icon: 'fas fa-file-pdf' }
+        { label: 'Project', href: './index.html?project=SkinSight', icon: 'fas fa-arrow-right' }
         ]
     },
     {
