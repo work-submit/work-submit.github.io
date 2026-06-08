@@ -1,7 +1,7 @@
 const contentPaths = {
-        'fsdvs': './projects/intelligent_imaging_2606_06856.html',
+        'fsdvs': './projects/FS_DVS.html',
         // backward-compatible old id
-        'ii-2606-06856': './projects/intelligent_imaging_2606_06856.html',
+        'ii-2606-06856': './projects/FS_DVS.html',
         'SkinSight': './projects/SkinSight.html',
         'skinsight': './projects/SkinSight.html',
         '3m-ti': './projects/3MTI.html',
