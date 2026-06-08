@@ -49,7 +49,7 @@ const directions = [
     {
         id: 'fsdvs',
         title: 'FS-DVS: A Frequency-Selective Dynamic Visual Sensing Paradigm for Enhancing Information Completeness',
-        fullTitle: '<b>Feiyu Ji</b>, <b>Xiaokang Yang</b>, <b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">✉</span>',
+        fullTitle: 'Feiyu Ji, Xiaokang Yang, <b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">✉</span>',
         direction: 'intelligent-imaging',
         directionLabel: 'Intelligent Imaging',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">arXiv</b> 2026',
