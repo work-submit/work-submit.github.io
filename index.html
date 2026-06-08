@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/project-pages.css">
 
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -99,7 +100,7 @@
         `;
       }
 
-      function projectCard(project) {
+    function projectCard(project) {
         return `
           <article class="project-card">
             <a class="project-image" aria-label="Open ${project.title}">
@@ -122,6 +123,31 @@
             </div>
           </article>
         `;
+      }
+
+      function applyProjectImageMode(image) {
+        var projectImage = image.closest('.project-image');
+        if (!projectImage || !image.naturalWidth || !image.naturalHeight) {
+          return;
+        }
+
+        var ratio = image.naturalWidth / image.naturalHeight;
+        projectImage.classList.toggle('project-image--landscape', ratio > 1.4);
+        projectImage.classList.toggle('project-image--portrait', ratio <= 1.4);
+      }
+
+      function markProjectImages() {
+        var cardImages = document.querySelectorAll('.project-image img');
+        cardImages.forEach(function(image) {
+          if (image.naturalWidth && image.naturalHeight) {
+            applyProjectImageMode(image);
+            return;
+          }
+
+          image.addEventListener('load', function() {
+            applyProjectImageMode(image);
+          }, { once: true });
+        });
       }
 
       function renderHome() {
@@ -177,6 +203,8 @@
 
           ${directionSections}
         `;
+
+        markProjectImages();
 
         if (window.location.hash) {
           const targetSection = document.querySelector(window.location.hash);

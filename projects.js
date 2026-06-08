@@ -1,4 +1,7 @@
 const contentPaths = {
+        'fsdvs': './projects/intelligent_imaging_2606_06856.html',
+        // backward-compatible old id
+        'ii-2606-06856': './projects/intelligent_imaging_2606_06856.html',
         '3m-ti': './projects/3MTI.html',
         'dmdiff': './projects/DMDiff.html',
         'lucid': './projects/LUCID.html',
@@ -39,8 +42,23 @@ const directions = [
     }
 ];
 
-const projects = [
+    const projects = [
     // Intelligent Imaging
+    {
+        id: 'fsdvs',
+        title: 'FS-DVS: A Frequency-Selective Dynamic Visual Sensing Paradigm for Enhancing Information Completeness',
+        fullTitle: '<b>Feiyu Ji</b>, <b>Xiaokang Yang</b>, <b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">✉</span>',
+        direction: 'intelligent-imaging',
+        directionLabel: 'Intelligent Imaging',
+        status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">arXiv</b> 2026',
+        image: './projects/FS_DVS_fig/fs_dvs_card.png',
+        summary: 'FS-DVS introduces a learnable spatial filter before event triggering in dynamic vision sensors, restoring mid-frequency structure and improving robustness for detection, recognition, and segmentation.',
+        tags: ['Neuromorphic Vision', 'Event Camera'],
+        links: [
+        { label: 'Project', href: './index.html?project=fsdvs', icon: 'fas fa-arrow-right' },
+        { label: 'arXiv', href: 'https://arxiv.org/abs/2606.06856', icon: 'ai ai-arxiv' }
+        ]
+    },
     {
         id: 'SkinSight',
         title: 'A skin-conformal rigid-in-soft array-based imaging system',
@@ -284,4 +302,3 @@ const projects = [
         ]
     },
     ];
-
