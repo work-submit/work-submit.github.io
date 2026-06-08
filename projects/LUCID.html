@@ -68,11 +68,21 @@
         </figure>
         <div class="lucid-video-wrapper">
           <iframe
+            id="lucid-project-video"
             src="https://www.youtube.com/embed/AGPLSiZcK_I"
             title="LUCID project video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen>
           </iframe>
+        </div>
+        <div class="lucid-video-switcher" aria-label="Video platform switcher">
+          <button class="button is-small lucid-video-source is-active" type="button" onclick="(function(button){var frame=document.getElementById('lucid-project-video');if(!frame)return;frame.src='https://www.youtube.com/embed/AGPLSiZcK_I';frame.title='LUCID project video on YouTube';button.parentElement.querySelectorAll('.lucid-video-source').forEach(function(item){item.classList.remove('is-active');});button.classList.add('is-active');})(this)">
+            YouTube
+          </button>
+          <button class="button is-small lucid-video-source" type="button" onclick="(function(button){var frame=document.getElementById('lucid-project-video');if(!frame)return;frame.src='https://player.bilibili.com/player.html?bvid=BV1DvEK6EEzu&page=1&autoplay=0';frame.title='LUCID project video on Bilibili';button.parentElement.querySelectorAll('.lucid-video-source').forEach(function(item){item.classList.remove('is-active');});button.classList.add('is-active');})(this)">
+            Bilibili
+          </button>
         </div>
       </div>
     </div>

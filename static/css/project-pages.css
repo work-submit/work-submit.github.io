@@ -50,6 +50,23 @@
   border: 0;
 }
 
+.lucid-video-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+}
+
+.lucid-video-switcher .button {
+  min-width: 6.5rem;
+}
+
+.lucid-video-switcher .is-active {
+  background: #2aa7b6;
+  border-color: #2aa7b6;
+  color: #fff;
+}
+
 .lucid-teaser-caption {
   margin-top: 0.85rem;
   color: #4f5d6a;
