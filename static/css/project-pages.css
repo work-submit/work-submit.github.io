@@ -33,6 +33,12 @@
   margin-top: 0.9rem;
 }
 
+.skinsight-disabled-link {
+  cursor: default;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
 .skinsight-plain-figure {
   margin: 1rem 0 0;
 }
