@@ -5,8 +5,9 @@
 }
 
 .skinsight-hero-panel {
-  background: linear-gradient(180deg, #f4f8fb 0%, #fbfcfd 100%);
-  border-radius: 24px;
+  background: #f7fafb;
+  border: 1px solid #dbe6ed;
+  border-radius: 16px;
   padding: 2rem 1.5rem;
 }
 
@@ -51,6 +52,57 @@
   text-align: justify;
 }
 
+.skinsight-showcase {
+  margin: 1.4rem auto 0;
+  padding: 0;
+}
+
+.skinsight-showcase img {
+  width: 100%;
+  display: block;
+  border: 1px solid #dbe6ed;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.skinsight-showcase figcaption,
+.skinsight-mini-card figcaption {
+  margin-top: 0.8rem;
+  color: #4f5d6a;
+  font-size: 0.96rem;
+  line-height: 1.55;
+  text-align: justify;
+}
+
+.skinsight-showcase-compact {
+  width: min(920px, 100%);
+}
+
+.skinsight-showcase-strip {
+  width: min(900px, 100%);
+}
+
+.skinsight-pair-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-top: 1.4rem;
+}
+
+.skinsight-mini-card {
+  margin: 0;
+}
+
+.skinsight-mini-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  display: block;
+  border: 1px solid #dbe6ed;
+  border-radius: 8px;
+  background: #fff;
+}
+
 .skinsight-video-placeholder {
   min-height: 320px;
   display: grid;
@@ -78,6 +130,12 @@
   background: #f7fafb;
   padding: 1rem 1.25rem;
   overflow-x: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .skinsight-pair-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .lucid-logo-top {

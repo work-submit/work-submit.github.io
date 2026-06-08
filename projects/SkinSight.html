@@ -8,7 +8,6 @@ layout: null
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <div class="skinsight-hero-panel">
-            <img class="skinsight-logo-top" src="./projects/SkinSight_fig/teaser.jpg" alt="SkinSight concept illustration">
             <p class="skinsight-kicker">Skin-conformal array imaging</p>
             <h1 class="title is-1 publication-title">A skin-conformal rigid-in-soft array-based imaging system</h1>
 
@@ -60,19 +59,79 @@ layout: null
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="overview">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <figure class="skinsight-plain-figure">
-          <img src="./projects/SkinSight_fig/fig1.png" alt="SkinSight rigid-in-soft imaging system architecture">
-          <figcaption class="skinsight-caption">
-            <strong>SkinSight turns rigid camera arrays into skin-conformal visual interfaces.</strong>
-            By decoupling optical sensing from mechanical strain, miniaturizing the imager nodes, and embedding them in a soft substrate, the system conforms to dynamic carriers such as human skin and soft robots while preserving high-resolution visual sensing.
-          </figcaption>
-        </figure>
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">What Is SkinSight?</h2>
+        <div class="content has-text-justified">
+          <p>
+            SkinSight is a skin-conformal camera array for deformable surfaces. Instead of stretching the optical path itself, it keeps the imaging modules rigid and embeds them in a soft substrate, so the array can conform to skin or soft robots while preserving useful visual detail.
+          </p>
+        </div>
       </div>
     </div>
+
+    <div class="skinsight-pair-grid">
+      <figure class="skinsight-mini-card">
+        <img src="./projects/SkinSight_fig/skinsight_fig1_module.png" alt="Rigid camera modules in SkinSight">
+        <figcaption>
+          <strong>Rigid imaging nodes.</strong>
+          The lens, sensor, and support structure remain mechanically protected.
+        </figcaption>
+      </figure>
+      <figure class="skinsight-mini-card">
+        <img src="./projects/SkinSight_fig/skinsight_fig1_bending.png" alt="SkinSight bending on a curved surface">
+        <figcaption>
+          <strong>Conformal mechanics.</strong>
+          The soft carrier lets the distributed array bend with the host surface.
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="device">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">How Does It Work?</h2>
+        <div class="content has-text-justified">
+          <p>
+            Compact CMOS imager nodes are connected by serpentine interconnects inside an elastic substrate. The soft region absorbs bending, twisting, and stretching, while each rigid node keeps its local camera geometry stable.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <figure class="skinsight-showcase">
+      <img src="./projects/SkinSight_fig/skinsight_fig1_architecture.png" alt="SkinSight rigid-in-soft sensor architecture">
+      <figcaption>
+        A rigid-in-soft layout distributes miniature cameras across a stretchable array, with the interconnects carrying most of the mechanical deformation.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="augmented-vision">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">What Can It Do?</h2>
+        <div class="content has-text-justified">
+          <p>
+            When worn on the palm, SkinSight turns the hand into an active visual interface. It captures views hidden from the user, reconstructs the scene, and registers the result into an augmented-reality view.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <figure class="skinsight-showcase">
+      <img src="./projects/SkinSight_fig/skinsight_fig4_usage.png" alt="SkinSight augmented vision workflow">
+      <figcaption>
+        SkinSight captures occluded objects from the hand and aligns the reconstructed geometry with AR glasses, enabling beyond-line-of-sight visual perception.
+      </figcaption>
+    </figure>
   </div>
 </section>
 
@@ -87,87 +146,9 @@ layout: null
             <p>Project video coming soon.</p>
           </div>
         </div>
-        <!-- Replace the placeholder above with a YouTube or Bilibili iframe after upload. -->
+        <!-- Replace this placeholder with a YouTube or Bilibili iframe after upload. -->
       </div>
     </div>
-  </div>
-</section>
-
-<section class="section" id="abstract">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Array-based imaging systems can map complex environments, but their structural rigidity makes them difficult to integrate with deformable hosts such as human skin and soft robots. SkinSight addresses this gap through a hybrid rigid-in-soft architecture that combines miniaturized CMOS imagers, stretchable interconnects, and a soft substrate. The system maintains stable, high-resolution imaging during bending, twisting, and stretching. To handle continuous deformation, it uses large-scale pretrained vision transformers for end-to-end geometric inference, enabling robust, calibration-free 3D visual perception. We demonstrate SkinSight on human skin as an augmented sensory interface for perceiving occluded objects beyond the direct line of sight.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="device">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Rigid-in-soft Device Design</h2>
-        <div class="content has-text-justified">
-          <p>
-            SkinSight shifts the sensing unit from individual stretchable pixels to compact imager modules. Each rigid node protects a high-density CMOS sensor, while serpentine copper interconnects and PDMS encapsulation absorb mechanical deformation across the soft substrate. This lets the array retain megapixel-level imaging capability while conforming to curved and moving surfaces.
-          </p>
-        </div>
-      </div>
-    </div>
-    <figure class="skinsight-plain-figure">
-      <img src="./projects/SkinSight_fig/fig2.png" alt="SkinSight device design and mechanical characterization">
-      <figcaption class="skinsight-caption">
-        Device characterization covers the distributed rigid-in-soft architecture, nano-lens design, serpentine interconnect geometry, finite-element strain analysis, cyclic loading, signal integrity, and fatigue performance.
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="section" id="reconstruction">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Deformation-adaptive Reconstruction</h2>
-        <div class="content has-text-justified">
-          <p>
-            The computational framework decouples fast online geometry recovery from asynchronous Gaussian optimization. Temporally chunked video streams provide camera poses and dense point maps, while the Gaussian pathway refines the scene into a continuous, photorealistic 3D representation. This avoids relying on fixed array geometry and supports reconstruction under dynamic deformation.
-          </p>
-        </div>
-      </div>
-    </div>
-    <figure class="skinsight-plain-figure">
-      <img src="./projects/SkinSight_fig/fig3.png" alt="SkinSight deformation-adaptive 3D reconstruction pipeline">
-      <figcaption class="skinsight-caption">
-        The reconstruction pipeline registers point maps, refines Gaussian scene representations, evaluates metric accuracy, and tracks dynamic motion from the skin-conformal camera array.
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="section" id="augmented-vision">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Augmented Vision on Human Skin</h2>
-        <div class="content has-text-justified">
-          <p>
-            Integrated on the palm, SkinSight acts as a wearable visual interface that explores occluded spaces and registers reconstructed geometry into an augmented-reality view. Fast point-map rendering provides geometric feedback, while Gaussian rendering offers higher-fidelity visual immersion for objects beyond direct line of sight.
-          </p>
-        </div>
-      </div>
-    </div>
-    <figure class="skinsight-plain-figure">
-      <img src="./projects/SkinSight_fig/fig4.png" alt="SkinSight augmented vision demonstration">
-      <figcaption class="skinsight-caption">
-        SkinSight enables AR-assisted augmented vision by aligning skin-mounted camera trajectories with AR-glasses coordinates and overlaying reconstructed point maps and Gaussian renderings onto the user's view.
-      </figcaption>
-    </figure>
   </div>
 </section>
 
