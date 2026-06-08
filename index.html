@@ -125,36 +125,6 @@
         `;
       }
 
-      function applyProjectImageMode(image) {
-        var projectImage = image.closest('.project-image');
-        var projectCard = image.closest('.project-card');
-        if (!projectImage || !image.naturalWidth || !image.naturalHeight) {
-          return;
-        }
-
-        var ratio = image.naturalWidth / image.naturalHeight;
-        if (projectCard) {
-          projectCard.classList.toggle('project-card--landscape', ratio > 1.45);
-          projectCard.classList.toggle('project-card--portrait', ratio <= 1.45);
-        }
-        projectImage.classList.toggle('project-image--landscape', ratio > 1.45);
-        projectImage.classList.toggle('project-image--portrait', ratio <= 1.45);
-      }
-
-      function markProjectImages() {
-        var cardImages = document.querySelectorAll('.project-image img');
-        cardImages.forEach(function(image) {
-          if (image.naturalWidth && image.naturalHeight) {
-            applyProjectImageMode(image);
-            return;
-          }
-
-          image.addEventListener('load', function() {
-            applyProjectImageMode(image);
-          }, { once: true });
-        });
-      }
-
       function renderHome() {
         setActive('home');
         const directionSections = directions.map(function(direction) {
@@ -208,8 +178,6 @@
 
           ${directionSections}
         `;
-
-        markProjectImages();
 
         if (window.location.hash) {
           const targetSection = document.querySelector(window.location.hash);
