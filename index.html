@@ -127,12 +127,18 @@
 
       function applyProjectImageMode(image) {
         var projectImage = image.closest('.project-image');
+        var projectCard = image.closest('.project-card');
         if (!projectImage || !image.naturalWidth || !image.naturalHeight) {
           return;
         }
 
-        var resolvedSrc = image.currentSrc || image.src;
-        projectImage.style.setProperty('--project-image', 'url("' + resolvedSrc.replace(/"/g, '\\"') + '")');
+        var ratio = image.naturalWidth / image.naturalHeight;
+        if (projectCard) {
+          projectCard.classList.toggle('project-card--landscape', ratio > 1.45);
+          projectCard.classList.toggle('project-card--portrait', ratio <= 1.45);
+        }
+        projectImage.classList.toggle('project-image--landscape', ratio > 1.45);
+        projectImage.classList.toggle('project-image--portrait', ratio <= 1.45);
       }
 
       function markProjectImages() {

@@ -264,48 +264,36 @@ img {
   box-shadow: 0 10px 24px rgba(23, 32, 51, 0.08);
 }
 
+.project-card--landscape {
+  grid-template-columns: 1fr;
+}
+
 .project-image {
-  position: relative;
   display: grid;
   place-items: center;
   width: 100%;
   height: 100%;
   min-height: 0;
   padding: 10px 12px;
-  background:
-    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 42%),
-    linear-gradient(180deg, rgba(240, 246, 250, 0.98) 0%, rgba(233, 241, 247, 0.95) 100%);
+  background: linear-gradient(180deg, #f4f7fa 0%, #eaf1f6 100%);
   overflow: hidden;
-  isolation: isolate;
-}
-
-.project-image::before {
-  content: "";
-  position: absolute;
-  inset: -18px;
-  background-image: var(--project-image);
-  background-position: center;
-  background-size: cover;
-  filter: blur(20px) saturate(0.9) brightness(1.05);
-  opacity: 0.18;
-  transform: scale(1.12);
-}
-
-.project-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
 }
 
 .project-image img {
-  position: relative;
-  z-index: 1;
   width: 100%;
   height: 100%;
   max-width: 100%;
   object-fit: contain;
   transition: transform 220ms ease;
+}
+
+.project-image--landscape {
+  aspect-ratio: 16 / 7;
+  padding: 14px 18px;
+}
+
+.project-image--portrait {
+  padding: 10px 12px;
 }
 
 .project-card:hover .project-image img {
@@ -318,6 +306,10 @@ img {
   align-content: center;
   gap: 8px;
   min-width: 0;
+}
+
+.project-card--landscape .project-content {
+  padding: 18px 22px 24px;
 }
 
 .project-meta {
@@ -704,6 +696,10 @@ img {
   .project-image {
     height: auto;
     aspect-ratio: 16 / 9;
+  }
+
+  .project-card--landscape .project-content {
+    padding: 14px 14px 18px;
   }
 
   .tag-list {

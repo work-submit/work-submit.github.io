@@ -128,7 +128,8 @@ const directions = [
         summary: 'A nighttime photography project on controllable restoration, deflaring, and exposure mastery.',
         tags: ['Night Photography', 'Image Restoration', 'Exposure Control', 'Diffusion'],
         links: [
-        { label: 'Project', href: './index.html?project=lucid', icon: 'fas fa-arrow-right' }
+        { label: 'Project', href: './index.html?project=lucid', icon: 'fas fa-arrow-right' },
+        { label: 'arXiv', href: 'https://arxiv.org/abs/2606.06901', icon: 'ai ai-arxiv' }
         ]
     },
     {
