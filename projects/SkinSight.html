@@ -2,20 +2,58 @@
 layout: null
 ---
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
+<section class="hero skinsight-hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">A skin-conformal rigid-in-soft array-based imaging system</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><b>Xiaoyun Yuan*</b></span>,
-            <span class="author-block">Jianing Zhang*</span>,
-            <span class="author-block">Youhai Liu</span>,
-            <span class="author-block">Yichen Wang</span>,
-            <span class="author-block">Lu Fang</span><span class="project-page-envelope">✉</span>
+          <div class="skinsight-hero-panel">
+            <img class="skinsight-logo-top" src="./projects/SkinSight_fig/teaser.jpg" alt="SkinSight concept illustration">
+            <p class="skinsight-kicker">Skin-conformal array imaging</p>
+            <h1 class="title is-1 publication-title">A skin-conformal rigid-in-soft array-based imaging system</h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><b>Xiaoyun Yuan</b><sup>1,†,‡</sup></span>&nbsp;&nbsp;
+              <span class="author-block">Jianing Zhang<sup>1,†</sup></span>&nbsp;&nbsp;
+              <span class="author-block">Youhai Liu<sup>1</sup></span>&nbsp;&nbsp;
+              <span class="author-block">Yichen Wang<sup>1</sup></span>&nbsp;&nbsp;
+              <span class="author-block">Lu Fang<sup>1,2</sup></span><span class="project-page-envelope">✉</span>
+            </div>
+
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>1</sup>Tsinghua University</span>&nbsp;&nbsp;
+              <span class="author-block"><sup>2</sup>Institute for Brain and Cognitive Science, Tsinghua University</span>
+              <br>
+              <span class="author-block"><sup>‡</sup>Present address: Shanghai Jiao Tong University</span>
+            </div>
+
+            <div class="is-size-4 publication-title">
+              <span class="skinsight-venue">Nature Communications 2026</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="./projects/SkinSight_fig/Manuscript_camera_ready.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./projects/SkinSight_fig/Supplementary_Information_camera_ready_small.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Supplementary</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#skinsight-video" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-play"></i></span>
+                    <span>Video</span>
+                  </a>
+                </span>
+              </div>
+            </div>
           </div>
-          <p class="subtitle is-6 has-text-grey">Nature Communications 2026</p>
         </div>
       </div>
     </div>
@@ -24,12 +62,13 @@ layout: null
 
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <figure class="lucid-plain-figure">
-          <img src="./projects/SkinSight_fig/teaser.jpg" alt="SkinSight teaser figure">
-          <figcaption class="lucid-teaser-caption">
-            Placeholder project page for SkinSight. We will replace this with the final teaser, method summary, results, and links once the full project materials are ready.
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <figure class="skinsight-plain-figure">
+          <img src="./projects/SkinSight_fig/fig1.png" alt="SkinSight rigid-in-soft imaging system architecture">
+          <figcaption class="skinsight-caption">
+            <strong>SkinSight turns rigid camera arrays into skin-conformal visual interfaces.</strong>
+            By decoupling optical sensing from mechanical strain, miniaturizing the imager nodes, and embedding them in a soft substrate, the system conforms to dynamic carriers such as human skin and soft robots while preserving high-resolution visual sensing.
           </figcaption>
         </figure>
       </div>
@@ -37,14 +76,31 @@ layout: null
   </div>
 </section>
 
-<section class="section" id="overview">
+<section class="section" id="skinsight-video">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Overview</h2>
+        <h2 class="title is-3">Video</h2>
+        <div class="skinsight-video-placeholder">
+          <div>
+            <i class="fas fa-play-circle" aria-hidden="true"></i>
+            <p>Project video coming soon.</p>
+          </div>
+        </div>
+        <!-- Replace the placeholder above with a YouTube or Bilibili iframe after upload. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="abstract">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This page is intentionally minimal for now. Once you send the final figure set, abstract, links, and any extra sections you want, we can turn it into a full project page without changing the homepage wiring.
+            Array-based imaging systems can map complex environments, but their structural rigidity makes them difficult to integrate with deformable hosts such as human skin and soft robots. SkinSight addresses this gap through a hybrid rigid-in-soft architecture that combines miniaturized CMOS imagers, stretchable interconnects, and a soft substrate. The system maintains stable, high-resolution imaging during bending, twisting, and stretching. To handle continuous deformation, it uses large-scale pretrained vision transformers for end-to-end geometric inference, enabling robust, calibration-free 3D visual perception. We demonstrate SkinSight on human skin as an augmented sensory interface for perceiving occluded objects beyond the direct line of sight.
           </p>
         </div>
       </div>
@@ -52,17 +108,77 @@ layout: null
   </div>
 </section>
 
-<section class="section" id="materials">
+<section class="section" id="device">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Materials</h2>
+        <h2 class="title is-3">Rigid-in-soft Device Design</h2>
         <div class="content has-text-justified">
           <p>
-            Pending. Send me the final teaser, method illustration, results, and paper link when you are ready, and I will update this page in place.
+            SkinSight shifts the sensing unit from individual stretchable pixels to compact imager modules. Each rigid node protects a high-density CMOS sensor, while serpentine copper interconnects and PDMS encapsulation absorb mechanical deformation across the soft substrate. This lets the array retain megapixel-level imaging capability while conforming to curved and moving surfaces.
           </p>
         </div>
       </div>
     </div>
+    <figure class="skinsight-plain-figure">
+      <img src="./projects/SkinSight_fig/fig2.png" alt="SkinSight device design and mechanical characterization">
+      <figcaption class="skinsight-caption">
+        Device characterization covers the distributed rigid-in-soft architecture, nano-lens design, serpentine interconnect geometry, finite-element strain analysis, cyclic loading, signal integrity, and fatigue performance.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="reconstruction">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Deformation-adaptive Reconstruction</h2>
+        <div class="content has-text-justified">
+          <p>
+            The computational framework decouples fast online geometry recovery from asynchronous Gaussian optimization. Temporally chunked video streams provide camera poses and dense point maps, while the Gaussian pathway refines the scene into a continuous, photorealistic 3D representation. This avoids relying on fixed array geometry and supports reconstruction under dynamic deformation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <figure class="skinsight-plain-figure">
+      <img src="./projects/SkinSight_fig/fig3.png" alt="SkinSight deformation-adaptive 3D reconstruction pipeline">
+      <figcaption class="skinsight-caption">
+        The reconstruction pipeline registers point maps, refines Gaussian scene representations, evaluates metric accuracy, and tracks dynamic motion from the skin-conformal camera array.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="augmented-vision">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Augmented Vision on Human Skin</h2>
+        <div class="content has-text-justified">
+          <p>
+            Integrated on the palm, SkinSight acts as a wearable visual interface that explores occluded spaces and registers reconstructed geometry into an augmented-reality view. Fast point-map rendering provides geometric feedback, while Gaussian rendering offers higher-fidelity visual immersion for objects beyond direct line of sight.
+          </p>
+        </div>
+      </div>
+    </div>
+    <figure class="skinsight-plain-figure">
+      <img src="./projects/SkinSight_fig/fig4.png" alt="SkinSight augmented vision demonstration">
+      <figcaption class="skinsight-caption">
+        SkinSight enables AR-assisted augmented vision by aligning skin-mounted camera trajectories with AR-glasses coordinates and overlaying reconstructed point maps and Gaussian renderings onto the user's view.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre class="skinsight-bibtex"><code>@article{yuan2026skinsight,
+  title={A skin-conformal rigid-in-soft array-based imaging system},
+  author={Yuan, Xiaoyun and Zhang, Jianing and Liu, Youhai and Wang, Yichen and Fang, Lu},
+  journal={Nature Communications},
+  year={2026}
+}</code></pre>
   </div>
 </section>

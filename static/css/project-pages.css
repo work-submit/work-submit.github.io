@@ -4,6 +4,82 @@
   padding: 2rem 1.5rem;
 }
 
+.skinsight-hero-panel {
+  background: linear-gradient(180deg, #f4f8fb 0%, #fbfcfd 100%);
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+}
+
+.skinsight-logo-top {
+  width: min(360px, 70vw);
+  height: auto;
+  display: block;
+  margin: 0 auto 1.2rem;
+}
+
+.skinsight-kicker {
+  margin: 0 0 0.65rem;
+  color: #23838b;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.skinsight-venue {
+  color: #ee7e61;
+  font-weight: 800;
+  margin-top: 0.9rem;
+}
+
+.skinsight-plain-figure {
+  margin: 1rem 0 0;
+}
+
+.skinsight-plain-figure img {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.skinsight-caption {
+  margin-top: 0.85rem;
+  color: #4f5d6a;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  text-align: justify;
+}
+
+.skinsight-video-placeholder {
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  margin-top: 1rem;
+  border: 1px solid #dbe6ed;
+  background: #f6fafc;
+  color: #667586;
+}
+
+.skinsight-video-placeholder i {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: #23838b;
+  font-size: 2.4rem;
+}
+
+.skinsight-video-placeholder p {
+  margin: 0;
+  font-weight: 700;
+}
+
+.skinsight-bibtex {
+  border-radius: 14px;
+  background: #f7fafb;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+}
+
 .lucid-logo-top {
   width: min(280px, 50vw);
   height: auto;
