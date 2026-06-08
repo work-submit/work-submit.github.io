@@ -51,7 +51,7 @@ const directions = [
         direction: 'intelligent-imaging',
         directionLabel: 'Intelligent Imaging',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">arXiv</b> 2026',
-        image: './projects/FS_DVS_fig/fs_dvs_card.png',
+        image: './projects/FS_DVS_fig/fs_dvs_card_home.png',
         summary: 'FS-DVS introduces a learnable spatial filter before event triggering in dynamic vision sensors, restoring mid-frequency structure and improving robustness for detection, recognition, and segmentation.',
         tags: ['Neuromorphic Vision', 'Event Camera'],
         links: [
