@@ -132,8 +132,15 @@
         }
 
         var ratio = image.naturalWidth / image.naturalHeight;
-        projectImage.classList.toggle('project-image--landscape', ratio > 1.4);
-        projectImage.classList.toggle('project-image--portrait', ratio <= 1.4);
+        projectImage.classList.remove('project-image--portrait', 'project-image--landscape', 'project-image--ultra-landscape');
+
+        if (ratio > 1.9) {
+          projectImage.classList.add('project-image--ultra-landscape');
+        } else if (ratio > 1.35) {
+          projectImage.classList.add('project-image--landscape');
+        } else {
+          projectImage.classList.add('project-image--portrait');
+        }
       }
 
       function markProjectImages() {

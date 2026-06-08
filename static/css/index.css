@@ -291,13 +291,26 @@ img {
 
 .project-image--landscape img {
   width: auto;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
+  max-width: calc(100% - 24px);
+  max-height: calc(100% - 12px);
+  object-fit: contain;
 }
 
 .project-image--landscape {
-  padding: 0;
+  padding: 6px 12px;
+}
+
+.project-image--ultra-landscape img {
+  width: auto;
+  height: auto;
+  max-width: calc(100% - 42px);
+  max-height: calc(100% - 14px);
+  object-fit: contain;
+}
+
+.project-image--ultra-landscape {
+  padding: 6px 21px;
 }
 
 .project-card:hover .project-image img {
@@ -698,15 +711,21 @@ img {
     aspect-ratio: 16 / 9;
   }
 
-  .project-image--landscape,
-  .project-image--portrait {
+  .project-image--landscape {
     padding: 6px;
   }
 
-  .project-image--landscape img {
+  .project-image--landscape img,
+  .project-image--ultra-landscape img {
     width: 100%;
+    max-width: 100%;
     height: auto;
+    max-height: 100%;
     object-fit: contain;
+  }
+
+  .project-image--ultra-landscape {
+    padding: 6px 4px;
   }
 
   .tag-list {
