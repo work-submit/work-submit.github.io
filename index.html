@@ -127,19 +127,26 @@
 
       function applyProjectImageMode(image) {
         var projectImage = image.closest('.project-image');
+        var projectCard = image.closest('.project-card');
         if (!projectImage || !image.naturalWidth || !image.naturalHeight) {
           return;
         }
 
         var ratio = image.naturalWidth / image.naturalHeight;
         projectImage.classList.remove('project-image--portrait', 'project-image--landscape', 'project-image--ultra-landscape');
+        if (projectCard) {
+          projectCard.classList.remove('project-card--portrait', 'project-card--landscape', 'project-card--ultra-landscape');
+        }
 
         if (ratio > 1.9) {
           projectImage.classList.add('project-image--ultra-landscape');
+          if (projectCard) projectCard.classList.add('project-card--ultra-landscape');
         } else if (ratio > 1.35) {
           projectImage.classList.add('project-image--landscape');
+          if (projectCard) projectCard.classList.add('project-card--landscape');
         } else {
           projectImage.classList.add('project-image--portrait');
+          if (projectCard) projectCard.classList.add('project-card--portrait');
         }
       }
 
