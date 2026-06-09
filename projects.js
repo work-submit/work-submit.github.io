@@ -131,6 +131,7 @@ const directions = [
         tags: ['Night Photography', 'Image Restoration', 'Exposure Control', 'Diffusion'],
         links: [
         { label: 'Project', href: './index.html?project=lucid', icon: 'fas fa-arrow-right' },
+        { label: 'Code', href: 'https://github.com/frakenation/LUCID', icon: 'fab fa-github' },
         { label: 'arXiv', href: 'https://arxiv.org/abs/2606.06901', icon: 'ai ai-arxiv' }
         ]
     },
