@@ -305,4 +305,18 @@ const directions = [
         { label: 'Online Game', href: 'https://pi.xiaoyunyuan.net/resources/RL/DP_vs_MC.html', icon: 'fas fa-arrow-right' },
         ]
     },
+    {
+        id: 'independent-random-variables-sum',
+        title: 'Distribution of Sums of Independent Random Variables',
+        fullTitle: '<b>Xiaoyun Yuan</b>',
+        direction: 'resources',
+        directionLabel: 'Educational Resources',
+        status: 'Probability Demo',
+        image: './projects/Resources/images/independent-sum-thumb.svg',
+        summary: 'An interactive demo for the distribution of sums, convolution, and the central limit theorem.',
+        tags: ['Probability', 'Statistics', 'Convolution'],
+        links: [
+        { label: 'Launch Demo', href: './projects/Resources/独立随机变量和的分布.html', icon: 'fas fa-arrow-right' },
+        ]
+    },
     ];

@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>独立随机变量和的分布 · 卷积与中心极限定理可视化</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<style>
+  :root{
+    --bg:#f7f8fb; --card:#ffffff; --ink:#1f2330; --muted:#6b7280;
+    --line:#e5e7eb; --accent:#4f46e5; --accent2:#0ea5e9;
+    --xcol:#2563eb; --ycol:#db2777; --zcol:#16a34a; --prodcol:#f59e0b;
+    --refcol:#111827;
+    --shadow:0 1px 2px rgba(16,24,40,.06), 0 8px 24px rgba(16,24,40,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",-apple-system,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1180px; margin:0 auto; padding:28px 22px 80px}
+
+  header.hero{
+    background:linear-gradient(135deg,#4f46e5 0%, #7c3aed 55%, #0ea5e9 120%);
+    color:#fff; border-radius:18px; padding:30px 34px; box-shadow:var(--shadow);
+    margin-bottom:22px;
+  }
+  header.hero h1{margin:0 0 6px; font-size:26px; font-weight:700; letter-spacing:.3px}
+  header.hero p{margin:0; opacity:.92; font-size:15px}
+  .formula{
+    margin-top:16px; background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.22); border-radius:12px;
+    padding:12px 16px; font-size:17px; backdrop-filter:blur(2px);
+  }
+  .formula .lab{opacity:.85; margin-right:10px; font-size:13px}
+  .formula i{font-style:italic; font-family:"Cambria Math",Georgia,serif}
+  .formula sub{font-size:.72em}
+
+  /* Tabs */
+  .tabs{display:flex; gap:10px; margin:6px 0 18px}
+  .tab{
+    flex:1; cursor:pointer; border:1px solid var(--line); background:var(--card);
+    padding:14px 18px; border-radius:12px; box-shadow:var(--shadow);
+    transition:transform .12s ease, border-color .12s ease, background .12s ease;
+    user-select:none;
+  }
+  .tab:hover{transform:translateY(-1px)}
+  .tab .tnum{display:inline-block; width:22px;height:22px;line-height:22px;text-align:center;
+    border-radius:50%; background:var(--line); color:var(--ink); font-size:13px; margin-right:8px}
+  .tab .ttitle{font-weight:600; font-size:15px}
+  .tab .tdesc{display:block; color:var(--muted); font-size:12.5px; margin-top:3px}
+  .tab.active{border-color:var(--accent); background:#eef2ff}
+  .tab.active .tnum{background:var(--accent); color:#fff}
+
+  .panel{display:none}
+  .panel.active{display:block; animation:fade .2s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+  .layout{display:grid; grid-template-columns:330px 1fr; gap:18px; align-items:start}
+  @media (max-width:880px){ .layout{grid-template-columns:1fr} }
+
+  .controls{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:18px; box-shadow:var(--shadow); position:sticky; top:14px;
+  }
+  @media (max-width:880px){ .controls{position:static} }
+  .ctl-group{margin-bottom:16px}
+  .ctl-group:last-child{margin-bottom:0}
+  .ctl-label{
+    font-size:12.5px; font-weight:600; color:var(--muted);
+    text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px;
+    display:flex; justify-content:space-between; align-items:baseline;
+  }
+  .ctl-label .val{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; color:var(--accent); font-weight:700; text-transform:none; letter-spacing:0}
+
+  select, button.input{
+    width:100%; padding:8px 10px; border:1px solid var(--line); border-radius:8px;
+    background:#fff; color:var(--ink); font-size:14px; font-family:inherit; cursor:pointer;
+  }
+  select:focus{outline:2px solid var(--accent); outline-offset:-1px}
+
+  input[type=range]{
+    -webkit-appearance:none; width:100%; height:5px; border-radius:3px;
+    background:var(--line); outline:none; margin:6px 0 2px;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:16px; height:16px; border-radius:50%;
+    background:var(--accent); cursor:pointer; border:2px solid #fff;
+    box-shadow:0 1px 3px rgba(0,0,0,.2);
+  }
+  input[type=range]::-moz-range-thumb{
+    width:16px; height:16px; border-radius:50%; background:var(--accent);
+    cursor:pointer; border:2px solid #fff;
+  }
+
+  .switch{display:flex; align-items:center; gap:8px; font-size:13.5px; cursor:pointer; user-select:none}
+  .switch input{width:16px; height:16px; accent-color:var(--accent); cursor:pointer}
+
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+  .row3{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+
+  .btn{
+    padding:8px 12px; border:1px solid var(--line); border-radius:8px; background:#fff;
+    color:var(--ink); font-size:13px; font-family:inherit; cursor:pointer; text-align:center;
+    transition:background .12s, border-color .12s, color .12s;
+  }
+  .btn:hover{background:#f3f4f6}
+  .btn.primary{background:var(--accent); color:#fff; border-color:var(--accent)}
+  .btn.primary:hover{background:#4338ca}
+  .btn.active{background:#eef2ff; border-color:var(--accent); color:var(--accent)}
+
+  .preset-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px}
+  .preset-grid .btn{font-size:11.5px; padding:6px 4px; line-height:1.3}
+
+  .charts{display:flex; flex-direction:column; gap:14px}
+  .chart-card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:14px 14px 8px; box-shadow:var(--shadow);
+  }
+  .chart-card h3{margin:0 0 2px; font-size:14px; font-weight:600}
+  .chart-card .hint{margin:0 0 8px; color:var(--muted); font-size:12px}
+  .chart-card .hint b{color:var(--ink)}
+
+  .legend-chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:6px}
+  .chip{font-size:11.5px; padding:2px 8px; border-radius:10px; background:#f3f4f6; border:1px solid var(--line)}
+  .chip .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+
+  .readouts{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:6px;
+  }
+  .readout{background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+  .readout .k{font-size:11px;color:var(--muted)}
+  .readout .v{font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:13.5px}
+
+  .cmp-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:4px}
+  .cmp-table th,.cmp-table td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:right}
+  .cmp-table th{background:#f8fafc;color:var(--muted);font-weight:600;font-size:12px}
+  .cmp-table td:first-child,.cmp-table th:first-child{text-align:left}
+  .cmp-table td{font-family:ui-monospace,Menlo,monospace}
+  .cmp-table tr:last-child td{border-bottom:none}
+  .cmp-table .err-good{color:var(--zcol);font-weight:700}
+  .cmp-table .err-warn{color:var(--prodcol);font-weight:700}
+  .note{font-size:11.5px;color:var(--muted);margin:6px 0 0;line-height:1.5}
+  .note b{color:var(--ink)}
+
+  footer{margin-top:26px; color:var(--muted); font-size:12.5px; text-align:center}
+  footer code{background:#eef;border-radius:4px;padding:1px 5px;font-size:11.5px}
+
+  /* spacing helper for tab2 single big chart */
+  .bigchart{min-height:480px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>独立随机变量和的分布 · 可视化</h1>
+    <p>用「滑动卷积」直觉理解 Z = X + Y 的概率密度如何由两个分布叠加而成，并延伸到 N 个变量求和的中心极限定理。</p>
+    <div class="formula">
+      <span class="lab">卷积定义（连续型）</span>
+      <i>f<sub>Z</sub>(z) = (f<sub>X</sub> * f<sub>Y</sub>)(z) = ∫ f<sub>X</sub>(x) · f<sub>Y</sub>(z − x) dx</i>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="t1" id="tabbtn1">
+      <span class="tnum">1</span><span class="ttitle">两个变量相加</span>
+      <span class="tdesc">滑动卷积动画 · Z = X + Y 的 PDF</span>
+    </div>
+    <div class="tab" data-tab="t2" id="tabbtn2">
+      <span class="tnum">2</span><span class="ttitle">N 个变量求和（CLT）</span>
+      <span class="tdesc">N 越大越接近正态 · 中心极限定理</span>
+    </div>
+  </div>
+
+  <!-- ============ TAB 1 ============ -->
+  <section class="panel active" id="t1">
+    <div class="layout">
+      <!-- Controls -->
+      <aside class="controls">
+        <div class="ctl-group">
+          <div class="ctl-label"><span>X 的分布</span></div>
+          <select id="distX"></select>
+          <div id="paramsX" style="margin-top:10px"></div>
+        </div>
+        <div class="ctl-group">
+          <div class="ctl-label"><span>Y 的分布</span></div>
+          <select id="distY"></select>
+          <div id="paramsY" style="margin-top:10px"></div>
+        </div>
+
+        <div class="ctl-group">
+          <div class="ctl-label"><span>一键预设</span></div>
+          <div class="preset-grid">
+            <div class="btn" data-preset="uniform-uniform">均匀+均匀<br><span style="color:var(--muted);font-size:10px">→三角</span></div>
+            <div class="btn" data-preset="gauss-gauss">高斯+高斯<br><span style="color:var(--muted);font-size:10px">→高斯</span></div>
+            <div class="btn" data-preset="exp-exp">指数+指数<br><span style="color:var(--muted);font-size:10px">→Gamma</span></div>
+          </div>
+        </div>
+
+        <div class="ctl-group">
+          <div class="ctl-label"><span>卷积动画</span><span class="val" id="zReadout">z = 0.0</span></div>
+          <div class="row2" style="margin-bottom:8px">
+            <button class="btn primary" id="playBtn">▶ 播放</button>
+            <button class="btn" id="resetBtn">⏮ 重置</button>
+          </div>
+          <div class="ctl-label" style="margin-top:4px"><span>速度</span><span class="val" id="speedVal">中</span></div>
+          <input type="range" id="speed" min="0.3" max="3" step="0.1" value="1.2">
+          <div class="ctl-label" style="margin-top:8px"><span>手动定位 z</span></div>
+          <input type="range" id="zManual" min="0" max="1000" step="1" value="500">
+        </div>
+
+        <div class="ctl-group">
+          <label class="switch"><input type="checkbox" id="mcToggle1" checked> 叠加蒙特卡洛采样验证</label>
+          <div class="ctl-label" style="margin-top:10px"><span>采样次数 N</span><span class="val" id="nsVal1">20,000</span></div>
+          <input type="range" id="nsRange1" min="100" max="50000" step="100" value="20000">
+          <p style="font-size:11px;color:var(--muted);margin:6px 0 0">次数越多，直方图与估计值越接近理论曲线/理论矩。</p>
+          <button class="btn" id="resample1" style="margin-top:8px">🎲 重新采样（同参数新随机样本）</button>
+        </div>
+      </aside>
+
+      <!-- Charts -->
+      <div class="charts">
+        <div class="chart-card">
+          <h3>① 输入分布 f<sub>X</sub>(x) 与 f<sub>Y</sub>(y)</h3>
+          <p class="hint">两个独立的输入分布形态。<b>X</b> 与 <b>Y</b> 在实轴上的密度曲线。</p>
+          <div class="legend-chips">
+            <span class="chip"><span class="dot" style="background:var(--xcol)"></span>f_X(x)</span>
+            <span class="chip"><span class="dot" style="background:var(--ycol)"></span>f_Y(y)</span>
+          </div>
+          <div id="g1" style="height:200px"></div>
+        </div>
+
+        <div class="chart-card">
+          <h3>② 卷积是怎么「算」出来的（核心！请配合动画看）</h3>
+          <p class="hint">对每一个 z，卷积做四步：<b>翻转 f_Y → 平移到 z → 与 f_X 相乘 → 积分</b>。蓝色 f_X 固定不动，粉色虚线是翻转+平移后的 f_Y(z−x)，<b>橙色阴影面积</b>就是该 z 处的和分布取值 f_Z(z)。拖动「手动定位 z」滑块，看阴影如何随 z 变化。</p>
+          <div class="legend-chips">
+            <span class="chip"><span class="dot" style="background:var(--xcol)"></span>f_X(x) —— 固定</span>
+            <span class="chip"><span class="dot" style="background:var(--ycol)"></span>f_Y(z−x) —— 翻转+滑动</span>
+            <span class="chip"><span class="dot" style="background:var(--prodcol)"></span>乘积 → 阴影面积 = f_Z(z)</span>
+          </div>
+          <div id="g2" style="height:300px"></div>
+        </div>
+
+        <div class="chart-card">
+          <h3>③ 和的分布 f<sub>Z</sub>(z) = f<sub>X</sub> * f<sub>Y</sub></h3>
+          <p class="hint">把图②每个 z 对应的<b>阴影面积</b>逐个收集起来，就拼成了这条绿色曲线。<b>绿点的高度 = 图②当前的橙色阴影面积</b>——两张图就是这样联动的。灰柱为蒙特卡洛采样验证。</p>
+          <div class="legend-chips">
+            <span class="chip"><span class="dot" style="background:var(--zcol)"></span>f_Z(z) 完整曲线</span>
+            <span class="chip"><span class="dot" style="background:var(--zcol);border:2px solid #fff"></span>当前 z 的绿点（=图②阴影面积）</span>
+            <span class="chip" id="mcChip1" style="display:none"><span class="dot" style="background:#94a3b8"></span>蒙特卡洛直方图</span>
+          </div>
+          <div id="g3" style="height:240px"></div>
+        </div>
+
+        <div class="chart-card">
+          <h3>④ 理论值 vs 蒙特卡洛估计（Z = X + Y）</h3>
+          <p class="hint">独立变量和的矩满足可加性：<b>均值相加、方差相加</b>。下表把解析解与 2 万次采样估计并排对照，便于一眼看出卷积结果是否正确。</p>
+          <table class="cmp-table">
+            <thead>
+              <tr><th>统计量</th><th>理论值（解析）</th><th>蒙特卡洛估计</th><th>相对误差</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>均值 E[Z]</td><td id="thMu">—</td><td id="mcMu">—</td><td id="errMu">—</td></tr>
+              <tr><td>标准差 σ_Z</td><td id="thSig">—</td><td id="mcSig">—</td><td id="errSig">—</td></tr>
+              <tr><td>方差 σ_Z²</td><td id="thVar">—</td><td id="mcVar">—</td><td id="errVar">—</td></tr>
+            </tbody>
+          </table>
+          <p class="note" id="cmpNote"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TAB 2 ============ -->
+  <section class="panel" id="t2">
+    <div class="layout">
+      <aside class="controls">
+        <div class="ctl-group">
+          <div class="ctl-label"><span>基础分布（每个 X<sub>i</sub> 同分布）</span></div>
+          <select id="baseDist"></select>
+          <div id="baseParams" style="margin-top:10px"></div>
+        </div>
+
+        <div class="ctl-group">
+          <div class="ctl-label"><span>变量个数 N</span><span class="val" id="nReadout">N = 1</span></div>
+          <input type="range" id="nVar" min="1" max="30" step="1" value="3">
+        </div>
+
+        <div class="ctl-group">
+          <label class="switch"><input type="checkbox" id="stdToggle" checked> 标准化：(S<sub>N</sub>−Nμ)/(σ√N)</label>
+        </div>
+        <div class="ctl-group">
+          <label class="switch"><input type="checkbox" id="exactToggle" checked> 叠加精确 N 重卷积曲线（N≤8）</label>
+        </div>
+        <div class="ctl-group">
+          <label class="switch"><input type="checkbox" id="mcToggle2" checked> 蒙特卡洛直方图</label>
+          <div class="ctl-label" style="margin-top:10px"><span>采样次数 N</span><span class="val" id="nsVal2">20,000</span></div>
+          <input type="range" id="nsRange2" min="100" max="50000" step="100" value="20000">
+          <button class="btn" id="resample2" style="margin-top:8px">🎲 重新采样（同参数新随机样本）</button>
+        </div>
+
+        <div class="ctl-group">
+          <div class="ctl-label"><span>理论矩 vs 蒙特卡洛</span></div>
+          <div class="readouts" style="grid-template-columns:1fr 1fr 1fr">
+            <div class="readout"><div class="k">理论均值 Nμ</div><div class="v" id="muN_th">—</div></div>
+            <div class="readout"><div class="k">MC 估计均值</div><div class="v" id="muN_mc">—</div></div>
+            <div class="readout"><div class="k">相对误差</div><div class="v" id="muN_err">—</div></div>
+            <div class="readout"><div class="k">理论 σ = √N·σ</div><div class="v" id="sigN_th">—</div></div>
+            <div class="readout"><div class="k">MC 估计 σ</div><div class="v" id="sigN_mc">—</div></div>
+            <div class="readout"><div class="k">相对误差</div><div class="v" id="sigN_err">—</div></div>
+          </div>
+          <p class="note" id="cmpNote2" style="margin-top:6px"></p>
+        </div>
+
+        <div class="ctl-group">
+          <div class="ctl-label"><span>提示</span></div>
+          <p style="font-size:12px;color:var(--muted);margin:0">
+            拖动 N：观察直方图从「原始非正态」逐步「鼓起成钟形」。标准化后，所有分布都趋向 <b>N(0,1)</b>——这就是中心极限定理。
+          </p>
+        </div>
+      </aside>
+
+      <div class="charts">
+        <div class="chart-card">
+          <h3 id="t2title">S<sub>3</sub> = X<sub>1</sub>+X<sub>2</sub>+X<sub>3</sub> 的分布</h3>
+          <p class="hint" id="t2hint">蓝色直方图为蒙特卡洛采样；虚线为精确 N 重卷积；灰色实线为极限参考分布。</p>
+          <div id="g4" class="bigchart"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    数据全部在浏览器本地计算 · 绘图：<code>Plotly.js</code>（首次加载需联网） · 关闭页面后无任何数据留存
+  </footer>
+</div>
+
+<script>
+"use strict";
+/* ============================================================
+ *  0. 常量与配色
+ * ============================================================ */
+const COLORS = {
+  X:'#2563eb', Y:'#db2777', Z:'#16a34a', PROD:'#f59e0b',
+  REF:'#111827', MC:'#94a3b8', EXACT:'#dc2626'
+};
+
+/* ============================================================
+ *  1. 分布定义
+ *  每个分布: { id, name, params:[{id,name,min,max,step,default,value}],
+ *             pdf(x,p), sample(p), support(p), moments(p)->{mean,var} }
+ * ============================================================ */
+const PI = Math.PI, SQRT2 = Math.SQRT2, SQRT2PI = Math.sqrt(2*PI);
+
+function clampParamSpec(s){ return s; }
+
+const DISTS = {
+  gauss:{
+    id:'gauss', name:'高斯 N(μ, σ²)',
+    params:[
+      {id:'mu', name:'μ 均值', min:-6, max:6, step:0.1, default:0},
+      {id:'sig',name:'σ 标准差', min:0.2, max:4, step:0.1, default:1.2}
+    ],
+    pdf:(x,p)=>{ const s=Math.max(1e-6,p.sig); return Math.exp(-0.5*((x-p.mu)/s)**2)/(s*SQRT2PI); },
+    sample:p=>{ const s=Math.max(1e-6,p.sig);
+      const u1=Math.random()||1e-12, u2=Math.random();
+      return p.mu + s*Math.sqrt(-2*Math.log(u1))*Math.cos(2*PI*u2); },
+    support:p=>{ const s=Math.max(1e-6,p.sig); return [p.mu-4.5*s, p.mu+4.5*s]; },
+    moments:p=>({mean:p.mu, var:Math.max(1e-6,p.sig)**2})
+  },
+  uniform:{
+    id:'uniform', name:'均匀 U(a, b)',
+    params:[
+      {id:'a', name:'a 下界', min:-4, max:4, step:0.1, default:-1},
+      {id:'b', name:'b 上界', min:-4, max:8, step:0.1, default:2}
+    ],
+    pdf:(x,p)=>{ const a=Math.min(p.a,p.b), b=Math.max(p.a,p.b); return (x>=a && x<=b)? 1/(b-a) : 0; },
+    sample:p=>{ const a=Math.min(p.a,p.b), b=Math.max(p.a,p.b); return a+(b-a)*Math.random(); },
+    support:p=>{ const a=Math.min(p.a,p.b), b=Math.max(p.a,p.b); return [a,b]; },
+    moments:p=>{ const a=Math.min(p.a,p.b), b=Math.max(p.a,p.b); return {mean:(a+b)/2, var:(b-a)**2/12}; }
+  },
+  exp:{
+    id:'exp', name:'指数 Exp(λ)',
+    params:[
+      {id:'lam', name:'λ 率', min:0.2, max:3, step:0.1, default:1}
+    ],
+    pdf:(x,p)=>{ const l=Math.max(1e-6,p.lam); return x>=0 ? l*Math.exp(-l*x) : 0; },
+    sample:p=>{ const l=Math.max(1e-6,p.lam); const u=Math.random()||1e-12; return -Math.log(u)/l; },
+    support:p=>[0, 8/Math.max(1e-6,p.lam)],
+    moments:p=>{ const l=Math.max(1e-6,p.lam); return {mean:1/l, var:1/(l*l)}; }
+  },
+  laplace:{
+    id:'laplace', name:'拉普拉斯 Laplace(μ, b)',
+    params:[
+      {id:'mu', name:'μ 位置', min:-4, max:4, step:0.1, default:0},
+      {id:'b',  name:'b 尺度', min:0.2, max:3, step:0.1, default:1}
+    ],
+    pdf:(x,p)=>{ const b=Math.max(1e-6,p.b); return Math.exp(-Math.abs(x-p.mu)/b)/(2*b); },
+    sample:p=>{ const b=Math.max(1e-6,p.b);
+      const u=Math.random()-0.5; return p.mu - b*Math.sign(u)*Math.log(1-2*Math.abs(u)); },
+    support:p=>{ const b=Math.max(1e-6,p.b); return [p.mu-6*b, p.mu+6*b]; },
+    moments:p=>({mean:p.mu, var:2*Math.max(1e-6,p.b)**2})
+  }
+};
+const DIST_ORDER = ['gauss','uniform','exp','laplace'];
+
+/* ============================================================
+ *  2. 通用参数控件构建
+ * ============================================================ */
+function readParams(containerId){
+  const p={};
+  document.querySelectorAll('#'+containerId+' input[data-pid]').forEach(el=>{
+    p[el.dataset.pid] = parseFloat(el.value);
+  });
+  return p;
+}
+function buildParamControls(containerId, distId, onInput){
+  const cont = document.getElementById(containerId);
+  const dist = DISTS[distId];
+  cont.innerHTML='';
+  dist.params.forEach(sp=>{
+    const wrap = document.createElement('div');
+    wrap.style.marginBottom='8px';
+    const lab = document.createElement('div');
+    lab.className='ctl-label';
+    lab.innerHTML = `<span>${sp.name}</span><span class="val" id="${containerId}-${sp.id}-val">${sp.default.toFixed(1)}</span>`;
+    wrap.appendChild(lab);
+    const inp = document.createElement('input');
+    inp.type='range'; inp.min=sp.min; inp.max=sp.max; inp.step=sp.step; inp.value=sp.default;
+    inp.dataset.pid=sp.id;
+    inp.addEventListener('input',()=>{
+      document.getElementById(`${containerId}-${sp.id}-val`).textContent = parseFloat(inp.value).toFixed(1);
+      onInput();
+    });
+    wrap.appendChild(inp);
+    cont.appendChild(wrap);
+  });
+}
+function fillDistSelect(selId){
+  const sel=document.getElementById(selId);
+  sel.innerHTML='';
+  DIST_ORDER.forEach(id=>{
+    const o=document.createElement('option'); o.value=id; o.textContent=DISTS[id].name; sel.appendChild(o);
+  });
+}
+
+/* ============================================================
+ *  3. 网格 + 数值卷积
+ * ============================================================ */
+function linspace(a,b,n){ const out=new Array(n); const d=(b-a)/(n-1); for(let i=0;i<n;i++) out[i]=a+i*d; return out; }
+
+// 在共享网格 grid 上得到 dist 的 pdf 数组
+function pdfOnGrid(dist, params, grid){
+  return grid.map(x=>dist.pdf(x,params));
+}
+
+// 给定 X,Y 的 support，返回一个足够覆盖 X+Y support 的公共网格
+function buildConvGrid(distX,pX,distY,pY,padFrac=0.08){
+  const [ax,bx]=distX.support(pX);
+  const [ay,by]=distY.support(pY);
+  let lo=ax+ay, hi=bx+by;
+  // 同时保证每个分布自身在 grid 内可见（用于 f_X 与 f_Y(z-x) 绘图）
+  const minLo=Math.min(ax,ay,lo), maxHi=Math.max(bx,by,hi);
+  const span=maxHi-minLo, pad=span*padFrac;
+  lo=minLo-pad; hi=maxHi+pad;
+  const N=701;
+  return {grid:linspace(lo,hi,N), lo, hi};
+}
+
+/* 从样本数组估计 {mean, var, std}（无偏方差分母 n-1） */
+function sampleStats(samples){
+  const n=samples.length;
+  let m=0; for(let i=0;i<n;i++) m+=samples[i]; m/=n;
+  let s2=0; for(let i=0;i<n;i++){ const d=samples[i]-m; s2+=d*d; }
+  s2/=(n-1);
+  return {mean:m, var:s2, std:Math.sqrt(s2)};
+}
+/* 相对误差百分比，返回字符串；分母为 0 时退化为绝对误差 */
+function relErr(theory, est){
+  if(Math.abs(theory)<1e-9) return Math.abs(est);
+  return (est-theory)/Math.abs(theory);
+}
+function fmtErr(theory, est){
+  const r=relErr(theory,est);
+  const cls = Math.abs(r)<0.03 ? 'err-good' : (Math.abs(r)<0.08 ? 'err-warn':'');
+  const pct = (r*100).toFixed(2);
+  const sign = r>=0?'+':'';
+  return `<span class="${cls}">${sign}${pct}%</span>`;
+}
+
+// 数值卷积：返回与 grid 同长度的 fZ 数组
+// fZ[k] ≈ Σ_i fX[i]*fY[k-i] * dx   （线性卷积，梯形近似）
+function convolve(fX, fY, dx){
+  const n=fX.length, m=fY.length, out=new Array(n+m-1).fill(0);
+  for(let i=0;i<n;i++){
+    const xi=fX[i]; if(xi===0) continue;
+    for(let j=0;j<m;j++){
+      out[i+j]+=xi*fY[j];
+    }
+  }
+  for(let k=0;k<out.length;k++) out[k]*=dx;
+  return out;
+}
+
+// 把卷积结果对齐到原 grid：out 索引 i+j 对应 z = ax_grid + ay_grid + (i+j)*dx
+// 这里 fX,fY 共用同一 grid（buildConvGrid），所以结果 z 起点 = 2*grid[0]
+function alignConvToGrid(grid, conv){
+  const n=grid.length, dx=grid[1]-grid[0];
+  const zStart=2*grid[0];
+  return grid.map(z=>{
+    const idx=Math.round((z-zStart)/dx);
+    return (idx>=0 && idx<conv.length)? conv[idx] : 0;
+  });
+}
+
+/* ============================================================
+ *  4. 蒙特卡洛直方图（密度归一）
+ * ============================================================ */
+function mcHistogram(samples, edges){
+  // edges: 升序边界数组，长度 B+1；返回 {centers:[], density:[]}
+  const B=edges.length-1;
+  const counts=new Array(B).fill(0);
+  for(let i=0;i<samples.length;i++){
+    const s=samples[i];
+    if(s<edges[0]||s>=edges[B]) continue;
+    // 二分找桶
+    let lo=0,hi=B-1;
+    while(lo<hi){ const mid=(lo+hi)>>1; if(s<edges[mid+1]) hi=mid; else lo=mid+1; }
+    counts[lo]++;
+  }
+  const centers=[], density=[];
+  for(let i=0;i<B;i++){ const w=edges[i+1]-edges[i]; centers.push((edges[i+1]+edges[i])/2); density.push(counts[i]/(samples.length*w)); }
+  return {centers, density};
+}
+
+/* ============================================================
+ *  5. N 重数值卷积（CLT 精确曲线）
+ * ============================================================ */
+// 在 grid 上迭代卷积 N 次（每次再叠加一个单变量）。
+// 关键：每次把「当前和分布」与「单变量 PDF」做线性卷积，结果的原点右移 grid[0]。
+// 由于 grid 已预留到 N 倍 support，结果落在 grid 之外的部分会被截断（误差可忽略）。
+function nFoldConvolutionOnGrid(dist, params, N, grid){
+  if(N<=1) return grid.map(x=>dist.pdf(x,params));
+  const dx=grid[1]-grid[0];
+  const single = grid.map(x=>dist.pdf(x,params));          // 1 重 PDF
+  let cur = single.slice();                                 // 当前代表 k 重
+  let origin = grid[0];                                     // 当前分布的 z 原点
+  for(let k=2;k<=N;k++){
+    const conv = convolve(cur, single, dx);                 // k 重 = (k-1)重 * 1重
+    // 新原点 = 旧原点 + 单变量原点 = origin + grid[0]
+    const newOrigin = origin + grid[0];
+    cur = grid.map(z=>{
+      const idx = Math.round((z - newOrigin)/dx);
+      return (idx>=0 && idx<conv.length)? conv[idx] : 0;
+    });
+    origin = newOrigin;
+  }
+  return cur;
+}
+
+// 为 CLT 构造足够宽的 grid：基于单个分布 support 扩展到 ~N 倍并标准化
+function buildCLTGrid(dist, params, N, standardize){
+  const m=dist.moments(params);
+  const [a,b]=dist.support(params);
+  // 原始和的范围 ~ [N*a, N*b]（近似，对轻尾分布 OK）
+  let lo=N*Math.min(a, m.mean-(b-m.mean)*0), hi=N*Math.max(b, m.mean+(m.mean-a)*0);
+  // 更稳健：以均值±若干标准差界定
+  const sdSum=Math.sqrt(N*m.var);
+  if(standardize){
+    lo=-4.5; hi=4.5;
+  } else {
+    lo = N*m.mean - 5*sdSum;
+    hi = N*m.mean + 5*sdSum;
+    lo=Math.min(lo, N*Math.min(a,b));
+    hi=Math.max(hi, N*Math.max(a,b));
+  }
+  return linspace(lo,hi,801);
+}
+
+/* ============================================================
+ *  6. Plotly 默认布局
+ * ============================================================ */
+function baseLayout(extra){
+  return Object.assign({
+    margin:{l:48,r:14,t:8,b:38},
+    paper_bgcolor:'rgba(0,0,0,0)',
+    plot_bgcolor:'rgba(0,0,0,0)',
+    font:{family:'"PingFang SC","Microsoft YaHei",Arial,sans-serif', size:12, color:'#374151'},
+    xaxis:{gridcolor:'#eef0f3', zerolinecolor:'#d1d5db', linecolor:'#d1d5db'},
+    yaxis:{gridcolor:'#eef0f3', zerolinecolor:'#d1d5db', linecolor:'#d1d5db', rangemode:'tozero'},
+    showlegend:false,
+    hovermode:'closest'
+  }, extra||{});
+}
+function lineTrace(x,y,color,opts){
+  return Object.assign({x,y,type:'scatter',mode:'lines',line:{color:color,width:2.2},hovertemplate:'x=%{x:.2f}<br>f=%{y:.3f}<extra></extra>'}, opts||{});
+}
+
+/* ============================================================
+ *  7. TAB 1 状态与渲染
+ * ============================================================ */
+const T1 = {
+  distX:'gauss', distY:'gauss',
+  pX:{}, pY:{},
+  grid:null, fX:null, fY:null, fZfull:null,   // fZfull: 完整卷积结果（对齐 grid）
+  mcX:null, mcY:null, mcSum:null,
+  mcEdges:null, mcHist:null,
+  NS:20000,
+  playing:false, zFrac:0.5, speed:1.2, rafId:null, lastT:0
+};
+
+function getZRange(){
+  const g=T1.grid; return [g[0], g[g.length-1]];
+}
+function zFromFrac(f){ const [a,b]=getZRange(); return a+(b-a)*f; }
+function fracFromZ(z){ const [a,b]=getZRange(); return (z-a)/(b-a); }
+
+function recomputeT1(){
+  T1.pX=readParams('paramsX');
+  T1.pY=readParams('paramsY');
+  const dx_=DISTS[T1.distX], dy_=DISTS[T1.distY];
+  const built=buildConvGrid(dx_,T1.pX,dy_,T1.pY);
+  T1.grid=built.grid;
+  T1.fX=pdfOnGrid(dx_,T1.pX,T1.grid);
+  T1.fY=pdfOnGrid(dy_,T1.pY,T1.grid);
+  const dd=T1.grid[1]-T1.grid[0];
+  const conv=convolve(T1.fX,T1.fY,dd);
+  T1.fZfull=alignConvToGrid(T1.grid,conv);
+  // 理论矩（独立和的可加性：均值相加、方差相加）
+  const mX=dx_.moments(T1.pX), mY=dy_.moments(T1.pY);
+  T1.thStats = { mean:mX.mean+mY.mean, var:mX.var+mY.var, std:Math.sqrt(mX.var+mY.var) };
+  // 蒙特卡洛部分（受采样次数影响，单独抽出来）
+  recomputeT1MC();
+}
+
+/* 仅重算蒙特卡洛（调节采样次数 / 重新采样时调用，不必重算网格与卷积） */
+function recomputeT1MC(){
+  const dx_=DISTS[T1.distX], dy_=DISTS[T1.distY];
+  const NS=T1.NS;
+  T1.mcSum=new Array(NS);
+  for(let i=0;i<NS;i++){ T1.mcSum[i]=dx_.sample(T1.pX)+dy_.sample(T1.pY); }
+  // 直方图分桶数随样本量自适应：少样本用少桶，避免锯齿；多样本用多桶，看清细节
+  const B=Math.max(12, Math.min(80, Math.round(Math.sqrt(NS)*1.6)));
+  const [lo,hi]=getZRange();
+  T1.mcEdges=linspace(lo,hi,B+1);
+  T1.mcHist=mcHistogram(T1.mcSum, T1.mcEdges);
+  T1.mcStats = sampleStats(T1.mcSum);
+}
+
+function renderG1(){
+  const g=T1.grid;
+  const dx_=DISTS[T1.distX], dy_=DISTS[T1.distY];
+  const ymax=Math.max(arrayMax(T1.fX), arrayMax(T1.fY))*1.15;
+  const data=[
+    lineTrace(g,T1.fX,COLORS.X,{name:'f_X'}),
+    lineTrace(g,T1.fY,COLORS.Y,{name:'f_Y'})
+  ];
+  const lay=baseLayout({
+    xaxis:{title:{text:'x / y',font:{size:11}}, gridcolor:'#eef0f3', zerolinecolor:'#d1d5db'},
+    yaxis:{title:{text:'密度',font:{size:11}}, gridcolor:'#eef0f3', zerolinecolor:'#d1d5db', rangemode:'tozero', range:[0,ymax]}
+  });
+  Plotly.react('g1',data,lay,{displayModeBar:false,responsive:true});
+}
+
+function renderG2(){
+  const g=T1.grid; const z=zFromFrac(T1.zFrac);
+  const dd=g[1]-g[0];
+  const distY=DISTS[T1.distY];
+  // f_Y(z-x)：把 f_Y 翻转后平移到 z（卷积的核心几何动作）
+  const fyShift = g.map(x=>distY.pdf(z-x, T1.pY));
+  // 乘积 f_X(x)·f_Y(z-x)，其积分（阴影面积）= f_Z(z)
+  const prod    = g.map((x,i)=>T1.fX[i]*fyShift[i]);
+  let area=0; for(let i=0;i<prod.length;i++) area+=prod[i]; area*=dd;
+  const fZz = evalFZat(z);
+
+  const ymax = Math.max(arrayMax(T1.fX), arrayMax(fyShift))*1.18;
+
+  const data=[
+    // 1) 乘积阴影（最底层，半透明橙色）—— 这块面积就是 f_Z(z)
+    {x:g,y:prod,type:'scatter',mode:'lines',
+     line:{color:COLORS.PROD,width:1.2},
+     fill:'tozeroy',fillcolor:'rgba(245,158,11,0.30)',
+     name:'乘积 f_X·f_Y(z−x)',hovertemplate:'x=%{x:.2f}<br>乘积=%{y:.3f}<extra></extra>'},
+    // 2) f_X(x)：固定的蓝色实线
+    lineTrace(g,T1.fX,COLORS.X,{name:'f_X(x)',line:{width:2.6},
+      hovertemplate:'<b>f_X(%{x:.2f}) = %{y:.3f}</b><extra></extra>'}),
+    // 3) f_Y(z-x)：翻转滑动后的粉色虚线
+    lineTrace(g,fyShift,COLORS.Y,{name:'f_Y(z−x)',line:{width:2.6,dash:'dash'},
+      hovertemplate:'<b>f_Y(z−x) = %{y:.3f}</b>（z='+z.toFixed(2)+'）<extra></extra>'}),
+    // 4) 当前 z 的竖线
+    {x:[z,z],y:[0,ymax],type:'scatter',mode:'lines',
+     line:{color:'#9ca3af',width:1.2,dash:'dot'},hoverinfo:'skip',showlegend:false}
+  ];
+  const lay=baseLayout({
+    xaxis:{title:{text:'x',font:{size:11.5}}, gridcolor:'#eef0f3', zerolinecolor:'#d1d5db'},
+    yaxis:{title:{text:'密度',font:{size:11}}, gridcolor:'#eef0f3', zerolinecolor:'#d1d5db', rangemode:'tozero', range:[0,ymax]},
+    annotations:[
+      // 左上：当前 z 与阴影面积读数
+      {x:0.015,y:0.985,yref:'paper',xref:'paper',showarrow:false,align:'left',yanchor:'top',
+       text:`<b>第 z = ${z.toFixed(2)} 处的卷积</b><br>橙色阴影面积 = ${area.toFixed(3)}<br>→ 即 f_Z(${z.toFixed(2)}) = ${fZz.toFixed(3)}`,
+       bgcolor:'rgba(255,255,255,0.9)',bordercolor:COLORS.PROD,borderwidth:1,borderpad:7,font:{size:11.5}},
+      // 右下：四步操作说明
+      {x:0.985,y:0.02,yref:'paper',xref:'paper',showarrow:false,align:'right',yanchor:'bottom',
+       text:`<span style="color:${COLORS.Y}">①</span> f_Y 先<b>翻转</b> → f_Y(−x)`
+          + `<br><span style="color:${COLORS.Y}">②</span> 平移到 z → <b>f_Y(z−x)</b>`
+          + `<br><span style="color:${COLORS.PROD}">③</span> 与 f_X 逐点<b>相乘</b>`
+          + `<br><span style="color:${COLORS.Z}">④</span> 阴影<b>积分</b> = f_Z(z)`,
+       bgcolor:'rgba(248,250,252,0.95)',bordercolor:'#e5e7eb',borderwidth:1,borderpad:7,font:{size:11}},
+      // 标注竖线 = 当前 z
+      {x:z,y:ymax*0.96,xref:'x',yref:'y',xanchor:'middle',yanchor:'top',showarrow:false,
+       text:`z=${z.toFixed(2)}`,font:{size:10.5,color:'#6b7280'}}
+    ]
+  });
+  Plotly.react('g2',data,lay,{displayModeBar:false,responsive:true});
+  // 更新读数
+  document.getElementById('zReadout').textContent='z = '+z.toFixed(2);
+  document.getElementById('zManual').value=Math.round(T1.zFrac*1000);
+}
+
+function evalFZat(z){
+  const g=T1.grid, dd=g[1]-g[0];
+  const idx=(z-g[0])/dd;
+  const i0=Math.floor(idx), i1=Math.min(g.length-1,i0+1);
+  const t=idx-i0;
+  return (1-t)*T1.fZfull[Math.max(0,i0)] + t*T1.fZfull[i1];
+}
+
+function renderG3(){
+  const g=T1.grid;
+  const z=zFromFrac(T1.zFrac);
+  const fZz=evalFZat(z);
+  const ymax=arrayMax(T1.fZfull)*1.2;
+  const data=[];
+  // 蒙特卡洛（放最底层，半透明）
+  if(document.getElementById('mcToggle1').checked){
+    data.push({x:T1.mcHist.centers,y:T1.mcHist.density,type:'bar',
+      marker:{color:'rgba(148,163,184,0.45)',line:{width:0}},
+      width:Array(T1.mcHist.centers.length).fill((T1.mcEdges[1]-T1.mcEdges[0])*0.9),
+      name:'蒙特卡洛',hovertemplate:'z≈%{x:.2f}<br>密度=%{y:.3f}<extra></extra>'});
+  }
+  // 完整 f_Z 曲线（始终画出，让用户看到完整形态）
+  data.push({x:g,y:T1.fZfull,type:'scatter',mode:'lines',
+    line:{color:COLORS.Z,width:2.8},
+    fill:'tozeroy',fillcolor:'rgba(22,163,74,0.10)',
+    name:'f_Z(z)',hovertemplate:'z=%{x:.2f}<br>f_Z=%{y:.3f}<extra></extra>'});
+  // 当前 z 的竖线
+  data.push({x:[z,z],y:[0,Math.max(fZz,ymax*0.001)],type:'scatter',mode:'lines',
+    line:{color:COLORS.PROD,width:1.5,dash:'dot'},hoverinfo:'skip',showlegend:false});
+  // 当前 z 的绿点（强调：高度 = 图二的阴影面积）
+  data.push({x:[z],y:[fZz],type:'scatter',mode:'markers',
+    marker:{color:COLORS.Z,size:13,line:{color:'#fff',width:2.5}},
+    hovertemplate:`<b>f_Z(${z.toFixed(2)}) = ${fZz.toFixed(3)}</b><br>＝图②橙色阴影面积<extra></extra>`});
+  const lay=baseLayout({
+    xaxis:{title:{text:'z = X + Y',font:{size:11.5}}, gridcolor:'#eef0f3', zerolinecolor:'#d1d5db'},
+    yaxis:{title:{text:'密度 f_Z(z)',font:{size:11}}, gridcolor:'#eef0f3', zerolinecolor:'#d1d5db', rangemode:'tozero', range:[0,ymax]},
+    barmode:'overlay',
+    annotations:[
+      {x:z,y:fZz,xref:'x',yref:'y',xanchor:'left',yanchor:'bottom',showarrow:true,arrowhead:2,arrowsize:0.8,
+       arrowwidth:1,ax:38,ay:-32,
+       text:`f_Z(${z.toFixed(2)}) = ${fZz.toFixed(3)}`,
+       font:{size:11.5,color:COLORS.Z},bgcolor:'rgba(255,255,255,0.92)',bordercolor:COLORS.Z,borderwidth:1,borderpad:4}
+    ]
+  });
+  Plotly.react('g3',data,lay,{displayModeBar:false,responsive:true});
+}
+
+function arrayMax(a){ let m=-Infinity; for(let i=0;i<a.length;i++) if(a[i]>m) m=a[i]; return m; }
+
+function renderT1Compare(){
+  const th=T1.thStats, mc=T1.mcStats;
+  const set=(id,v)=>{ const el=document.getElementById(id); if(el) el.innerHTML=v; };
+  set('thMu', th.mean.toFixed(3));
+  set('mcMu', mc.mean.toFixed(3));
+  set('errMu', fmtErr(th.mean, mc.mean));
+  set('thSig', th.std.toFixed(3));
+  set('mcSig', mc.std.toFixed(3));
+  set('errSig', fmtErr(th.std, mc.std));
+  set('thVar', th.var.toFixed(3));
+  set('mcVar', mc.var.toFixed(3));
+  set('errVar', fmtErr(th.var, mc.var));
+  const note=document.getElementById('cmpNote');
+  const mX=DISTS[T1.distX].moments(T1.pX), mY=DISTS[T1.distY].moments(T1.pY);
+  note.innerHTML = `理论：E[Z]=E[X]+E[Y]=${mX.mean.toFixed(2)}+${mY.mean.toFixed(2)}=${th.mean.toFixed(2)}，`
+    + `Var[Z]=Var[X]+Var[Y]=${mX.var.toFixed(2)}+${mY.var.toFixed(2)}=${th.var.toFixed(2)}，`
+    + `σ_Z=${th.std.toFixed(3)}。绿色误差 = 采样噪声，通常在 1%~3%。`;
+}
+
+function fullRenderT1(){
+  renderG1(); renderG2(); renderG3(); renderT1Compare();
+  document.getElementById('mcChip1').style.display = document.getElementById('mcToggle1').checked?'':'none';
+}
+
+/* 动画循环 */
+function tick(ts){
+  if(!T1.playing) return;
+  if(!T1.lastT) T1.lastT=ts;
+  const dt=(ts-T1.lastT)/1000; T1.lastT=ts;
+  // z 在 [0,1] 之间来回扫描
+  T1.zFrac += (dt*0.18*T1.speed);
+  // 折返
+  const phase=T1.zFrac%2;
+  T1.zFrac = phase<1? phase : 2-phase;
+  renderG2(); renderG3();
+  T1.rafId=requestAnimationFrame(tick);
+}
+function togglePlay(){
+  T1.playing=!T1.playing;
+  const btn=document.getElementById('playBtn');
+  if(T1.playing){ btn.textContent='⏸ 暂停'; T1.lastT=0; T1.rafId=requestAnimationFrame(tick); }
+  else{ btn.textContent='▶ 播放'; if(T1.rafId) cancelAnimationFrame(T1.rafId); }
+}
+
+/* ============================================================
+ *  8. TAB 1 控件绑定
+ * ============================================================ */
+function bindT1(){
+  fillDistSelect('distX'); fillDistSelect('distY');
+  document.getElementById('distX').value=T1.distX;
+  document.getElementById('distY').value=T1.distY;
+  buildParamControls('paramsX', T1.distX, ()=>{ recomputeT1(); fullRenderT1(); });
+  buildParamControls('paramsY', T1.distY, ()=>{ recomputeT1(); fullRenderT1(); });
+
+  document.getElementById('distX').addEventListener('change',e=>{
+    T1.distX=e.target.value;
+    buildParamControls('paramsX', T1.distX, ()=>{ recomputeT1(); fullRenderT1(); });
+    recomputeT1(); fullRenderT1();
+  });
+  document.getElementById('distY').addEventListener('change',e=>{
+    T1.distY=e.target.value;
+    buildParamControls('paramsY', T1.distY, ()=>{ recomputeT1(); fullRenderT1(); });
+    recomputeT1(); fullRenderT1();
+  });
+
+  document.getElementById('playBtn').addEventListener('click', togglePlay);
+  document.getElementById('resetBtn').addEventListener('click',()=>{
+    T1.zFrac=0.5; renderG2(); renderG3();
+  });
+  const speedEl=document.getElementById('speed');
+  speedEl.addEventListener('input',()=>{
+    T1.speed=parseFloat(speedEl.value);
+    const v=T1.speed;
+    document.getElementById('speedVal').textContent = v<0.7?'慢':(v>1.8?'快':'中');
+  });
+  document.getElementById('zManual').addEventListener('input',e=>{
+    T1.zFrac=parseFloat(e.target.value)/1000;
+    if(T1.playing) togglePlay();
+    renderG2(); renderG3();
+  });
+  document.getElementById('mcToggle1').addEventListener('change',()=>{ renderG3(); document.getElementById('mcChip1').style.display=document.getElementById('mcToggle1').checked?'':'none'; });
+
+  // 采样次数调节（拖动滑块时只重算蒙特卡洛，不必重算卷积）
+  const nsEl1=document.getElementById('nsRange1');
+  let nsDebounce=null;
+  nsEl1.addEventListener('input',()=>{
+    T1.NS=parseInt(nsEl1.value);
+    document.getElementById('nsVal1').textContent=T1.NS.toLocaleString();
+    // 拖动时先即时小样本更新手感，结束后兜底重算
+    clearTimeout(nsDebounce);
+    if(T1.NS<=5000){ recomputeT1MC(); renderG3(); renderT1Compare(); }
+    else { nsDebounce=setTimeout(()=>{ recomputeT1MC(); renderG3(); renderT1Compare(); },120); }
+  });
+  document.getElementById('resample1').addEventListener('click',()=>{
+    recomputeT1MC(); renderG3(); renderT1Compare();
+  });
+
+  // 预设
+  document.querySelectorAll('[data-preset]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const p=btn.dataset.preset;
+      if(p==='uniform-uniform') applyPreset('uniform','uniform',{a:-1.5,b:1.5},{a:-1.5,b:1.5});
+      else if(p==='gauss-gauss') applyPreset('gauss','gauss',{mu:-1,sig:1},{mu:1,sig:1.5});
+      else if(p==='exp-exp') applyPreset('exp','exp',{lam:1},{lam:1.5});
+    });
+  });
+}
+function applyPreset(dx,dy,pX,pY){
+  T1.distX=dx; T1.distY=dy;
+  document.getElementById('distX').value=dx;
+  document.getElementById('distY').value=dy;
+  buildParamControls('paramsX',dx,()=>{ recomputeT1(); fullRenderT1(); });
+  buildParamControls('paramsY',dy,()=>{ recomputeT1(); fullRenderT1(); });
+  // 覆盖默认参数值
+  Object.keys(pX).forEach(k=>{ const el=document.querySelector('#paramsX input[data-pid="'+k+'"]'); if(el){ el.value=pX[k]; document.getElementById('paramsX-'+k+'-val').textContent=pX[k].toFixed(1);} });
+  Object.keys(pY).forEach(k=>{ const el=document.querySelector('#paramsY input[data-pid="'+k+'"]'); if(el){ el.value=pY[k]; document.getElementById('paramsY-'+k+'-val').textContent=pY[k].toFixed(1);} });
+  recomputeT1(); fullRenderT1();
+}
+
+/* ============================================================
+ *  9. TAB 2 状态与渲染
+ * ============================================================ */
+const T2 = {
+  base:'uniform',
+  params:{},
+  N:3,
+  NS:20000,
+  standardize:true,
+  samples:null
+};
+
+function recomputeT2(){
+  T2.params=readParams('baseParams');
+  const dist=DISTS[T2.base];
+  const m=dist.moments(T2.params);
+  // 蒙特卡洛：每个样本 = N 个同分布变量之和
+  const NS=T2.NS;
+  const sums=new Array(NS).fill(0);
+  for(let i=0;i<NS;i++){
+    let s=0; for(let k=0;k<T2.N;k++) s+=dist.sample(T2.params);
+    sums[i]=s;
+  }
+  // 原始和的统计量（无论是否标准化，都先记原始值用于对照）
+  T2.rawStats = sampleStats(sums);
+  // 理论矩
+  T2.thStats = { mean:T2.N*m.mean, var:T2.N*m.var, std:Math.sqrt(T2.N*m.var) };
+  // 标准化
+  const sd=T2.thStats.std;
+  if(T2.standardize && sd>1e-9){
+    const muN=T2.N*m.mean;
+    for(let i=0;i<NS;i++) sums[i]=(sums[i]-muN)/sd;
+  }
+  T2.samples=sums;
+  T2.moments=m;
+}
+function renderG4(){
+  const dist=DISTS[T2.base]; const m=T2.moments;
+  const N=T2.N;
+  const sdSum=Math.sqrt(N*m.var);
+  // 展示范围
+  let lo,hi;
+  if(T2.standardize){ lo=-4.5; hi=4.5; }
+  else {
+    lo=N*m.mean-4.5*sdSum; hi=N*m.mean+4.5*sdSum;
+    lo=Math.min(lo, N*Math.min(...dist.support(T2.params)));
+    hi=Math.max(hi, N*Math.max(...dist.support(T2.params)));
+  }
+  const edges=linspace(lo,hi,90);
+  const hist=mcHistogram(T2.samples, edges);
+  const data=[];
+  // 蒙特卡洛直方图（受开关控制）
+  const mcOn=document.getElementById('mcToggle2').checked;
+  let ymax=0;
+  if(mcOn){
+    data.push({x:hist.centers,y:hist.density,type:'bar',
+      marker:{color:'rgba(37,99,235,0.42)',line:{width:0}},
+      width:Array(hist.centers.length).fill((edges[1]-edges[0])*0.92),
+      name:'蒙特卡洛',hovertemplate:'x≈%{x:.2f}<br>密度=%{y:.3f}<extra></extra>'});
+    ymax=Math.max(ymax, arrayMax(hist.density));
+  }
+  // 参考曲线（标准化→N(0,1)；否则→N(Nμ,Nσ²)）
+  const refMean = T2.standardize?0:N*m.mean;
+  const refSd   = T2.standardize?1:sdSum;
+  const xref=linspace(lo,hi,400);
+  const yref=xref.map(x=>Math.exp(-0.5*((x-refMean)/refSd)**2)/(refSd*SQRT2PI));
+  data.push(lineTrace(xref,yref,COLORS.REF,{name:'参考正态',line:{width:2.5}}));
+  ymax=Math.max(ymax, arrayMax(yref));
+  // 精确 N 重卷积（N≤8 且开启）
+  const exactOn=document.getElementById('exactToggle').checked;
+  if(exactOn && N<=8){
+    // 在标准化或原始坐标下都需要把卷积曲线变换到同一坐标
+    const rawGrid = linspace(
+      N*Math.min(...dist.support(T2.params)) - 0.5,
+      N*Math.max(...dist.support(T2.params)) + 0.5,
+      1000
+    );
+    // 重新构造一个真正覆盖 N 倍 support 的网格用于卷积
+    const sup=dist.support(T2.params);
+    const gLo = N*Math.min(sup[0], m.mean-(sup[1]-m.mean)); // 留点裕量
+    const gHi = N*Math.max(sup[1], m.mean+(m.mean-sup[0]));
+    const cGrid=linspace(Math.min(gLo, N*Math.min(...sup))-0.5, Math.max(gHi, N*Math.max(...sup))+0.5, 1400);
+    const fExact = nFoldConvolutionOnGrid(dist, T2.params, N, cGrid);
+    // 变换到显示坐标
+    const xShow=[], yShow=[];
+    const muN=N*m.mean;
+    for(let i=0;i<cGrid.length;i++){
+      let xv=cGrid[i];
+      if(T2.standardize && sdSum>1e-9) xv=(xv-muN)/sdSum;
+      if(xv>=lo && xv<=hi){ xShow.push(xv); yShow.push(fExact[i]/(T2.standardize?sdSum:1)); }
+    }
+    data.push(lineTrace(xShow,yShow,COLORS.EXACT,{name:'精确卷积',line:{width:2,dash:'dash'}}));
+  }
+  const lay=baseLayout({
+    xaxis:{title:{text:T2.standardize?'(S_N − Nμ)/(σ√N)':'S_N = Σ X_i',font:{size:11.5}}, gridcolor:'#eef0f3', zerolinecolor:'#d1d5db'},
+    yaxis:{title:{text:'密度',font:{size:11}}, gridcolor:'#eef0f3', zerolinecolor:'#d1d5db', rangemode:'tozero', range:[0,ymax*1.25]},
+    barmode:'overlay',
+    annotations:[
+      {x:0.99,y:0.97,yref:'paper',xref:'paper',showarrow:false,xanchor:'right',
+       text:`<b>和的均值</b> Nμ = ${(N*m.mean).toFixed(2)}<br><b>和的方差</b> Nσ² = ${(N*m.var).toFixed(2)}`,
+       bgcolor:'rgba(255,255,255,0.85)',bordercolor:'#e5e7eb',borderwidth:1,borderpad:6,font:{size:11.5}}
+    ]
+  });
+  Plotly.react('g4',data,lay,{displayModeBar:false,responsive:true});
+
+  // 更新标题/读数
+  document.getElementById('t2title').innerHTML = T2.standardize
+    ? `标准化后的 S<sub>${N}</sub> = Σ X<sub>i</sub>`
+    : `S<sub>${N}</sub> = X<sub>1</sub>+…+X<sub>${N}</sub> 的分布`;
+  const th=T2.thStats, mc=T2.rawStats;
+  document.getElementById('muN_th').textContent=th.mean.toFixed(3);
+  document.getElementById('muN_mc').textContent=mc.mean.toFixed(3);
+  document.getElementById('muN_err').innerHTML=fmtErr(th.mean, mc.mean);
+  document.getElementById('sigN_th').textContent=th.std.toFixed(3);
+  document.getElementById('sigN_mc').textContent=mc.std.toFixed(3);
+  document.getElementById('sigN_err').innerHTML=fmtErr(th.std, mc.std);
+  document.getElementById('nReadout').textContent='N = '+N;
+  document.getElementById('t2hint').innerHTML = T2.standardize
+    ? '标准化后，所有分布随 N 增大都趋向 <b>N(0,1)</b>——这就是中心极限定理。灰色实线即 N(0,1)。'
+    : '蓝色直方图为蒙特卡洛采样；灰色实线为同均值同方差的正态参考。';
+  document.getElementById('cmpNote2').innerHTML =
+    `理论：E[S<sub>${N}</sub>]=Nμ=${th.mean.toFixed(2)}，`
+    + `Var[S<sub>${N}</sub>]=Nσ²=${th.var.toFixed(2)}，σ=√N·σ=${th.std.toFixed(3)}。`
+    + `注意右表始终对照<b>原始和</b>的矩（不受标准化开关影响）。`;
+}
+function fullRenderT2(){ renderG4(); }
+
+function bindT2(){
+  fillDistSelect('baseDist');
+  document.getElementById('baseDist').value=T2.base;
+  buildParamControls('baseParams', T2.base, ()=>{ recomputeT2(); fullRenderT2(); });
+  document.getElementById('baseDist').addEventListener('change',e=>{
+    T2.base=e.target.value;
+    buildParamControls('baseParams', T2.base, ()=>{ recomputeT2(); fullRenderT2(); });
+    recomputeT2(); fullRenderT2();
+  });
+  const nEl=document.getElementById('nVar');
+  nEl.addEventListener('input',()=>{ T2.N=parseInt(nEl.value); recomputeT2(); fullRenderT2(); });
+  document.getElementById('stdToggle').addEventListener('change',e=>{ T2.standardize=e.target.checked; recomputeT2(); fullRenderT2(); });
+  document.getElementById('exactToggle').addEventListener('change',()=>{ fullRenderT2(); });
+  document.getElementById('mcToggle2').addEventListener('change',()=>{ fullRenderT2(); });
+}
+
+/* ============================================================
+ *  10. Tab 切换 + 启动
+ * ============================================================ */
+function switchTab(which){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active', t.dataset.tab===which));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(which).classList.add('active');
+  // 切换后重绘以适配尺寸
+  setTimeout(()=>{
+    if(which==='t1'){ fullRenderT1(); }
+    else { fullRenderT2(); }
+  },30);
+}
+document.getElementById('tabbtn1').addEventListener('click',()=>switchTab('t1'));
+document.getElementById('tabbtn2').addEventListener('click',()=>switchTab('t2'));
+
+/* 响应窗口尺寸 */
+window.addEventListener('resize', ()=>{
+  const t1Active=document.getElementById('t1').classList.contains('active');
+  if(t1Active) fullRenderT1(); else fullRenderT2();
+});
+
+/* 启动 */
+function boot(){
+  bindT1(); bindT2();
+  recomputeT1();
+  fullRenderT1();
+}
+// 等 Plotly 就绪
+if(window.Plotly){ boot(); }
+else { window.addEventListener('load', boot); }
+</script>
+</body>
+</html>
