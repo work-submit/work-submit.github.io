@@ -72,7 +72,8 @@ const directions = [
         summary: 'By integrating miniaturized cameras with stretchable interconnects, this skin-conformal rigid-in-soft system endows dynamic surfaces with high-fidelity visual capabilities, augmenting perception for wearables and embodied artificial intelligence.',
         tags: ['Intelligent Imaging', 'Wearable Imaging', 'Embodied AI'],
         links: [
-        { label: 'Project', href: './index.html?project=SkinSight', icon: 'fas fa-arrow-right' }
+        { label: 'Project', href: './index.html?project=SkinSight', icon: 'fas fa-arrow-right' },
+        { label: 'Paper', href: 'https://www.nature.com/articles/s41467-026-74257-9', icon: 'fas fa-file-pdf' }
         ]
     },
     {
