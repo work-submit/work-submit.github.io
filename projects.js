@@ -312,7 +312,7 @@ const directions = [
         direction: 'resources',
         directionLabel: 'Educational Resources',
         status: 'Probability Demo',
-        image: './projects/Resources/images/independent-sum-thumb.svg',
+        image: './projects/Resources/images/independent-sum-thumb.png',
         summary: 'An interactive demo for the distribution of sums, convolution, and the central limit theorem.',
         tags: ['Probability', 'Statistics', 'Convolution'],
         links: [

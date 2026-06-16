@@ -285,7 +285,7 @@
         </div>
 
         <div class="ctl-group">
-          <div class="ctl-label"><span>变量个数 N</span><span class="val" id="nReadout">N = 1</span></div>
+          <div class="ctl-label"><span>变量个数 N</span><span class="val" id="nReadout">N = 3</span></div>
           <input type="range" id="nVar" min="1" max="30" step="1" value="3">
         </div>
 
@@ -297,7 +297,7 @@
         </div>
         <div class="ctl-group">
           <label class="switch"><input type="checkbox" id="mcToggle2" checked> 蒙特卡洛直方图</label>
-          <div class="ctl-label" style="margin-top:10px"><span>采样次数 N</span><span class="val" id="nsVal2">20,000</span></div>
+          <div class="ctl-label" style="margin-top:10px"><span>采样次数 M</span><span class="val" id="nsVal2">20,000</span></div>
           <input type="range" id="nsRange2" min="100" max="50000" step="100" value="20000">
           <button class="btn" id="resample2" style="margin-top:8px">🎲 重新采样（同参数新随机样本）</button>
         </div>
@@ -1029,6 +1029,27 @@ function bindT2(){
   document.getElementById('stdToggle').addEventListener('change',e=>{ T2.standardize=e.target.checked; recomputeT2(); fullRenderT2(); });
   document.getElementById('exactToggle').addEventListener('change',()=>{ fullRenderT2(); });
   document.getElementById('mcToggle2').addEventListener('change',()=>{ fullRenderT2(); });
+
+  const nsEl2=document.getElementById('nsRange2');
+  let nsDebounce2=null;
+  nsEl2.addEventListener('input',()=>{
+    T2.NS=parseInt(nsEl2.value);
+    document.getElementById('nsVal2').textContent=T2.NS.toLocaleString();
+    clearTimeout(nsDebounce2);
+    if(T2.NS<=5000){
+      recomputeT2();
+      fullRenderT2();
+    } else {
+      nsDebounce2=setTimeout(()=>{
+        recomputeT2();
+        fullRenderT2();
+      },120);
+    }
+  });
+  document.getElementById('resample2').addEventListener('click',()=>{
+    recomputeT2();
+    fullRenderT2();
+  });
 }
 
 /* ============================================================
@@ -1057,6 +1078,9 @@ window.addEventListener('resize', ()=>{
 function boot(){
   bindT1(); bindT2();
   recomputeT1();
+  recomputeT2();
+  document.getElementById('nReadout').textContent='N = '+T2.N;
+  document.getElementById('nsVal2').textContent=T2.NS.toLocaleString();
   fullRenderT1();
 }
 // 等 Plotly 就绪
