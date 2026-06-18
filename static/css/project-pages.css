@@ -8,14 +8,14 @@
   background: #f7fafb;
   border: 1px solid #dbe6ed;
   border-radius: 16px;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.5rem 1.5rem;
 }
 
 .skinsight-logo-top {
-  width: min(360px, 70vw);
+  width: min(170px, 38vw);
   height: auto;
   display: block;
-  margin: 0 auto 1.2rem;
+  margin: 0 auto 0.9rem;
 }
 
 .skinsight-kicker {
@@ -27,16 +27,35 @@
   text-transform: uppercase;
 }
 
+.skinsight-author-list,
+.skinsight-affiliation-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 1.05rem;
+  row-gap: 0.18rem;
+}
+
+.skinsight-affiliation-list {
+  column-gap: 1.2rem;
+}
+
 .skinsight-venue {
   color: #ee7e61;
   font-weight: 800;
   margin-top: 0.9rem;
 }
 
-.skinsight-disabled-link {
-  cursor: default;
-  opacity: 0.72;
-  pointer-events: none;
+.skinsight-cover-figure {
+  margin: 1.6rem auto 0;
+}
+
+.skinsight-cover-figure img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 1825 / 862;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .skinsight-plain-figure {
@@ -109,26 +128,20 @@
   background: #fff;
 }
 
-.skinsight-video-placeholder {
-  min-height: 320px;
-  display: grid;
-  place-items: center;
-  margin-top: 1rem;
+.skinsight-video-wrapper {
+  width: min(920px, 100%);
+  margin: 1.4rem auto 0;
   border: 1px solid #dbe6ed;
-  background: #f6fafc;
-  color: #667586;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111827;
 }
 
-.skinsight-video-placeholder i {
+.skinsight-video-wrapper video {
+  width: 100%;
   display: block;
-  margin-bottom: 0.8rem;
-  color: #23838b;
-  font-size: 2.4rem;
-}
-
-.skinsight-video-placeholder p {
-  margin: 0;
-  font-weight: 700;
+  aspect-ratio: 16 / 9;
+  background: #111827;
 }
 
 .skinsight-bibtex {
@@ -138,10 +151,74 @@
   overflow-x: auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 980px) {
   .skinsight-pair-grid {
     grid-template-columns: 1fr;
   }
+
+  .skinsight-hero-panel {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    padding: 1.4rem 1rem 1rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .skinsight-hero .container,
+  .skinsight-hero .columns,
+  .skinsight-hero .column {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .skinsight-hero .publication-title {
+    max-width: 280px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1.55rem;
+    line-height: 1.16;
+    overflow-wrap: anywhere;
+  }
+
+  .skinsight-hero .publication-authors {
+    font-size: 0.98rem !important;
+    overflow-wrap: anywhere;
+  }
+
+  .skinsight-author-list,
+  .skinsight-affiliation-list {
+    max-width: 280px;
+    margin-right: auto;
+    margin-left: auto;
+    column-gap: 0.7rem;
+    font-size: 0.88rem !important;
+  }
+
+  .skinsight-affiliation-list .author-block {
+    display: block;
+    width: 100%;
+  }
+
+  .skinsight-hero .author-block {
+    margin-bottom: 0.25rem;
+  }
+
+  .skinsight-venue {
+    display: inline-block;
+    max-width: 280px;
+    font-size: 1.05rem;
+    line-height: 1.18;
+  }
+
+  .skinsight-logo-top {
+    width: min(132px, 44vw);
+  }
+
+  .skinsight-cover-figure img {
+    aspect-ratio: 4 / 3;
+    object-position: 36% center;
+  }
+
 }
 
 .lucid-logo-top {
