@@ -404,8 +404,12 @@
 }
 
 .project-page-envelope {
-  font-size: 1.6em;
+  display: inline-block;
+  margin-left: 0.15em;
+  font-size: 0.9em;
   font-weight: 800;
+  line-height: 1;
+  vertical-align: 0.02em;
 }
 
 .project-page-list {

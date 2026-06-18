@@ -13,7 +13,7 @@
               <span class="author-block">Jianing Zhang<sup>1,†</sup></span>
               <span class="author-block">Youhai Liu<sup>1</sup></span>
               <span class="author-block">Yichen Wang<sup>1</sup></span>
-              <span class="author-block">Lu Fang<sup>1,2</sup></span><span class="project-page-envelope">✉</span>
+              <span class="author-block">Lu Fang<sup>1,2</sup><span class="project-page-envelope">✉</span></span>
             </div>
 
             <div class="is-size-6 publication-authors skinsight-affiliation-list">
@@ -54,7 +54,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Array-based imaging systems can map complex environments, but their structural rigidity limits intimate integration with dynamic, non-rigid hosts such as human skin and soft robots. SkinSight addresses this trade-off with a hybrid rigid-in-soft architecture: miniaturized imagers are protected as rigid optical nodes, while stretchable interconnects and an elastic substrate absorb macroscopic deformation. Together with deformation-adaptive geometric inference based on large-scale pre-trained vision transformers, the system enables stable, high-resolution, calibration-free 3D visual perception on deformable surfaces.
+            Array-based imaging systems offer unparalleled capabilities for mapping complex environments, but their inherent structural rigidity prevents intimate integration with dynamic, non-rigid hosts such as human skin and soft robots. While flexible visual sensor arrays offer compliance, fabrication constraints severely limit their pixel density and overall resolution. Here, we present SkinSight, a skin-conformal imaging system that overcomes this trade-off through a hybrid “rigid-in-soft” architecture. By integrating miniaturized imagers with stretchable interconnects, SkinSight achieves stable, high-resolution imaging under complex mechanical deformations. Furthermore, to resolve processing challenges induced by continuous deformation, we leverage large-scale pre-trained vision transformers for end-to-end geometric inference. This deformation-adaptive framework no longer relies on rigid structural priors, enabling robust, calibration-free 3D visual perception. We demonstrate seamless integration with human skin, transforming a human palm into a sensory interface capable of perceiving objects beyond the direct line of sight. By augmenting the perceptual capabilities of humans and robots, SkinSight demonstrates broad potential for next-generation wearables and embodied artificial intelligence.
           </p>
         </div>
       </div>
@@ -95,25 +95,10 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Rigid-In-Soft Architecture</h2>
+        <h2 class="title is-3">Rigid-In-Soft Architecture and Reconstruction</h2>
         <div class="content has-text-justified">
           <p>
-            The system physically decouples optical sensing from mechanical strain. Each rigid node integrates a CMOS image sensor, micro-lens array, lens holder, and nano-lens into a compact imager module, preserving local imaging geometry during deformation. The surrounding soft matrix and serpentine interconnects accommodate bending, twisting, and stretching, allowing the array to conform to the carrier while maintaining reliable image signal transmission.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="reconstruction">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Deformation-Adaptive Reconstruction</h2>
-        <div class="content has-text-justified">
-          <p>
-            Deformation creates a continuously changing, non-rigid camera geometry. SkinSight therefore pairs its hardware with an asynchronous computational framework that estimates view poses and 3D point maps from temporally chunked video streams, then refines the scene through Gaussian optimization. By leveraging pre-trained vision transformers for end-to-end geometric inference, the framework avoids rigid structural priors and supports robust reconstruction without pre-calibrated camera extrinsics.
+            SkinSight physically decouples optical sensing from mechanical strain: each rigid node integrates a CMOS image sensor, micro-lens array, lens holder, and nano-lens into a compact imager module, while the surrounding soft matrix and serpentine interconnects accommodate bending, twisting, and stretching. Because deformation creates a continuously changing, non-rigid camera geometry, SkinSight pairs this hardware with an asynchronous computational framework that estimates view poses and 3D point maps from temporally chunked video streams, then refines the scene through Gaussian optimization. By leveraging pre-trained vision transformers for end-to-end geometric inference, the framework avoids rigid structural priors and supports robust reconstruction without pre-calibrated camera extrinsics.
           </p>
         </div>
       </div>

@@ -68,7 +68,7 @@ const directions = [
         direction: 'intelligent-imaging',
         directionLabel: 'Intelligent Imaging',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">Nature Communications</b> 2026',
-        image: './projects/SkinSight_fig/skinsight_cover_wide.png',
+        image: './projects/SkinSight_fig/skinsight_cover_square.png',
         summary: 'SkinSight integrates miniaturized imagers with stretchable interconnects in a rigid-in-soft architecture, enabling high-resolution, deformation-adaptive 3D visual perception on human skin and soft robotic surfaces.',
         tags: ['Intelligent Imaging', 'Wearable Imaging', 'Embodied AI'],
         links: [
