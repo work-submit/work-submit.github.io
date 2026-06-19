@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="180" viewBox="0 0 760 180" role="img" aria-labelledby="title desc">
+  <title id="title">FS-DVS logo</title>
+  <desc id="desc">A center-surround sensing kernel mark with red and blue event signals and the FS-DVS wordmark.</desc>
+  <defs>
+    <linearGradient id="mark-bg" x1="16" y1="24" x2="144" y2="156" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef7fb"/>
+    </linearGradient>
+    <linearGradient id="event-red" x1="101" y1="45" x2="148" y2="45" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff8a73"/>
+      <stop offset="1" stop-color="#ee3f4d"/>
+    </linearGradient>
+    <linearGradient id="event-blue" x1="15" y1="135" x2="62" y2="135" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2468d8"/>
+      <stop offset="1" stop-color="#7ed7ee"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#12304a" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#soft-shadow)">
+    <rect x="22" y="22" width="136" height="136" rx="34" fill="url(#mark-bg)" stroke="#c8ddec" stroke-width="2"/>
+    <g opacity="0.9">
+      <rect x="52" y="52" width="24" height="24" rx="5" fill="#e8f0fb"/>
+      <rect x="80" y="52" width="24" height="24" rx="5" fill="#ffe9e4"/>
+      <rect x="108" y="52" width="24" height="24" rx="5" fill="#dfeafb"/>
+      <rect x="52" y="80" width="24" height="24" rx="5" fill="#ffece8"/>
+      <rect x="80" y="80" width="24" height="24" rx="5" fill="#ef3347"/>
+      <rect x="108" y="80" width="24" height="24" rx="5" fill="#e9effb"/>
+      <rect x="52" y="108" width="24" height="24" rx="5" fill="#dfeafa"/>
+      <rect x="80" y="108" width="24" height="24" rx="5" fill="#fff4f1"/>
+      <rect x="108" y="108" width="24" height="24" rx="5" fill="#dbe8fb"/>
+    </g>
+    <path d="M40 42h24M40 42v24M140 138h-24M140 138v-24" fill="none" stroke="#0b4ea2" stroke-width="5" stroke-linecap="round"/>
+    <path d="M118 35c11 4 18 11 22 22M40 123c5 11 13 18 24 22" fill="none" stroke="#ef3347" stroke-width="5" stroke-linecap="round"/>
+    <path d="M31 86h-15M31 100h-15M144 78h15M144 92h15" fill="none" stroke="#15395b" stroke-width="4" stroke-linecap="round"/>
+    <path d="M145 46c12 9 18 22 18 38M16 134c-1-17 5-30 18-39" fill="none" stroke-linecap="round" stroke-width="4" stroke-dasharray="3 10"/>
+    <path d="M145 46c12 9 18 22 18 38" stroke="url(#event-red)"/>
+    <path d="M16 134c-1-17 5-30 18-39" stroke="url(#event-blue)"/>
+  </g>
+
+  <g transform="translate(202 46)">
+    <text x="0" y="54" fill="#13233a" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="58" font-weight="800">FS-DVS</text>
+    <text x="3" y="91" fill="#496276" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="600">Frequency-selective dynamic visual sensing</text>
+  </g>
+</svg>

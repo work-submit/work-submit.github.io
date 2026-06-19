@@ -6,6 +6,8 @@ const contentPaths = {
         'skinsight': './projects/SkinSight.html',
         '3m-ti': './projects/3MTI.html',
         'dmdiff': './projects/DMDiff.html',
+        'Dante': './projects/DANTE.html',
+        'dante': './projects/DANTE.html',
         'lucid': './projects/LUCID.html',
         'about': './about.html',
         'team': './team.html',
@@ -53,8 +55,8 @@ const directions = [
         direction: 'intelligent-imaging',
         directionLabel: 'Intelligent Imaging',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">arXiv</b> 2026',
-        image: './projects/FS_DVS_fig/fs_dvs_card_home.png',
-        summary: 'FS-DVS introduces a learnable spatial filter before event triggering in dynamic vision sensors, restoring mid-frequency structure and improving robustness for detection, recognition, and segmentation.',
+        image: './projects/FS_DVS_fig/web/fs_dvs_logo_v2.png',
+        summary: 'FS-DVS learns a center-surround spatial filter before event triggering, restoring mid-frequency structure and improving information completeness for detection, recognition, and segmentation.',
         tags: ['Neuromorphic Vision', 'Event Camera'],
         links: [
         { label: 'Project', href: './index.html?project=fsdvs', icon: 'fas fa-arrow-right' },
@@ -193,10 +195,11 @@ const directions = [
         direction: 'ai-optics',
         directionLabel: 'Optical Neural Networks',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">Nature Communications</b> 2023',
-        image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/nc_2023.jpg',
+        image: './projects/DANTE_fig/dante_logo_symbol.png',
         summary: 'A dual-neuron optical-artificial learning approach for training large-scale diffractive neural networks, achieving VGG-level performance on ImageNet in simulation with a network that is 10 times larger than existing ones.',
         tags: ['Optics + AI', 'Intelligent Computing', 'Optical Neural Networks'],
         links: [
+        { label: 'Project', href: './index.html?project=dante', icon: 'fas fa-arrow-right' },
         { label: 'Paper', href: 'https://www.nature.com/articles/s41467-023-42984-y', icon: 'fas fa-file-pdf' },
         { label: 'Code', href: 'https://github.com/yuanxy92/DANTE/tree/dante_nc', icon: 'fab fa-github' }
         ]

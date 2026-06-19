@@ -1,0 +1,166 @@
+<section class="hero dante-hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="dante-hero-panel">
+            <img class="dante-logo-top" src="./projects/DANTE_fig/dante_logo.png" alt="DANTE logo">
+            <h1 class="title is-1 publication-title">
+              Training large-scale optoelectronic neural networks with dual-neuron optical-artificial learning
+            </h1>
+
+            <div class="is-size-5 publication-authors dante-author-list">
+              <span class="author-block"><b>Xiaoyun Yuan</b><sup>1,2,3</sup></span>
+              <span class="author-block">Yong Wang<sup>1</sup></span>
+              <span class="author-block">Zhihao Xu<sup>1,4</sup></span>
+              <span class="author-block">Tiankuang Zhou<sup>1,2,3</sup></span>
+              <span class="author-block">Lu Fang<sup>1,2,3,✉</sup></span>
+            </div>
+
+            <div class="is-size-6 publication-authors dante-affiliation-list">
+              <span class="author-block"><sup>1</sup>Department of Electronic Engineering, Tsinghua University</span>
+              <span class="author-block"><sup>2</sup>BNRist, Tsinghua University</span>
+              <span class="author-block"><sup>3</sup>Institute for Brain and Cognitive Science, Tsinghua University</span>
+              <span class="author-block"><sup>4</sup>Tsinghua Shenzhen International Graduate School</span>
+            </div>
+
+            <div class="is-size-4 publication-title">
+              <span class="dante-venue">Nature Communications 2023</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://www.nature.com/articles/s41467-023-42984-y" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://doi.org/10.1038/s41467-023-42984-y" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fas fa-link"></i></span>
+                    <span>DOI</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/yuanxy92/DANTE/tree/dante_nc" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+            <!-- <figure class="dante-cover-figure">
+              <img src="./projects/DANTE_fig/dante_architecture.webp" alt="Principle of dual-neuron optical-artificial learning">
+            </figure> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dante-section" id="overview">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column dante-copy-column">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Optoelectronic neural networks (ONNs) are a promising avenue in AI computing due to their potential for parallelization, power efficiency, and speed. However, training large-scale diffractive networks faces challenges due to the computational and memory costs of optical diffraction modeling. Here, we present DANTE, a dual-neuron optical-artificial learning architecture. Optical neurons model the optical diffraction, while artificial neurons approximate the intensive optical-diffraction computations with lightweight functions. DANTE improves convergence by employing iterative global artificial-learning steps and local optical-learning steps, enabling large-scale ONNs that were previously difficult to train.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <figure class="dante-showcase">
+      <img src="./projects/DANTE_fig/dante_architecture.webp" alt="DANTE architecture overview">
+      <figcaption>
+        Principle of dual-neuron optical-artificial learning. Each optical modulation layer contains an optical-neuron layer that accurately models diffraction and an artificial-neuron layer that approximates the computationally intensive optical model.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section dante-section" id="architecture">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column dante-copy-column">
+        <h2 class="title is-3">Dual-Neuron Optical-Artificial Learning</h2>
+        <div class="content has-text-justified">
+          <p>
+            Existing single-neuron learning approaches connect all optical neurons into one large differentiable function and optimize the entire physical system directly using backpropagation. In DANTE, the dual-neuron switch alternates between two steps. In the global artificial-learning step, artificial-neuron layers are connected as a complex-valued ANN and trained to fit the dataset. In the local optical-learning step, the network is decomposed into independent layer pairs, and each optical-neuron layer is optimized to align its impulse response with the corresponding artificial-neuron layer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dante-section" id="results">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column dante-copy-column">
+        <h2 class="title is-3">Training Speed and Large-Scale ONNs</h2>
+        <div class="content has-text-justified">
+          <p>
+            In simulation experiments, DANTE achieves a training acceleration of approximately 200 times and elevates accuracy by approximately 10% on the CIFAR-10 benchmark compared to single-neuron learning. DANTE also enables the training of large-scale ONNs with 150 million neurons on ImageNet, achieving performance on par with the representative VGG network in simulation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dante-result-stack">
+      <figure class="dante-showcase">
+        <img src="./projects/DANTE_fig/dante_training_results.webp" alt="CIFAR-10 training acceleration and accuracy results">
+        <figcaption>
+          DANTE improves ONN training on CIFAR-10, demonstrating faster convergence, higher simulation accuracy, and substantially reduced training time compared with single-neuron learning.
+        </figcaption>
+      </figure>
+      <figure class="dante-showcase">
+        <img src="./projects/DANTE_fig/dante_large_scale.webp" alt="Large-scale ONN results on CIFAR-10 and ImageNet">
+        <figcaption>
+          Large-scale ONNs enabled by DANTE are evaluated on CIFAR-10 and ImageNet-32, with VGG16 presented as a reference for ImageNet-scale performance.
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section dante-section" id="physical-system">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column dante-copy-column">
+        <h2 class="title is-3">Physical Optoelectronic Demonstration</h2>
+        <div class="content has-text-justified">
+          <p>
+            We further develop a two-layer physical ONN system based on DANTE. The implemented system uses off-the-shelf optical modulation devices and electronic relay operations, and can effectively extract features to improve the classification of natural images. The results provide evidence that DANTE can be successfully implemented on physical ONNs despite assembly errors and system noise.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <figure class="dante-showcase">
+      <img src="./projects/DANTE_fig/dante_physical_system.webp" alt="Physical ONN system and experimental results">
+      <figcaption>
+        DANTE on a physical ONN system, including the prototype, two-layer ONN structure, simulation and optical results, and accuracy evaluation on MNIST, CIFAR-10, and ImageNet datasets.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section dante-section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre class="dante-bibtex"><code>@article{yuan2023dante,
+  title={Training large-scale optoelectronic neural networks with dual-neuron optical-artificial learning},
+  author={Yuan, Xiaoyun and Wang, Yong and Xu, Zhihao and Zhou, Tiankuang and Fang, Lu},
+  journal={Nature Communications},
+  volume={14},
+  pages={7110},
+  year={2023},
+  doi={10.1038/s41467-023-42984-y}
+}</code></pre>
+  </div>
+</section>
