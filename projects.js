@@ -4,6 +4,8 @@ const contentPaths = {
         'ii-2606-06856': './projects/FS_DVS.html',
         'SkinSight': './projects/SkinSight.html',
         'skinsight': './projects/SkinSight.html',
+        'unstructuredcam': './projects/Gigapixel.html',
+        'gigapixel': './projects/Gigapixel.html',
         '3m-ti': './projects/3MTI.html',
         'dmdiff': './projects/DMDiff.html',
         'Dante': './projects/DANTE.html',
@@ -103,6 +105,7 @@ const directions = [
         summary: 'An unstructured hierarchical array camera that adaptively combines multiscale hybrid cameras, reducing hardware cost while improving flexibility, robustness, and scalability.',
         tags: ['Gigapixel Videography', 'Unstructured Camera Arrays', 'Computational Imaging'],
         links: [
+        { label: 'Project', href: './index.html?project=unstructuredcam', icon: 'fas fa-arrow-right' },
         { label: 'Paper', href: 'https://www.nature.com/articles/s41377-021-00485-x', icon: 'fas fa-file-pdf' }
         ]
     },

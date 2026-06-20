@@ -151,6 +151,227 @@
   overflow-x: auto;
 }
 
+.gigapixel-hero-panel {
+  background: #f7fafb;
+  border: 1px solid #dbe6ed;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+}
+
+.gigapixel-author-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 1rem;
+  row-gap: 0.2rem;
+  color: #5f6d7c;
+}
+
+.gigapixel-teaser {
+  margin: 1.6rem auto 0;
+  width: min(900px, 100%);
+}
+
+.gigapixel-teaser img {
+  width: 100%;
+  display: block;
+  border: 1px solid #dbe6ed;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.gigapixel-figure {
+  margin: 1.35rem auto 0;
+  width: min(940px, 100%);
+}
+
+.gigapixel-figure img {
+  width: 100%;
+  display: block;
+  border: 1px solid #dbe6ed;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.gigapixel-figure figcaption {
+  margin-top: 0.75rem;
+  color: #4f5d6a;
+  font-size: 0.96rem;
+  line-height: 1.55;
+  text-align: justify;
+}
+
+.gigapixel-video-card {
+  width: min(940px, 100%);
+  margin: 1.25rem auto 0;
+}
+
+.gigapixel-video-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 0.65rem;
+  border: 1px solid #dbe6ed;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  color: #405064;
+  background: #f7fafb;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.gigapixel-video-wrapper {
+  border: 1px solid #dbe6ed;
+  border-radius: 0 8px 8px 8px;
+  overflow: hidden;
+  background: #111827;
+}
+
+.gigapixel-video-wrapper video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: #111827;
+}
+
+.gigapixel-publications ul {
+  margin: 0.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gigapixel-publications li {
+  position: relative;
+  margin-bottom: 0.75rem;
+  padding: 0.8rem 0.9rem 0.8rem 1.05rem;
+  border: 1px solid #dbe6ed;
+  border-radius: 8px;
+  background: #fff;
+  line-height: 1.58;
+}
+
+.gigapixel-publications a {
+  color: #1c6d78;
+  font-weight: 700;
+}
+
+.gigapixel-section + .gigapixel-section {
+  padding-top: 2rem;
+}
+
+@media screen and (max-width: 980px) {
+  .gigapixel-hero .hero-body,
+  .gigapixel-section {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .project-detail .gigapixel-hero .container.is-max-desktop,
+  .project-detail .gigapixel-section .container.is-max-desktop {
+    width: calc(100vw - 48px) !important;
+    max-width: calc(100vw - 48px) !important;
+  }
+
+  .gigapixel-hero-panel {
+    width: calc(100vw - 48px);
+    max-width: calc(100vw - 48px);
+    padding: 1.4rem 1rem 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+  }
+
+  .gigapixel-hero .container,
+  .gigapixel-hero .columns,
+  .gigapixel-hero .column {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .gigapixel-hero .columns,
+  .gigapixel-section .columns {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .gigapixel-section .container,
+  .gigapixel-section .column {
+    width: calc(100vw - 48px);
+    min-width: 0;
+    max-width: calc(100vw - 48px);
+  }
+
+  .project-detail .gigapixel-section .columns.is-centered > .column:not(.is-narrow) {
+    width: calc(100vw - 48px) !important;
+    max-width: calc(100vw - 48px) !important;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .gigapixel-hero .publication-title {
+    max-width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1.65rem;
+    line-height: 1.16;
+    overflow-wrap: anywhere;
+  }
+
+  .gigapixel-hero .publication-authors {
+    font-size: 0.98rem !important;
+    overflow-wrap: anywhere;
+  }
+
+  .gigapixel-hero .publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.45rem;
+  }
+
+  .gigapixel-hero .publication-links .button {
+    max-width: 100%;
+  }
+
+  .gigapixel-teaser {
+    width: 100%;
+  }
+
+  .gigapixel-teaser img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .gigapixel-author-list,
+  .gigapixel-publications {
+    max-width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    column-gap: 0.7rem;
+    font-size: 0.88rem !important;
+  }
+
+  .gigapixel-section .content.has-text-justified {
+    text-align: left !important;
+  }
+
+  .gigapixel-video-label {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #dbe6ed;
+    border-radius: 8px 8px 0 0;
+    line-height: 1.2;
+  }
+
+  .gigapixel-video-wrapper {
+    border-radius: 0 0 8px 8px;
+  }
+}
+
 @media screen and (max-width: 980px) {
   .skinsight-pair-grid {
     grid-template-columns: 1fr;

@@ -1,0 +1,187 @@
+<section class="hero gigapixel-hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="gigapixel-hero-panel">
+            <h1 class="title is-1 publication-title">A modular hierarchical array camera</h1>
+            <div class="is-size-5 publication-authors gigapixel-author-list">
+              <span class="author-block"><b>Xiaoyun Yuan*</b></span>
+              <span class="author-block">Mengqi Ji*</span>
+              <span class="author-block">Jiamin Wu</span>
+              <span class="author-block">David J. Brady</span>
+              <span class="author-block">Qionghai Dai</span>
+              <span class="author-block">Lu Fang<span aria-label="corresponding author">✉</span></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://www.nature.com/articles/s41377-021-00485-x" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://gigavision.cn/data/news?nav=DataSet%20Panda&type=nav&t=1732450676652" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fas fa-database"></i></span>
+                    <span>Datasets</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+            <figure class="gigapixel-teaser">
+              <img src="./projects/Gigapixel_fig/light_teaser.webp" alt="Teaser figure for computational imaging with camera arrays">
+            </figure>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section gigapixel-section" id="overview">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            Camera array-based imaging uses a large number of inexpensive cameras to create virtual cameras that outperform real ones. They can function in many ways by changing the arrangement and aiming of the cameras. We developed an unstructured gigapixel array camera, UnstructuredCam, beyond the resolution of a single camera and human visual perception, to capture large-scale dynamic scenes with both wide field of view and high resolution. The prototype uses one global camera and 19 local cameras, with all cameras mounted on gimbals for adjustable poses.
+          </p>
+        </div>
+
+        <figure class="gigapixel-figure">
+          <img src="./projects/Gigapixel_fig/light_teaser2.jpg" alt="System overview and field deployment of the modular hierarchical array camera">
+          <figcaption>
+            Modular hierarchical array camera design and field deployment for wide-field, high-resolution gigapixel videography.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section gigapixel-section" id="realtime-demo">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Interactive Gigapixel Videography</h2>
+        <div class="content has-text-justified">
+          <p>
+            The left side shows captured videos and the right side shows recorded screens from Nanshan I Park, Shenzhen. The viewer can choose where to zoom in and inspect details interactively. A blue road sign about 300 m away remains readable, and the license plate of a car at around 150 m can be clearly distinguished.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gigapixel-video-card">
+      <div class="gigapixel-video-label">Demo 01 / Realtime zoom-in inspection</div>
+      <div class="gigapixel-video-wrapper">
+        <video controls preload="metadata" playsinline>
+          <source src="https://github.com/yuanxy92/yuanxy92.github.io/raw/refs/heads/master/videos/gigapixel/realtime_demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section gigapixel-section" id="online-calibration">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Online Calibration and Robust Reconfiguration</h2>
+        <div class="content has-text-justified">
+          <p>
+            By proposing an unstructured embedding algorithm, UnstructuredCam is robust to local camera movement, loss, and addition because it can react and recover quickly through online recalibration. During real-time streaming, a local camera can be adjusted and calibrated online within a short time. In this demonstration, the camera moves from the red position to the yellow position.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gigapixel-video-card">
+      <div class="gigapixel-video-label">Demo 02 / Pose adjustment and recovery</div>
+      <div class="gigapixel-video-wrapper">
+        <video controls preload="metadata" playsinline>
+          <source src="https://github.com/yuanxy92/yuanxy92.github.io/raw/refs/heads/master/videos/gigapixel/online_calibration_demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section gigapixel-section" id="vr">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Large-Scale 3D Videography</h2>
+        <div class="content has-text-justified">
+          <p>
+            UnstructuredCam can also be extended for distant large-scale 3D videography, enabling immersive virtual-reality experiences from large outdoor scenes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gigapixel-video-card">
+      <div class="gigapixel-video-label">Demo 03 / Multiscale 3D perception</div>
+      <div class="gigapixel-video-wrapper">
+        <video controls preload="metadata" playsinline>
+          <source src="https://github.com/yuanxy92/yuanxy92.github.io/raw/refs/heads/master/videos/gigapixel/3d_perception_demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section gigapixel-section" id="datasets">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Datasets and More Demos</h2>
+        <div class="content has-text-justified">
+          <p>
+            Based on UnstructuredCam, we built the <a href="https://gigavision.cn/data/news?nav=DataSet%20Panda&type=nav&t=1732450676652" target="_blank" rel="noopener noreferrer">PANDA and GigaMVS gigapixel datasets</a> using our array camera to promote the study of large-scale, long-range, multi-target visual analysis centered on human behavior. The following video shows more gigapixel videography captured by UnstructuredCam.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gigapixel-video-card">
+      <div class="gigapixel-video-label">Demo 04 / More captured gigapixel videos</div>
+      <div class="gigapixel-video-wrapper">
+        <video controls preload="metadata" playsinline>
+          <source src="https://github.com/yuanxy92/yuanxy92.github.io/raw/refs/heads/master/videos/gigapixel/more_demos.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section gigapixel-section" id="publications">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Publications and Links</h2>
+        <div class="content gigapixel-publications">
+          <ul>
+            <li><a href="https://www.nature.com/articles/s41377-021-00485-x" target="_blank" rel="noopener noreferrer">A modular hierarchical array camera (cover article)</a>, <strong>Light: Science &amp; Applications</strong> 2021.</li>
+            <li><a href="https://ieeexplore.ieee.org/abstract/document/7951481" target="_blank" rel="noopener noreferrer">Multiscale gigapixel video: A cross resolution image matching and warping approach</a>, <strong>IEEE International Conference on Computational Photography (ICCP)</strong> 2017.</li>
+            <li><a href="https://ieeexplore.ieee.org/abstract/document/9105244/" target="_blank" rel="noopener noreferrer">Multiscale-vr: Multiscale gigapixel 3D panoramic videography for virtual reality</a>, <strong>IEEE International Conference on Computational Photography (ICCP)</strong> 2020.</li>
+            <li><a href="https://ieeexplore.ieee.org/abstract/document/9099445" target="_blank" rel="noopener noreferrer">Crossnet++: Cross-scale large-parallax warping for reference-based super-resolution</a>, <strong>IEEE Transactions on Pattern Analysis and Machine Intelligence (PAMI)</strong> 2020.</li>
+            <li><a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_PANDA_A_Gigapixel-Level_Human-Centric_Video_Dataset_CVPR_2020_paper.html" target="_blank" rel="noopener noreferrer">Panda: A gigapixel-level human-centric video dataset</a>, <strong>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</strong> 2020. <a href="https://gigavision.cn/data/news?nav=DataSet%20Panda&type=nav&t=1732452632314" target="_blank" rel="noopener noreferrer">&lt;Dataset page&gt;</a></li>
+            <li><a href="https://ieeexplore.ieee.org/abstract/document/9547729" target="_blank" rel="noopener noreferrer">GigaMVS: a benchmark for ultra-large-scale gigapixel-level 3D reconstruction</a>, <strong>IEEE Transactions on Pattern Analysis and Machine Intelligence (PAMI)</strong> 2021. <a href="https://gigavision.cn/data/news?nav=GigaMVS%20RAWDATA&type=nav&t=1731982252980" target="_blank" rel="noopener noreferrer">&lt;Dataset page&gt;</a></li>
+            <li><a href="https://www.beijing.gov.cn/zhengce/zcjd/202212/t20221230_2887402.html" target="_blank" rel="noopener noreferrer">16位科学家、191项成果荣获2021年度北京市科学技术奖</a></li>
+            <li><a href="https://www.zohetec.com/video/85-en.html" target="_blank" rel="noopener noreferrer">助力北京冬奥亿像素全景智能防控项目</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

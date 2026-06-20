@@ -128,9 +128,9 @@ img {
 .lab-hero {
   min-height: 430px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(330px, 0.48fr);
+  grid-template-columns: minmax(0, 0.84fr) minmax(500px, 0.72fr);
   align-items: center;
-  gap: 40px;
+  gap: 28px;
   padding: 52px 0 34px;
 }
 
@@ -154,7 +154,7 @@ img {
 }
 
 .hero-lede {
-  max-width: 680px;
+  max-width: 650px;
   margin: 28px 0 0;
   color: var(--muted);
   font-size: 1.18rem;
