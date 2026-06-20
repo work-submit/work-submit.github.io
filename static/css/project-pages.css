@@ -249,6 +249,13 @@
   font-weight: 700;
 }
 
+.pact-bibtex {
+  border-radius: 14px;
+  background: #f7fafb;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+}
+
 .pact-section + .pact-section {
   padding-top: 2rem;
 }
@@ -450,6 +457,13 @@
 .gigapixel-publications a {
   color: #1c6d78;
   font-weight: 700;
+}
+
+.gigapixel-bibtex {
+  border-radius: 14px;
+  background: #f7fafb;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
 }
 
 .gigapixel-section + .gigapixel-section {
