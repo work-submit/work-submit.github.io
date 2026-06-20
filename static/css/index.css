@@ -342,11 +342,7 @@ img {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-}
-
-.project-summary {
-  min-height: calc(1.42em * 4);
+  -webkit-line-clamp: 3;
 }
 
 .tag-list {
