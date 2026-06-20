@@ -100,7 +100,7 @@ const directions = [
         directionLabel: 'Gigapixel Imaging',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">Light: Science & Applications</b> 2021',
         image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/light_2021.jpg',
-        summary: 'A hemispherical ultrasound array enables photoacoustic brain imaging with 350-micrometre resolution and 2-second updates.',
+        summary: 'An unstructured hierarchical array camera that adaptively combines multiscale hybrid cameras, reducing hardware cost while improving flexibility, robustness, and scalability.',
         tags: ['Gigapixel Videography', 'Unstructured Camera Arrays', 'Computational Imaging'],
         links: [
         { label: 'Paper', href: 'https://www.nature.com/articles/s41377-021-00485-x', icon: 'fas fa-file-pdf' }
