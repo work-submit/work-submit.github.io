@@ -103,7 +103,7 @@
       function projectCard(project) {
         return `
           <article class="project-card">
-            <a class="project-image" aria-label="Open ${project.title}">
+            <a class="project-image ${project.imageClass || ''}" aria-label="Open ${project.title}">
               <img src="${project.image}" alt="${project.title} preview">
             </a>
             <div class="project-content">

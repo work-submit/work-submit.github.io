@@ -4,6 +4,8 @@ const contentPaths = {
         'ii-2606-06856': './projects/FS_DVS.html',
         'SkinSight': './projects/SkinSight.html',
         'skinsight': './projects/SkinSight.html',
+        'brainpact': './projects/PACT.html',
+        'pact': './projects/PACT.html',
         'unstructuredcam': './projects/Gigapixel.html',
         'gigapixel': './projects/Gigapixel.html',
         '3m-ti': './projects/3MTI.html',
@@ -72,7 +74,7 @@ const directions = [
         direction: 'intelligent-imaging',
         directionLabel: 'Intelligent Imaging',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">Nature Communications</b> 2026',
-        image: './projects/SkinSight_fig/teaser.jpg',
+        image: './projects/SkinSight_fig/teaser_transparent.png',
         summary: 'SkinSight combines miniaturized imagers and stretchable interconnects in a rigid-in-soft array for skin-conformal visual sensing.',
         tags: ['Intelligent Imaging', 'Wearable Imaging', 'Embodied AI'],
         links: [
@@ -87,10 +89,11 @@ const directions = [
         direction: 'intelligent-imaging',
         directionLabel: 'Photoacoustic Computed Tomography',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">Nature Biomedical Engineering</b> 2022',
-        image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/nbme_2022.jpg',
+        image: './projects/PACT_fig/nbme_2022_transparent.png',
         summary: 'A hemispherical ultrasound array enables photoacoustic brain imaging with 350-micrometre resolution and 2-second updates.',
         tags: ['Functional Brain Imaging', 'Photoacoustic Computed Tomography'],
         links: [
+        { label: 'Project', href: './index.html?project=brainpact', icon: 'fas fa-arrow-right' },
         { label: 'Paper', href: 'https://www.nature.com/articles/s41551-021-00735-8', icon: 'fas fa-file-pdf' }
         ]
     },
@@ -101,7 +104,7 @@ const directions = [
         direction: 'intelligent-imaging',
         directionLabel: 'Gigapixel Imaging',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">Light: Science & Applications</b> 2021',
-        image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/light_2021.jpg',
+        image: './projects/Gigapixel_fig/light_2021_cover_index.jpg',
         summary: 'An unstructured hierarchical array camera that adaptively combines multiscale hybrid cameras, reducing hardware cost while improving flexibility, robustness, and scalability.',
         tags: ['Gigapixel Videography', 'Unstructured Camera Arrays', 'Computational Imaging'],
         links: [
@@ -165,7 +168,7 @@ const directions = [
         direction: 'ai-vision',
         directionLabel: 'Generative AI for Vision',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">ICCV</b> 2025',
-        image: './projects/DMDiff_fig/images/teaser_square.jpg',
+        image: './projects/DMDiff_fig/images/teaser_square_transparent.png',
         summary: 'A tunable diffusion framework for compact metalens photography.',
         tags: ['Metalens', 'Computational Optics', 'Generative Restoration', 'Diffusion'],
         links: [
@@ -181,7 +184,7 @@ const directions = [
         direction: 'ai-vision',
         directionLabel: 'Generative AI for Gaussian Splatting',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">IEEE TCSVT</b> 2025',
-        image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/csvt2025_GBR.jpg',
+        image: './projects/GBR_fig/csvt2025_GBR_transparent.png',
         summary: 'High-fidelity Gaussian splatting and meshing from only 4-6 input views.',
         tags: ['Gaussian Splatting', 'Mesh Reconstruction', 'Diffusion'],
         links: [
@@ -231,7 +234,7 @@ const directions = [
         direction: 'datasets',
         directionLabel: 'Metalens Datasets',
         status: 'Image Reconstruction',
-        image: './projects/DMDiff_fig/images/teaser_square.jpg',
+        image: './projects/DMDiff_fig/images/teaser_square_transparent.png',
         summary: 'A 10,000+ pair dataset for metalens image restoration.',
         tags: ['Optics + AI', 'Image Restoration', 'Metalens'],
         links: [
