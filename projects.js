@@ -56,7 +56,7 @@ const directions = [
         directionLabel: 'Intelligent Imaging',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">arXiv</b> 2026',
         image: './projects/FS_DVS_fig/web/fs_dvs_logo_v2.png',
-        summary: 'FS-DVS learns a center-surround spatial filter before event triggering, restoring mid-frequency structure and improving information completeness for detection, recognition, and segmentation.',
+        summary: 'FS-DVS inserts a learnable center-surround filter before event triggering, restoring mid-frequency structure for dynamic vision.',
         tags: ['Neuromorphic Vision', 'Event Camera'],
         links: [
         { label: 'Project', href: './index.html?project=fsdvs', icon: 'fas fa-arrow-right' },
@@ -71,7 +71,7 @@ const directions = [
         directionLabel: 'Intelligent Imaging',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">Nature Communications</b> 2026',
         image: './projects/SkinSight_fig/teaser.jpg',
-        summary: 'SkinSight integrates miniaturized imagers with stretchable interconnects in a rigid-in-soft architecture, enabling high-resolution, deformation-adaptive 3D visual perception on human skin and soft robotic surfaces.',
+        summary: 'SkinSight combines miniaturized imagers and stretchable interconnects in a rigid-in-soft array for skin-conformal visual sensing.',
         tags: ['Intelligent Imaging', 'Wearable Imaging', 'Embodied AI'],
         links: [
         { label: 'Project', href: './index.html?project=SkinSight', icon: 'fas fa-arrow-right' },
@@ -86,7 +86,7 @@ const directions = [
         directionLabel: 'Photoacoustic Computed Tomography',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">Nature Biomedical Engineering</b> 2022',
         image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/nbme_2022.jpg',
-        summary: 'Arrays of ultrasonic transducers arranged hemispherically around the head enable the mapping of haemodynamic changes in the brain via photoacoustic computed tomography at resolutions down to 350 micrometres and 2 seconds.',
+        summary: 'A hemispherical ultrasound array enables photoacoustic brain imaging with 350-micrometre resolution and 2-second updates.',
         tags: ['Functional Brain Imaging', 'Photoacoustic Computed Tomography'],
         links: [
         { label: 'Paper', href: 'https://www.nature.com/articles/s41551-021-00735-8', icon: 'fas fa-file-pdf' }
@@ -100,7 +100,7 @@ const directions = [
         directionLabel: 'Gigapixel Imaging',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">Light: Science & Applications</b> 2021',
         image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/light_2021.jpg',
-        summary: 'Arrays of ultrasonic transducers arranged hemispherically around the head enable the mapping of haemodynamic changes in the brain via photoacoustic computed tomography at resolutions down to 350 micrometres and 2 seconds.',
+        summary: 'A hemispherical ultrasound array enables photoacoustic brain imaging with 350-micrometre resolution and 2-second updates.',
         tags: ['Gigapixel Videography', 'Unstructured Camera Arrays', 'Computational Imaging'],
         links: [
         { label: 'Paper', href: 'https://www.nature.com/articles/s41377-021-00485-x', icon: 'fas fa-file-pdf' }
@@ -114,7 +114,7 @@ const directions = [
         directionLabel: 'Hyperspectral Imaging',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">Nature</b> 2025',
         image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/nature_2025.jpg',
-        summary: 'A sub-ångström ultra-high-transmittance snapshot spectroscopic technique, which targets this trade-off with integrated and reconfigurable photonics based on lithium niobate.',
+        summary: 'A sub-ångström snapshot spectroscopy method built on reconfigurable lithium-niobate photonics.',
         tags: ['Hyperspectral Imaging', 'Reconfigurable Imaging', 'Lithium Niobate Photonics'],
         links: [
         { label: 'Paper', href: 'https://www.nature.com/articles/s41586-025-09591-x', icon: 'fas fa-file-pdf' }
@@ -130,7 +130,7 @@ const directions = [
         directionLabel: 'Generative AI for Vision',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">Siggraph</b> 2026',
         image: './projects/LUCID_fig/LUCID_logo.png',
-        summary: 'A nighttime photography project on controllable restoration, deflaring, and exposure mastery.',
+        summary: 'Controllable nighttime restoration for deflaring and exposure mastery.',
         tags: ['Night Photography', 'Image Restoration', 'Exposure Control', 'Diffusion'],
         links: [
         { label: 'Project', href: './index.html?project=lucid', icon: 'fas fa-arrow-right' },
@@ -147,7 +147,7 @@ const directions = [
         directionLabel: 'Generative AI for Vision',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">CVPR</b> 2026',
         image: './projects/3MTI_fig/fig_abs_square.jpg',
-        summary: 'Calibration-free multi-camera thermal enhancement that uses RGB guidance and diffusion priors for mobile thermal perception.',
+        summary: 'Calibration-free thermal enhancement with RGB guidance and diffusion priors for mobile perception.',
         tags: ['Thermal Imaging', 'Diffusion', 'Cross-Modal Fusion', 'Diffusion'],
         links: [
         { label: 'Project', href: './index.html?project=3m-ti', icon: 'fas fa-arrow-right' },
@@ -163,7 +163,7 @@ const directions = [
         directionLabel: 'Generative AI for Vision',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">ICCV</b> 2025',
         image: './projects/DMDiff_fig/images/teaser_square.jpg',
-        summary: 'A tunable diffusion framework for compact metalens photography, balancing perceptual detail with optical fidelity.',
+        summary: 'A tunable diffusion framework for compact metalens photography.',
         tags: ['Metalens', 'Computational Optics', 'Generative Restoration', 'Diffusion'],
         links: [
         { label: 'Project', href: './index.html?project=dmdiff', icon: 'fas fa-arrow-right' },
@@ -179,7 +179,7 @@ const directions = [
         directionLabel: 'Generative AI for Gaussian Splatting',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">IEEE TCSVT</b> 2025',
         image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/csvt2025_GBR.jpg',
-        summary: 'A method for high-fidelity Gaussian splatting and meshing using only 4—6 input views.',
+        summary: 'High-fidelity Gaussian splatting and meshing from only 4-6 input views.',
         tags: ['Gaussian Splatting', 'Mesh Reconstruction', 'Diffusion'],
         links: [
         { label: 'Project', href: 'https://gbrnvs.github.io/', icon: 'fas fa-arrow-right' },
@@ -197,7 +197,7 @@ const directions = [
         directionLabel: 'Optical Neural Networks',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">Nature Communications</b> 2023',
         image: './projects/DANTE_fig/dante_logo_symbol.png',
-        summary: 'A dual-neuron optical-artificial learning approach for training large-scale diffractive neural networks, achieving VGG-level performance on ImageNet in simulation with a network that is 10 times larger than existing ones.',
+        summary: 'Dual-neuron optical-artificial learning for large-scale diffractive neural networks.',
         tags: ['Optics + AI', 'Intelligent Computing', 'Optical Neural Networks'],
         links: [
         { label: 'Project', href: './index.html?project=dante', icon: 'fas fa-arrow-right' },
@@ -213,7 +213,7 @@ const directions = [
         directionLabel: 'Optical Neural Networks',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">Light: Science & Applications</b> 2022',
         image: 'https://pi.xiaoyunyuan.net/mypaper/paper_icon/light_2022.jpg',
-        summary: 'A multichannel optical neural network architecture for a universal multiple-input multiple-channel optical computing, which can be optically implemented with high-efficiency, enabling real-world intelligent multichannel-processing tasks solved via optical computing, including 3D/motion detections. ',
+        summary: 'A multichannel optical computing architecture for efficient intelligent vision tasks.',
         tags: ['Optics + AI', 'Intelligent Computing', 'Optical Neural Networks'],
         links: [
         { label: 'Paper', href: 'https://www.nature.com/articles/s41377-022-00945-y', icon: 'fas fa-file-pdf' }
@@ -229,7 +229,7 @@ const directions = [
         directionLabel: 'Metalens Datasets',
         status: 'Image Reconstruction',
         image: './projects/DMDiff_fig/images/teaser_square.jpg',
-        summary: 'A metalens dataset for research on image restoration, which includes 10,000+ image pairs captured by a metalens camera.',
+        summary: 'A 10,000+ pair dataset for metalens image restoration.',
         tags: ['Optics + AI', 'Image Restoration', 'Metalens'],
         links: [
         { label: 'Project', href: './index.html?project=dmdiff', icon: 'fas fa-arrow-right' },
@@ -244,7 +244,7 @@ const directions = [
         directionLabel: 'Mobile Vis-IR Datasets',
         status: 'Image Fusion and Reconstruction',
         image: './projects/3MTI_fig/fig_abs_square.jpg',
-        summary: 'A cross-resolution Vis-IR benchmark for mobile photography, facilitating research on cross-modal restoration and light synthesis.',
+        summary: 'A cross-resolution visible-infrared benchmark for mobile photography.',
         tags: ['Image Restoration', 'Visual-Infrared'],
         links: [
         { label: 'Project', href: './index.html?project=3m-ti', icon: 'fas fa-arrow-right' },
@@ -259,7 +259,7 @@ const directions = [
         directionLabel: 'Gigapixel Dataset',
         status: 'Gigapixel Visual Analysis',
         image: 'https://yuanxy92.github.io/mypaper/paper_icon/cvpr_panda.jpg',
-        summary: 'The first gigaPixel-level humAN-centric viDeo dAtaset, for large-scale, long-term, and multi-object visual analysis.',
+        summary: 'A gigapixel human-centric video dataset for large-scale visual analysis.',
         tags: ['Computer Vision', 'VLM', 'Gigapixel'],
         links: [
         { label: 'Project and Dataset', href: 'https://gigavision.cn/data/news?nav=DataSet%20Panda&type=nav&t=1731982080864', icon: 'fas fa-database' },
@@ -273,7 +273,7 @@ const directions = [
         directionLabel: 'Gigapixel Dataset',
         status: 'Gigapixel 3D Reconstruction',
         image: 'https://yuanxy92.github.io/mypaper/paper_icon/pami_gigamvs.jpg',
-        summary: 'The first gigapixel-image-based 3D reconstruction benchmark for ultra-large-scale scenes.',
+        summary: 'A gigapixel-image benchmark for ultra-large-scale 3D reconstruction.',
         tags: ['3D Reconstruction', 'Multi-View Stereo', 'Gigapixel'],
         links: [
         { label: 'Project and Dataset', href: 'https://gigavision.cn/data/news?nav=GigaMVS%20RAWDATA&type=nav&t=1731982252980', icon: 'fas fa-database' }
@@ -289,7 +289,7 @@ const directions = [
         directionLabel: 'Reinforcement Learning',
         status: 'Game AI',
         image: './projects/RL_flappybird/flappy_bird.png',
-        summary: 'A reinforcement learning implementation of the popular Flappy Bird game. (Q learning)',
+        summary: 'An RL Flappy Bird demo using Q-learning.',
         tags: ['Reinforcement Learning', 'Game AI'],
         links: [
         { label: 'Online Game', href: 'https://rlbird.xiaoyunyuan.net', icon: 'fas fa-arrow-right' },
@@ -304,7 +304,7 @@ const directions = [
         directionLabel: 'Reinforcement Learning',
         status: 'Educational Resources',
         image: './projects/Resources/images/DP_vs_MC.png',
-        summary: 'An interactive demo that compares dynamic programming and Monte Carlo methods.',
+        summary: 'An interactive demo comparing dynamic programming and Monte Carlo methods.',
         tags: ['Reinforcement Learning'],
         links: [
         { label: 'Online Game', href: 'https://pi.xiaoyunyuan.net/resources/RL/DP_vs_MC.html', icon: 'fas fa-arrow-right' },
@@ -318,7 +318,7 @@ const directions = [
         directionLabel: 'Educational Resources',
         status: 'Probability Demo',
         image: './projects/Resources/images/independent-sum-thumb-picked.png',
-        summary: 'An interactive demo for the distribution of sums, convolution, and the central limit theorem.',
+        summary: 'An interactive demo for sums, convolution, and the central limit theorem.',
         tags: ['Probability', 'Statistics', 'Convolution'],
         links: [
         { label: 'Launch Demo', href: './projects/Resources/独立随机变量和的分布.html', icon: 'fas fa-arrow-right' },

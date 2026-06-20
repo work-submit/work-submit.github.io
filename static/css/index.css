@@ -338,11 +338,15 @@ img {
   margin: 0;
   color: var(--muted);
   font-size: 0.94rem;
-  line-height: 1.48;
+  line-height: 1.42;
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 4;
+}
+
+.project-summary {
+  min-height: calc(1.42em * 4);
 }
 
 .tag-list {
