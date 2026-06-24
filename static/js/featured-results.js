@@ -43,6 +43,14 @@
       mediaType: 'image',
       media: './projects/3MTI_fig/fig_abs.jpg',
       href: './index.html?project=3m-ti'
+    },
+    {
+      title: 'Tunable Metalens Photography',
+      venue: 'ICCV 2025',
+      caption: 'A tunable reconstruction algorithm balances fidelity and sharpness for severely degraded compact metalens images.',
+      mediaType: 'image',
+      media: './projects/DMDiff_fig/images/teaser.jpg',
+      href: './index.html?project=dmdiff'
     }
   ];
 
