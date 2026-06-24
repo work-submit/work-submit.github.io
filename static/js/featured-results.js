@@ -112,9 +112,9 @@
 
   function featuredResultsMarkup() {
     return `
-      <section class="featured-results" aria-label="Featured results">
+      <section class="featured-results" aria-label="Research highlights">
         <div class="featured-heading">
-          <h2>Featured Results</h2>
+          <h2>Research Highlights</h2>
         </div>
         <div class="featured-carousel">
           <button class="featured-control featured-prev" type="button" aria-label="Previous featured result">
