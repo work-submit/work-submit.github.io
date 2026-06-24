@@ -141,7 +141,7 @@ const directions = [
         links: [
         { label: 'Project', href: './index.html?project=lucid', icon: 'fas fa-arrow-right' },
         { label: 'Code', href: 'https://github.com/frakenation/LUCID', icon: 'fab fa-github' },
-        { label: 'Model', href: 'https://huggingface.co/Unswear/LUCID', icon: 'fas fa-database' },
+        { label: 'Model', href: 'https://huggingface.co/OpticAI/LUCID', icon: 'fas fa-database' },
         { label: 'HF Paper', href: 'https://huggingface.co/papers/2606.06901', icon: 'fas fa-smile' },
         { label: 'arXiv', href: 'https://arxiv.org/abs/2606.06901', icon: 'ai ai-arxiv' }
         ]
