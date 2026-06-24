@@ -67,6 +67,7 @@
   </footer>
 
   <script src="projects.js"></script>
+  <script src="./static/js/featured-results.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const contentContainer = document.getElementById('content-container');
@@ -176,8 +177,11 @@
             </div>
           </section>
 
+          ${window.featuredResultsMarkup()}
           ${directionSections}
         `;
+
+        window.initFeaturedResults();
 
         if (window.location.hash) {
           const targetSection = document.querySelector(window.location.hash);
