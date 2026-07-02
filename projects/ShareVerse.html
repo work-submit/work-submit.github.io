@@ -1,0 +1,256 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="shareverse-hero-panel">
+            <p class="shareverse-kicker">Shared World Modeling</p>
+            <h1 class="title is-1 publication-title">
+              <span class="project-title-accent project-title-accent--blue">ShareVerse</span>: Multi-Agent Consistent Video Generation for Shared World Modeling
+            </h1>
+
+            <div class="is-size-5 publication-authors shareverse-author-list">
+              <span class="author-block">Jiayi Zhu</span>
+              <span class="author-block">Jianing Zhang</span>
+              <span class="author-block">Yiying Yang</span>
+              <span class="author-block">Wei Cheng</span>
+              <span class="author-block"><a href="https://xiaoyunyuan.net/">Xiaoyun Yuan</a><sup>✉</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Shanghai Jiao Tong University</span>
+              <br>
+              <span class="email-link">
+                <a href="mailto:yuanxiaoyun@sjtu.edu.cn">yuanxiaoyun@sjtu.edu.cn</a>
+              </span>
+            </div>
+
+            <div class="is-size-4 publication-title">
+              <span class="shareverse-venue">arXiv 2026</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://share-verse.github.io/" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fas fa-arrow-right"></i></span>
+                    <span>Project</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2603.02697" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>PDF</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2603.02697" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/sjbixiitu/shareverse" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://huggingface.co/sjbixiitu/shareverse_model" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fas fa-database"></i></span>
+                    <span>Model</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/sjbixiitu/shareverse_data" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fas fa-database"></i></span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <figure class="shareverse-teaser">
+      <img src="./projects/ShareVerse_fig/teaser.webp" alt="ShareVerse teaser figure">
+      <figcaption>
+        <strong>Collaborative video generation for a shared world.</strong>
+        ShareVerse enables distributed agents to synthesize a globally consistent virtual environment, resolving cross-agent conflicts while maintaining long-term scene permanence through a spatiotemporal memory cache.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="overview">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            ShareVerse is a video generation framework for multi-agent shared world modeling. It addresses the lack of unified shared-world construction in existing video generation systems by combining large video-model priors with multi-agent interaction. The framework builds a large-scale CARLA-based dataset with diverse scenes, weather conditions, interactive trajectories, paired multi-view videos, and camera data; uses spatial concatenation to model broader environments while preserving multi-view geometric consistency; and introduces cross-agent attention blocks to transmit spatiotemporal information between agents. ShareVerse supports 49-frame large-scale video generation and maintains consistency across overlapping and non-overlapping regions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Collaborative Generation Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            Each example shows two agents exploring the same generated environment. The top row summarizes the global point cloud, local point cloud, and selected frames, while the bottom row pairs the trajectory map with synchronized videos from both agents.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shareverse-demo-grid">
+      <article class="shareverse-demo-card">
+        <h3>Interactive Urban Exploration I</h3>
+        <div class="shareverse-demo-stills">
+          <figure><img src="./projects/ShareVerse_fig/demo/1g.webp" alt="Example 1 global point cloud"><figcaption>Global Point Cloud</figcaption></figure>
+          <figure><img src="./projects/ShareVerse_fig/demo/1l.webp" alt="Example 1 local point cloud"><figcaption>Local Point Cloud</figcaption></figure>
+          <figure><img src="./projects/ShareVerse_fig/demo/1f.webp" alt="Example 1 selected frames"><figcaption>Selected Frames</figcaption></figure>
+        </div>
+        <div class="shareverse-demo-media">
+          <figure><img src="./projects/ShareVerse_fig/demo/1.webp" alt="Example 1 trajectory map"><figcaption>Trajectory Map</figcaption></figure>
+          <figure><video src="./projects/ShareVerse_fig/demo/11.mp4" controls muted loop playsinline preload="metadata"></video><figcaption>Agent 1</figcaption></figure>
+          <figure><video src="./projects/ShareVerse_fig/demo/12.mp4" controls muted loop playsinline preload="metadata"></video><figcaption>Agent 2</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="shareverse-demo-card">
+        <h3>Interactive Urban Exploration II</h3>
+        <div class="shareverse-demo-stills">
+          <figure><img src="./projects/ShareVerse_fig/demo/2g.webp" alt="Example 2 global point cloud"><figcaption>Global Point Cloud</figcaption></figure>
+          <figure><img src="./projects/ShareVerse_fig/demo/2l.webp" alt="Example 2 local point cloud"><figcaption>Local Point Cloud</figcaption></figure>
+          <figure><img src="./projects/ShareVerse_fig/demo/2f.webp" alt="Example 2 selected frames"><figcaption>Selected Frames</figcaption></figure>
+        </div>
+        <div class="shareverse-demo-media">
+          <figure><img src="./projects/ShareVerse_fig/demo/2.webp" alt="Example 2 trajectory map"><figcaption>Trajectory Map</figcaption></figure>
+          <figure><video src="./projects/ShareVerse_fig/demo/21.mp4" controls muted loop playsinline preload="metadata"></video><figcaption>Agent 1</figcaption></figure>
+          <figure><video src="./projects/ShareVerse_fig/demo/22.mp4" controls muted loop playsinline preload="metadata"></video><figcaption>Agent 2</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="shareverse-demo-card">
+        <h3>Long-Range Shared World Consistency I</h3>
+        <div class="shareverse-demo-stills">
+          <figure><img src="./projects/ShareVerse_fig/demo/3g.webp" alt="Example 3 global point cloud"><figcaption>Global Point Cloud</figcaption></figure>
+          <figure><img src="./projects/ShareVerse_fig/demo/3l.webp" alt="Example 3 local point cloud"><figcaption>Local Point Cloud</figcaption></figure>
+          <figure><img src="./projects/ShareVerse_fig/demo/3f.webp" alt="Example 3 selected frames"><figcaption>Selected Frames</figcaption></figure>
+        </div>
+        <div class="shareverse-demo-media">
+          <figure><img src="./projects/ShareVerse_fig/demo/3.webp" alt="Example 3 trajectory map"><figcaption>Trajectory Map</figcaption></figure>
+          <figure><video src="./projects/ShareVerse_fig/demo/31.mp4" controls muted loop playsinline preload="metadata"></video><figcaption>Agent 1</figcaption></figure>
+          <figure><video src="./projects/ShareVerse_fig/demo/32.mp4" controls muted loop playsinline preload="metadata"></video><figcaption>Agent 2</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="shareverse-demo-card">
+        <h3>Long-Range Shared World Consistency II</h3>
+        <div class="shareverse-demo-stills">
+          <figure><img src="./projects/ShareVerse_fig/demo/4g.webp" alt="Example 4 global point cloud"><figcaption>Global Point Cloud</figcaption></figure>
+          <figure><img src="./projects/ShareVerse_fig/demo/4l.webp" alt="Example 4 local point cloud"><figcaption>Local Point Cloud</figcaption></figure>
+          <figure><img src="./projects/ShareVerse_fig/demo/4f.webp" alt="Example 4 selected frames"><figcaption>Selected Frames</figcaption></figure>
+        </div>
+        <div class="shareverse-demo-media">
+          <figure><img src="./projects/ShareVerse_fig/demo/4.webp" alt="Example 4 trajectory map"><figcaption>Trajectory Map</figcaption></figure>
+          <figure><video src="./projects/ShareVerse_fig/demo/41.mp4" controls muted loop playsinline preload="metadata"></video><figcaption>Agent 1</figcaption></figure>
+          <figure><video src="./projects/ShareVerse_fig/demo/42.mp4" controls muted loop playsinline preload="metadata"></video><figcaption>Agent 2</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="shareverse-demo-card">
+        <h3>Asynchronous Revisitation I</h3>
+        <div class="shareverse-demo-stills">
+          <figure><img src="./projects/ShareVerse_fig/demo/5g.webp" alt="Example 5 global point cloud"><figcaption>Global Point Cloud</figcaption></figure>
+          <figure><img src="./projects/ShareVerse_fig/demo/5l.webp" alt="Example 5 local point cloud"><figcaption>Local Point Cloud</figcaption></figure>
+          <figure><img src="./projects/ShareVerse_fig/demo/5f.webp" alt="Example 5 selected frames"><figcaption>Selected Frames</figcaption></figure>
+        </div>
+        <div class="shareverse-demo-media">
+          <figure><img src="./projects/ShareVerse_fig/demo/5.webp" alt="Example 5 trajectory map"><figcaption>Trajectory Map</figcaption></figure>
+          <figure><video src="./projects/ShareVerse_fig/demo/51.mp4" controls muted loop playsinline preload="metadata"></video><figcaption>Agent 1</figcaption></figure>
+          <figure><video src="./projects/ShareVerse_fig/demo/52.mp4" controls muted loop playsinline preload="metadata"></video><figcaption>Agent 2</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="shareverse-demo-card">
+        <h3>Asynchronous Revisitation II</h3>
+        <div class="shareverse-demo-stills">
+          <figure><img src="./projects/ShareVerse_fig/demo/6g.webp" alt="Example 6 global point cloud"><figcaption>Global Point Cloud</figcaption></figure>
+          <figure><img src="./projects/ShareVerse_fig/demo/6l.webp" alt="Example 6 local point cloud"><figcaption>Local Point Cloud</figcaption></figure>
+          <figure><img src="./projects/ShareVerse_fig/demo/6f.webp" alt="Example 6 selected frames"><figcaption>Selected Frames</figcaption></figure>
+        </div>
+        <div class="shareverse-demo-media">
+          <figure><img src="./projects/ShareVerse_fig/demo/6.webp" alt="Example 6 trajectory map"><figcaption>Trajectory Map</figcaption></figure>
+          <figure><video src="./projects/ShareVerse_fig/demo/61.mp4" controls muted loop playsinline preload="metadata"></video><figcaption>Agent 1</figcaption></figure>
+          <figure><video src="./projects/ShareVerse_fig/demo/62.mp4" controls muted loop playsinline preload="metadata"></video><figcaption>Agent 2</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Framework Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            ShareVerse couples independent-agent video generation through shared spatial context and cross-agent attention. A global spatiotemporal memory cache preserves environmental permanence during asynchronous revisitation, enabling agents to revisit previously generated areas without drifting away from the shared world.
+          </p>
+        </div>
+        <figure class="shareverse-figure">
+          <img src="./projects/ShareVerse_fig/method.webp" alt="ShareVerse method overview">
+        </figure>
+        <figure class="shareverse-figure">
+          <img src="./projects/ShareVerse_fig/pipeline.webp" alt="ShareVerse pipeline">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Dataset</h2>
+        <div class="content has-text-justified">
+          <p>
+            The ShareVerse dataset is built on CARLA simulation and covers diverse scene layouts, weather conditions, and interactive multi-agent trajectories. Each sample includes paired multi-view videos and camera metadata for shared-world video generation.
+          </p>
+        </div>
+        <figure class="shareverse-figure">
+          <img src="./projects/ShareVerse_fig/dataset.webp" alt="ShareVerse dataset overview">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre class="shareverse-bibtex"><code>@article{zhu2026shareverse,
+  title={ShareVerse: Multi-Agent Consistent Video Generation for Shared World Modeling},
+  author={Zhu, Jiayi and Zhang, Jianing and Yang, Yiying and Cheng, Wei and Yuan, Xiaoyun},
+  journal={arXiv preprint arXiv:2603.02697},
+  year={2026}
+}</code></pre>
+  </div>
+</section>

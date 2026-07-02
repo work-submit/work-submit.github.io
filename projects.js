@@ -10,6 +10,8 @@ const contentPaths = {
         'gigapixel': './projects/Gigapixel.html',
         '3m-ti': './projects/3MTI.html',
         'dmdiff': './projects/DMDiff.html',
+        'shareverse': './projects/ShareVerse.html',
+        'share-verse': './projects/ShareVerse.html',
         'Dante': './projects/DANTE.html',
         'dante': './projects/DANTE.html',
         'lucid': './projects/LUCID.html',
@@ -160,6 +162,24 @@ const directions = [
         { label: 'Project', href: './index.html?project=3m-ti', icon: 'fas fa-arrow-right' },
         { label: 'Code', href: 'https://github.com/work-submit/3MTI', icon: 'fab fa-github' },
         { label: 'arXiv', href: 'https://arxiv.org/abs/2511.19117', icon: 'ai ai-arxiv' }
+        ]
+    },
+    {
+        id: 'shareverse',
+        title: 'ShareVerse: Multi-Agent Consistent Video Generation for Shared World Modeling',
+        fullTitle: 'Jiayi Zhu, Jianing Zhang, Yiying Yang, Wei Cheng, <b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">✉</span>',
+        direction: 'ai-vision',
+        directionLabel: 'Generative AI for Vision',
+        status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">arXiv</b> 2026',
+        image: './projects/ShareVerse_fig/teaser_card.webp',
+        summary: 'Multi-agent video generation for globally consistent shared world modeling with cross-agent interaction and spatiotemporal memory.',
+        tags: ['Video Generation', 'World Models', 'Multi-Agent', 'Diffusion'],
+        links: [
+        { label: 'Project', href: './index.html?project=shareverse', icon: 'fas fa-arrow-right' },
+        { label: 'Code', href: 'https://github.com/sjbixiitu/shareverse', icon: 'fab fa-github' },
+        { label: 'Model', href: 'https://huggingface.co/sjbixiitu/shareverse_model', icon: 'fas fa-database' },
+        { label: 'Dataset', href: 'https://huggingface.co/datasets/sjbixiitu/shareverse_data', icon: 'fas fa-database' },
+        { label: 'arXiv', href: 'https://arxiv.org/abs/2603.02697', icon: 'ai ai-arxiv' }
         ]
     },
     {
