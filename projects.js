@@ -15,6 +15,7 @@ const contentPaths = {
         'Dante': './projects/DANTE.html',
         'dante': './projects/DANTE.html',
         'lucid': './projects/LUCID.html',
+        'cs0502': './projects/CS0502.html',
         'about': './about.html',
         'team': './team.html',
     };
@@ -47,8 +48,8 @@ const directions = [
     {
     id: 'resources',
     title: 'Resources',
-    kicker: 'Tools and resources',
-    description: 'Utilities, resources, and fun interactive mini-games.'
+    kicker: 'Courses, tools, and resources',
+    description: 'Course projects, educational tools, and interactive mini-games.'
     }
 ];
 
@@ -338,17 +339,18 @@ const directions = [
         ]
     },
     {
-        id: 'independent-random-variables-sum',
-        title: 'Distribution of Sums of Independent Random Variables',
-        fullTitle: '<b>Xiaoyun Yuan</b>',
+        id: 'cs0502',
+        title: 'CS0502 · Introduction to Computer Science',
+        fullTitle: '<b>AI Agent Project Studio</b>',
         direction: 'resources',
-        directionLabel: 'Educational Resources',
-        status: 'Probability Demo',
-        image: './projects/Resources/images/independent-sum-thumb-picked.png',
-        summary: 'An interactive demo for sums, convolution, and the central limit theorem.',
-        tags: ['Probability', 'Statistics', 'Convolution'],
+        directionLabel: 'Course Resources',
+        status: 'Project-Based Course',
+        image: './projects/CS0502_fig/course-card-gpt.png',
+        summary: 'Build, test, and explain computer science systems with modern AI coding agents.',
+        tags: ['Computer Science', 'AI Agents', 'Course Projects'],
+        cardHref: './index.html?project=cs0502',
         links: [
-        { label: 'Launch Demo', href: './projects/Resources/独立随机变量和的分布.html', icon: 'fas fa-arrow-right' },
+        { label: 'View Projects', href: './index.html?project=cs0502', icon: 'fas fa-arrow-right' },
         ]
     },
     ];

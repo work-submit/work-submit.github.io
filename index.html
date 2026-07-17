@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/course-page.css?v=20260717-examples">
   <link rel="stylesheet" href="./static/css/project-pages.css?v=20260703-shareverse-overview3">
 
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
@@ -66,8 +67,9 @@
     <p class="template-credit">Built on GitHub Pages.</p>
   </footer>
 
-  <script src="projects.js?v=20260702-shareverse-png"></script>
+  <script src="projects.js?v=20260717-cs0502"></script>
   <script src="./static/js/featured-results.js"></script>
+  <script src="./static/js/cs0502-course.js?v=20260717-examples"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const contentContainer = document.getElementById('content-container');
@@ -102,9 +104,13 @@
       }
 
       function projectCard(project) {
+        const cardHref = project.cardHref || (project.links[0] && project.links[0].href) || '#';
+        const cardIsExternal = cardHref.startsWith('http');
+        const cardLinkAttributes = `href="${cardHref}" ${cardIsExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}`;
+
         return `
           <article class="project-card">
-            <a class="project-image ${project.imageClass || ''}" aria-label="Open ${project.title}">
+            <a class="project-image ${project.imageClass || ''}" ${cardLinkAttributes} aria-label="Open ${project.title}">
               <img src="${project.image}" alt="${project.title} preview">
             </a>
             <div class="project-content">
@@ -112,7 +118,7 @@
                 <span>${project.directionLabel}</span>
                 <span>${project.status}</span>
               </div>
-              <h3><a>${project.title}</a></h3>
+              <h3><a ${cardLinkAttributes}>${project.title}</a></h3>
               <p class="project-title">${project.fullTitle}</p>
               <p class="project-summary">${project.summary}</p>
               <div class="tag-list">
@@ -218,6 +224,10 @@
           })
           .then(function(html) {
             contentContainer.innerHTML = `<div class="project-detail">${html}</div>`;
+
+            if (target === 'cs0502' && window.initCS0502Course) {
+              window.initCS0502Course();
+            }
 
             if (window.MathJax) {
               MathJax.Hub.Queue(['Typeset', MathJax.Hub]);

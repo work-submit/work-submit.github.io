@@ -1,0 +1,218 @@
+<div class="course-page">
+  <header class="course-hero">
+    <div class="course-hero__copy">
+      <a class="course-back-link" href="./index.html#resources">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        <span>Back to resources</span>
+      </a>
+      <p class="course-code">CS0502</p>
+      <h1>Introduction to<br>Computer Science</h1>
+      <p class="course-lede">
+        A project-based introduction to computer science where students learn through vibe coding: directing AI agents to build, test, and explain working computational systems.
+      </p>
+      <a class="course-primary-link" href="#course-projects">
+        <span>Explore course projects</span>
+        <i class="fas fa-arrow-down" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <figure class="course-hero-art">
+      <img src="./projects/CS0502_fig/course-hero-gpt.png" alt="A computational core connecting algorithms, logic, data structures, waves, sensors, and engineered systems">
+    </figure>
+  </header>
+
+  <section class="course-projects" id="course-projects" aria-labelledby="course-projects-title">
+    <div class="course-section-heading">
+      <p>Course projects</p>
+      <h2 id="course-projects-title">Projects begin with a machine that can compute.</h2>
+    </div>
+
+    <details class="course-project-card" id="project-turing-machine">
+      <summary class="course-project-card__toggle">
+        <span class="course-project-card__number">01</span>
+        <span class="course-project-card__main">
+          <span class="course-project-card__meta">
+            <span>Foundations of computation</span>
+            <span>Agent-built project</span>
+          </span>
+          <strong>Turing Machine</strong>
+          <span class="course-project-card__summary">
+            Build a working, inspectable Turing machine with an AI coding agent, verify it with test cases, and record the complete run from input to halt.
+          </span>
+        </span>
+        <span class="course-project-card__action" aria-hidden="true">
+          <span class="course-project-card__action-copy course-project-card__action-copy--open">Open full brief</span>
+          <span class="course-project-card__action-copy course-project-card__action-copy--close">Close brief</span>
+          <span class="course-project-card__chevron"><i class="fas fa-chevron-down"></i></span>
+        </span>
+      </summary>
+
+      <div class="course-project-card__details">
+        <div class="course-project-note">
+          <i class="fas fa-info-circle" aria-hidden="true"></i>
+          <p>Start with the full prompt below, then iterate with your coding agent. The three links below are example implementations of the same project.</p>
+        </div>
+
+        <div class="course-brief-grid">
+          <section class="course-brief-panel" aria-labelledby="requirements-title">
+            <p class="course-panel-label">Required implementation</p>
+            <h4 id="requirements-title">What your machine must do</h4>
+            <ol class="course-requirement-list">
+              <li><span>Model the machine correctly.</span> Represent the tape, blank symbol, read/write head, finite states, start state, halt state, and transition function explicitly.</li>
+              <li><span>Implement the assigned algorithm.</span> Encode the transition rules from the course slides in one readable data structure that can be inspected and changed.</li>
+              <li><span>Make every step visible.</span> Highlight the current tape cell, state, symbol read, symbol written, movement direction, and next state.</li>
+              <li><span>Provide complete controls.</span> Include input loading, single-step execution, automatic run/pause, reset, and a clear halted or error state.</li>
+              <li><span>Keep a transition trace.</span> Display a chronological log so another person can verify exactly how the output was produced.</li>
+              <li><span>Test before submitting.</span> Include normal inputs, at least one edge case, and evidence that the final output agrees with the algorithm.</li>
+            </ol>
+          </section>
+
+          <aside class="course-brief-panel course-brief-panel--evidence" aria-labelledby="evidence-title">
+            <p class="course-panel-label">Evidence to submit</p>
+            <h4 id="evidence-title">Show that it really works</h4>
+            <ul class="course-evidence-list">
+              <li><i class="fas fa-code" aria-hidden="true"></i><span><strong>Working project</strong>Source files or a repository, plus clear launch instructions.</span></li>
+              <li><i class="fas fa-video" aria-hidden="true"></i><span><strong>Run recording</strong>A 60–120 second screen recording showing at least two inputs from reset to halt.</span></li>
+              <li><i class="fas fa-vial" aria-hidden="true"></i><span><strong>Test evidence</strong>Expected outputs, actual outputs, and one edge-case result.</span></li>
+              <li><i class="fas fa-robot" aria-hidden="true"></i><span><strong>Agent record</strong>Name the coding agent used and include the starter prompt plus important follow-up prompts.</span></li>
+              <li><i class="far fa-file-alt" aria-hidden="true"></i><span><strong>Short README</strong>Explain the algorithm, implementation choices, and how to run the machine.</span></li>
+            </ul>
+          </aside>
+        </div>
+
+        <section class="course-prompt-panel" aria-labelledby="starter-prompt-title">
+          <div class="course-prompt-panel__heading">
+            <div>
+              <p class="course-panel-label">Agent starter prompt</p>
+              <h4 id="starter-prompt-title">Give this prompt to your coding agent</h4>
+            </div>
+            <button type="button" class="course-copy-button" data-copy-prompt>
+              <span class="course-copy-button__icons" aria-hidden="true">
+                <i class="far fa-copy course-copy-button__copy-icon"></i>
+                <i class="fas fa-check course-copy-button__done-icon"></i>
+              </span>
+              <span data-copy-label>Copy prompt</span>
+            </button>
+          </div>
+          <pre><code id="cs0502-starter-prompt">请生成一个可直接运行的图灵机模拟器网页，保存为一个单独的 HTML 文件。
+
+## 最重要要求
+
+这个 HTML 文件必须能直接双击打开使用，不需要安装任何软件，不需要运行任何命令，不需要本地服务器，不需要联网。
+- 所有代码、样式、资源全部内联在这个 HTML 文件里
+- 不许使用 &lt;script type="module"&gt;
+- 不许从网络加载任何内容（完全离线可用）
+- 不许写任何需要用户额外操作的代码
+
+## 技术方案
+
+用 React 18 实现（它有 UMD 格式，可以直接内联到 HTML 中）。
+React 和 ReactDOM 的 UMD 文件从 https://unpkg.com/react@18/umd/ 下载后内联。
+用 esbuild 的 build() API 将源码打包成 IIFE 格式内联到 HTML。
+jsx 用经典模式（React.createElement），不要用 automatic JSX runtime。
+所有 CSS 内联在 &lt;style&gt; 标签中。
+Lucide 图标用内联 SVG 替代，不要引入图标库。
+
+## 功能要求
+
+制作一个交互式图灵机模拟器，面向大学课堂投影教学，中文界面。
+
+### 核心界面
+
+页面打开后直接显示模拟器（不要宣传首页）。第一视觉重点是横向纸带。每个格子显示一个符号，当前格子高亮，读写头在格子上方。
+纸带可以向左右无限扩展（内部用 Map&lt;number, string&gt; 实现，只渲染读写头周围 15 格的窗口）。
+纸带上方显示状态寄存器，包括：当前状态、当前读取符号、执行步数、运行状态（就绪/运行中/已暂停/接受/拒绝/已停机/错误）。
+
+### 控制功能
+
+- Demo 选择菜单（三个内置示例）
+- 输入字符串 + 应用输入按钮
+- 重置按钮
+- 单步执行按钮
+- 连续运行 / 暂停按钮
+- 后退一步按钮
+- 执行速度滑块
+- 转移规则表（支持添加、删除、编辑规则，检查重复规则）
+- 执行日志（显示中文步骤说明和形式化 δ 规则）
+- 自定义图灵机编辑器（编辑状态集、字母表、规则等）
+- 导入 / 导出 JSON 文件
+
+### 特殊符号约定
+
+- ⊢ 输入左边界；⊣ 输入右边界；□ 空白符
+- 初始状态 q0；接受状态 q_accept；拒绝状态 q_reject
+- 支持 L（左移）、R（右移）、S（不动）三种移动
+- 如果当前状态+读取符号没有对应规则，显示“未定义转移”并停机（不许报错）
+- 设置最大执行步数（如 1000 步）防止无限循环
+
+### 三个内置示例
+
+1. 一进制加法：输入 11101111（表示 3+4），运行后得到 1111111。动画展示扫描第一个操作数、删除分隔符、扫描第二个操作数、停机。
+2. 二进制加一：输入 1011 输出 1100，111 输出 1000。正确处理进位和全 1 的情况。
+3. 二进制回文识别：1001 进入接受状态，1010 进入拒绝状态。展示标记首尾字符、来回扫描的过程。
+
+### 动画效果
+
+每一步的动画按顺序播放：读取高亮→规则高亮→写入淡入淡出→读写头移动→状态更新。
+连续运行时也必须按阶段播放，不能直接跳到最终结果。速度滑块能明显控制动画快慢。后退一步能恢复纸带、读写头和位置。
+
+### 教学反馈
+
+执行日志显示可读的中文步骤，同时显示形式化规则，例如：
+δ(q0, 1) = (q1, 0, R)
+
+停机后显示结果摘要：是否接受、总步数、最终状态、最终纸带内容、停机原因。
+
+### 自定义模式
+
+用户可以编辑：状态集合、输入字母表、纸带字母表、空白符、左右边界符、初始状态、接受状态、拒绝状态、初始纸带内容、读写头初始位置、转移规则。
+支持用表格编辑规则，也支持粘贴文本格式的规则（如 q0,1 -&gt; q1,0,R）。修改配置后可以立即重置并运行。
+
+## 工程质量
+
+- 不要把所有代码写在一个组件里，保持代码结构清晰
+- 图灵机执行引擎要写成独立的模块，与界面分离
+- 页面不能有文字重叠、按钮溢出或纸带格子变形
+- 按钮用图标+文字，适配电脑和平板屏幕
+- 为图灵机引擎写单元测试，覆盖三个示例的预期结果、负坐标移动、空白格读写、未定义规则、后退恢复和最大步数停止
+- 不要留下 TODO、占位按钮或不可用功能
+- 运行测试确认全部通过</code></pre>
+          <p class="course-prompt-note"><i class="fas fa-lightbulb" aria-hidden="true"></i>Use this full prompt as a starting point, continue the conversation with your coding agent, then test and explain the implementation you produce.</p>
+        </section>
+
+        <section class="course-reference-links" aria-labelledby="reference-links-title">
+          <div class="course-subsection-heading">
+            <div>
+              <p class="course-panel-label">Three example results</p>
+              <h4 id="reference-links-title">Three example implementations</h4>
+            </div>
+            <p>Use the prompt above, continue the dialogue with your coding agent, and build your own version.</p>
+          </div>
+
+          <div class="course-reference-links__grid">
+            <a class="course-reference-link" href="./projects/CS0502_pages/TuringMachine-ChatGPT.html" target="_blank" rel="noopener noreferrer">
+              <strong>ChatGPT App</strong>
+              <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+            </a>
+            <a class="course-reference-link" href="./projects/CS0502_pages/TuringMachine-DeepSeekV4Flash.html" target="_blank" rel="noopener noreferrer">
+              <strong>DeepSeek V4 Flash + OpenCode</strong>
+              <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+            </a>
+            <a class="course-reference-link" href="./projects/CS0502_pages/TuringMachine-MiMoV2.5.html" target="_blank" rel="noopener noreferrer">
+              <strong>MiMo V2.5 + OpenCode</strong>
+              <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+            </a>
+          </div>
+        </section>
+      </div>
+    </details>
+
+    <div class="course-next-projects">
+      <span>02+</span>
+      <div>
+        <h3>More projects are coming.</h3>
+        <p>Future project briefs will be added here as the course develops.</p>
+      </div>
+    </div>
+  </section>
+</div>
