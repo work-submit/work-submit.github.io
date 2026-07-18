@@ -24,7 +24,7 @@
   <section class="course-projects" id="course-projects" aria-labelledby="course-projects-title">
     <div class="course-section-heading">
       <p>Course projects</p>
-      <h2 id="course-projects-title">Projects begin with a machine that can compute.</h2>
+      <h2 id="course-projects-title">Learn to program by talking to computers.</h2>
     </div>
 
     <details class="course-project-card" id="project-turing-machine">
@@ -50,51 +50,57 @@
       <div class="course-project-card__details">
         <div class="course-project-note">
           <i class="fas fa-info-circle" aria-hidden="true"></i>
-          <p>Start with the full prompt below, then iterate with your coding agent. The three links below are example implementations of the same project.</p>
+          <p>Use the prompt below, iterate with your coding agent, and submit a runnable HTML file, a short recording, and an illustrated iteration report.</p>
         </div>
 
-        <div class="course-brief-grid">
-          <section class="course-brief-panel" aria-labelledby="requirements-title">
-            <p class="course-panel-label">Required implementation</p>
-            <h4 id="requirements-title">What your machine must do</h4>
-            <ol class="course-requirement-list">
-              <li><span>Model the machine correctly.</span> Represent the tape, blank symbol, read/write head, finite states, start state, halt state, and transition function explicitly.</li>
-              <li><span>Implement the assigned algorithm.</span> Encode the transition rules from the course slides in one readable data structure that can be inspected and changed.</li>
-              <li><span>Make every step visible.</span> Highlight the current tape cell, state, symbol read, symbol written, movement direction, and next state.</li>
-              <li><span>Provide complete controls.</span> Include input loading, single-step execution, automatic run/pause, reset, and a clear halted or error state.</li>
-              <li><span>Keep a transition trace.</span> Display a chronological log so another person can verify exactly how the output was produced.</li>
-              <li><span>Test before submitting.</span> Include normal inputs, at least one edge case, and evidence that the final output agrees with the algorithm.</li>
-            </ol>
-          </section>
+        <section class="course-task-panel" aria-labelledby="requirements-title">
+          <div class="course-task-panel__heading">
+            <div>
+              <p class="course-panel-label" data-requirements-heading="label">Project task</p>
+              <h4 id="requirements-title" data-requirements-heading="title">What to submit</h4>
+            </div>
+            <div class="course-language-switcher" data-language-switcher data-language-target="requirements" aria-label="Requirements language">
+              <button type="button" class="is-active" data-language="zh" aria-pressed="true">中文</button>
+              <button type="button" data-language="en" aria-pressed="false">English</button>
+            </div>
+          </div>
 
-          <aside class="course-brief-panel course-brief-panel--evidence" aria-labelledby="evidence-title">
-            <p class="course-panel-label">Evidence to submit</p>
-            <h4 id="evidence-title">Show that it really works</h4>
-            <ul class="course-evidence-list">
-              <li><i class="fas fa-code" aria-hidden="true"></i><span><strong>Working project</strong>Source files or a repository, plus clear launch instructions.</span></li>
-              <li><i class="fas fa-video" aria-hidden="true"></i><span><strong>Run recording</strong>A 60–120 second screen recording showing at least two inputs from reset to halt.</span></li>
-              <li><i class="fas fa-vial" aria-hidden="true"></i><span><strong>Test evidence</strong>Expected outputs, actual outputs, and one edge-case result.</span></li>
-              <li><i class="fas fa-robot" aria-hidden="true"></i><span><strong>Agent record</strong>Name the coding agent used and include the starter prompt plus important follow-up prompts.</span></li>
-              <li><i class="far fa-file-alt" aria-hidden="true"></i><span><strong>Short README</strong>Explain the algorithm, implementation choices, and how to run the machine.</span></li>
-            </ul>
-          </aside>
-        </div>
+          <ol class="course-task-list" data-language-content="requirements" data-language="zh">
+            <li><span class="course-task-list__number">01</span><div><strong>用 AI agent 完成图灵机。</strong><p>不要自己手写代码；通过与 AI coding agent 对话，做出一个能运行、能复现课堂指定算法的图灵机，并提交可直接运行的 HTML 文件。</p></div></li>
+            <li><span class="course-task-list__number">02</span><div><strong>提交一段运行录屏。</strong><p>除 HTML 文件外，再提交一段简短录屏，展示输入、运行过程和最终结果。</p></div></li>
+            <li><span class="course-task-list__number">03</span><div><strong>提交图文并茂的迭代报告。</strong><p>一次对话通常不够。请记录每一轮对话得到的结果、发现的问题、你再次输入的提示词，以及该轮解决了什么；尽量附上界面或运行截图。</p></div></li>
+            <li class="course-task-list__item--bonus"><span class="course-task-list__number">04</span><div><strong>扩展功能可获得加分。</strong><p>完成基本功能即可获得基础分。在此基础上实现额外功能，例如扩展图灵机的能力、增加更丰富的交互或更多算法演示，可获得加分。</p></div></li>
+          </ol>
+
+          <ol class="course-task-list" data-language-content="requirements" data-language="en" hidden>
+            <li><span class="course-task-list__number">01</span><div><strong>Build the Turing machine with an AI agent.</strong><p>Do not hand-code the project yourself. Work through conversations with an AI coding agent to create a runnable machine that reproduces the algorithm assigned in class, then submit the runnable HTML file.</p></div></li>
+            <li><span class="course-task-list__number">02</span><div><strong>Submit a short run recording.</strong><p>Alongside the HTML file, submit a short screen recording that shows an input, the execution, and the final result.</p></div></li>
+            <li><span class="course-task-list__number">03</span><div><strong>Submit an illustrated iteration report.</strong><p>One conversation is usually not enough. For every round, record the result, the problem you noticed, the next prompt you entered, and what that round solved; include interface or run screenshots wherever possible.</p></div></li>
+            <li class="course-task-list__item--bonus"><span class="course-task-list__number">04</span><div><strong>Extensions can earn bonus credit.</strong><p>Completing the core functionality earns the base score. Extra features—such as extending the machine, adding richer interactions, or demonstrating more algorithms—can earn bonus credit.</p></div></li>
+          </ol>
+        </section>
 
         <section class="course-prompt-panel" aria-labelledby="starter-prompt-title">
           <div class="course-prompt-panel__heading">
             <div>
-              <p class="course-panel-label">Agent starter prompt</p>
-              <h4 id="starter-prompt-title">Give this prompt to your coding agent</h4>
+              <p class="course-panel-label" data-prompt-heading="label">Agent starter prompt</p>
+              <h4 id="starter-prompt-title" data-prompt-heading="title">Give this prompt to your coding agent</h4>
             </div>
-            <button type="button" class="course-copy-button" data-copy-prompt>
-              <span class="course-copy-button__icons" aria-hidden="true">
-                <i class="far fa-copy course-copy-button__copy-icon"></i>
-                <i class="fas fa-check course-copy-button__done-icon"></i>
-              </span>
-              <span data-copy-label>Copy prompt</span>
-            </button>
+            <div class="course-prompt-panel__actions">
+              <div class="course-language-switcher" data-language-switcher data-language-target="prompt" aria-label="Prompt language">
+                <button type="button" class="is-active" data-language="zh" aria-pressed="true">中文</button>
+                <button type="button" data-language="en" aria-pressed="false">English</button>
+              </div>
+              <button type="button" class="course-copy-button" data-copy-prompt>
+                <span class="course-copy-button__icons" aria-hidden="true">
+                  <i class="far fa-copy course-copy-button__copy-icon"></i>
+                  <i class="fas fa-check course-copy-button__done-icon"></i>
+                </span>
+                <span data-copy-label>复制提示词</span>
+              </button>
+            </div>
           </div>
-          <pre><code id="cs0502-starter-prompt">请生成一个可直接运行的图灵机模拟器网页，保存为一个单独的 HTML 文件。
+          <pre data-language-content="prompt" data-language="zh"><code class="cs0502-starter-prompt">请生成一个可直接运行的图灵机模拟器网页，保存为一个单独的 HTML 文件。
 
 ## 最重要要求
 
@@ -177,7 +183,90 @@ Lucide 图标用内联 SVG 替代，不要引入图标库。
 - 为图灵机引擎写单元测试，覆盖三个示例的预期结果、负坐标移动、空白格读写、未定义规则、后退恢复和最大步数停止
 - 不要留下 TODO、占位按钮或不可用功能
 - 运行测试确认全部通过</code></pre>
-          <p class="course-prompt-note"><i class="fas fa-lightbulb" aria-hidden="true"></i>Use this full prompt as a starting point, continue the conversation with your coding agent, then test and explain the implementation you produce.</p>
+          <pre data-language-content="prompt" data-language="en" hidden><code class="cs0502-starter-prompt">Create a fully runnable interactive Turing Machine simulator as a single HTML file.
+
+## Most important requirements
+
+The HTML file must work by double-clicking it directly. It must not require software installation, commands, a local server, or an internet connection.
+- Inline every piece of code, styling, and asset in this one HTML file.
+- Do not use &lt;script type="module"&gt;.
+- Do not load anything from the network; it must work completely offline.
+- Do not require any extra action from the user beyond opening the file.
+
+## Technical approach
+
+Build it with React 18 using its UMD build, which can be inlined directly in HTML.
+Download the React and ReactDOM UMD files from https://unpkg.com/react@18/umd/ and inline them.
+Use esbuild's build() API to bundle the source into an IIFE and inline it.
+Use classic JSX mode (React.createElement), not the automatic JSX runtime.
+Put all CSS in a &lt;style&gt; tag.
+Replace Lucide icons with inline SVG; do not import an icon library.
+
+## Functional requirements
+
+Create an interactive Turing Machine simulator for Chinese university classroom projection. The interface language should be Chinese.
+
+### Main interface
+
+Open directly to the simulator, with no marketing landing page. Make the horizontal tape the primary visual focus. Each cell shows a symbol, the current cell is highlighted, and the read/write head sits above it.
+The tape must expand infinitely in both directions (use Map&lt;number, string&gt; internally and render only a 15-cell window around the head).
+Above the tape, show registers for: current state, currently read symbol, step count, and status (ready / running / paused / accepted / rejected / halted / error).
+
+### Controls
+
+- Demo picker with three built-in examples
+- Input string and Apply Input button
+- Reset
+- Single step
+- Run / Pause
+- Step back
+- Speed slider
+- Transition-rule table with add, delete, edit, and duplicate-rule detection
+- Execution log with readable Chinese steps and formal δ rules
+- Custom Turing-machine editor for states, alphabets, and rules
+- JSON import and export
+
+### Symbol conventions
+
+- ⊢ is the left input boundary, ⊣ the right input boundary, and □ the blank symbol.
+- Initial state q0, accepting state q_accept, rejecting state q_reject.
+- Support L, R, and S moves.
+- If no rule exists for the current state and symbol, show “未定义转移” and halt without throwing an error.
+- Add a maximum-step setting (for example 1000) to prevent infinite loops.
+
+### Three built-in examples
+
+1. Unary addition: input 11101111 represents 3+4 and must produce 1111111. Animate scanning the first operand, deleting the separator, scanning the second operand, and halting.
+2. Binary increment: 1011 becomes 1100 and 111 becomes 1000. Correctly handle carry and all-ones inputs.
+3. Binary palindrome recognition: 1001 accepts and 1010 rejects. Show marking the first and last characters and scanning back and forth.
+
+### Animation
+
+For every step, animate in this order: read highlight → rule highlight → write fade → head movement → state update.
+Continuous running must preserve these phases rather than jumping to the final result. The speed slider must clearly affect the animation speed. Step back must restore the tape, head, and state.
+
+### Teaching feedback
+
+The execution log must show readable Chinese descriptions and formal rules, for example:
+δ(q0, 1) = (q1, 0, R)
+
+After halting, show a result summary: accepted or not, total steps, final state, final tape content, and halt reason.
+
+### Custom mode
+
+Allow editing the state set, input alphabet, tape alphabet, blank symbol, boundary symbols, initial state, accepting state, rejecting state, initial tape, initial head position, and transition rules.
+Support both a table editor and pasted textual rules such as q0,1 -&gt; q1,0,R. After editing, the configuration must be resettable and runnable immediately.
+
+## Engineering quality
+
+- Do not put all code in one component; keep the code structure clear.
+- Implement the Turing-machine engine as a separate module from the interface.
+- Avoid overlapping text, overflowing buttons, and distorted tape cells.
+- Use icon-plus-text buttons that work on desktop and tablet screens.
+- Write unit tests for the engine covering all three example results, negative-coordinate movement, blank reading and writing, undefined transitions, undo restoration, and maximum-step stopping.
+- Leave no TODOs, placeholder buttons, or nonfunctional controls.
+- Run the tests and confirm that all pass.</code></pre>
+          <p class="course-prompt-note"><i class="fas fa-lightbulb" aria-hidden="true"></i><span data-prompt-note>使用完整提示词作为起点，与 coding agent 多轮对话、测试并解释你最终完成的实现。</span></p>
         </section>
 
         <section class="course-reference-links" aria-labelledby="reference-links-title">
