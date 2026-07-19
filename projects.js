@@ -341,16 +341,16 @@ const directions = [
     {
         id: 'cs0502',
         title: 'CS0502 · Introduction to Computer Science',
-        fullTitle: '<b>AI Agent Project Studio</b>',
+        fullTitle: '<b>Xiaoyun Yuan</b>',
         direction: 'resources',
         directionLabel: 'Course Resources',
-        status: 'Project-Based Course',
+        status: 'Vibe Coding',
         image: './projects/CS0502_fig/course-card-gpt.png',
         summary: 'Build, test, and explain computer science systems with modern AI coding agents.',
         tags: ['Computer Science', 'AI Agents', 'Course Projects'],
         cardHref: './index.html?project=cs0502',
         links: [
-        { label: 'View Projects', href: './index.html?project=cs0502', icon: 'fas fa-arrow-right' },
+        { label: 'Course Page', href: './index.html?project=cs0502', icon: 'fas fa-arrow-right' },
         ]
     },
     ];
