@@ -29,7 +29,7 @@
     if (!button) return;
 
     function activePrompt() {
-      return root.querySelector('[data-language-content="prompt"]:not([hidden]) .cs0502-starter-prompt');
+      return root.querySelector('[data-language-content="turing"]:not([hidden]) .cs0502-starter-prompt');
     }
 
     function copyLabel() {
@@ -71,26 +71,16 @@
         contents.forEach(function(content) {
           content.hidden = content.dataset.language !== language;
         });
-        if (target === 'prompt') {
+        root.querySelectorAll('[data-language-heading="' + target + '"]').forEach(function(heading) {
+          const text = heading.dataset[language];
+          if (text) heading.textContent = text;
+        });
+        if (target === 'turing') {
           const copyButton = root.querySelector('[data-copy-prompt]');
           const copyLabel = root.querySelector('[data-copy-label]');
-          const promptLabel = root.querySelector('[data-prompt-heading="label"]');
-          const promptTitle = root.querySelector('[data-prompt-heading="title"]');
-          const promptNote = root.querySelector('[data-prompt-note]');
-          if (promptLabel) promptLabel.textContent = language === 'zh' ? 'Agent 提示词' : 'Agent starter prompt';
-          if (promptTitle) promptTitle.textContent = language === 'zh' ? '把这段提示词交给你的 coding agent' : 'Give this prompt to your coding agent';
-          if (promptNote) promptNote.textContent = language === 'zh'
-            ? '使用完整提示词作为起点，与 coding agent 多轮对话、测试并解释你最终完成的实现。'
-            : 'Use this full prompt as a starting point, continue the conversation with your coding agent, then test and explain the implementation you produce.';
           if (copyLabel && (!copyButton || !copyButton.classList.contains('is-copied'))) {
             copyLabel.textContent = language === 'zh' ? '复制提示词' : 'Copy prompt';
           }
-        }
-        if (target === 'requirements') {
-          const requirementsLabel = root.querySelector('[data-requirements-heading="label"]');
-          const requirementsTitle = root.querySelector('[data-requirements-heading="title"]');
-          if (requirementsLabel) requirementsLabel.textContent = language === 'zh' ? '项目任务' : 'Project task';
-          if (requirementsTitle) requirementsTitle.textContent = language === 'zh' ? '提交内容' : 'What to submit';
         }
       }
 
@@ -99,6 +89,11 @@
           selectLanguage(button.dataset.language);
         });
       });
+
+      const initiallySelected = buttons.find(function(button) {
+        return button.classList.contains('is-active');
+      });
+      selectLanguage((initiallySelected || buttons[0]).dataset.language);
     });
   }
 

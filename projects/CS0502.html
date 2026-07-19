@@ -32,47 +32,51 @@
         <span class="course-project-card__number">01</span>
         <span class="course-project-card__main">
           <span class="course-project-card__meta">
-            <span>Foundations of computation</span>
-            <span>Agent-built project</span>
+            <span data-language-heading="turing" data-zh="计算基础" data-en="Foundations of computation">计算基础</span>
+            <span data-language-heading="turing" data-zh="Agent 构建项目" data-en="Agent-built project">Agent 构建项目</span>
           </span>
-          <strong>Turing Machine</strong>
-          <span class="course-project-card__summary">
+          <strong data-language-heading="turing" data-zh="图灵机" data-en="Turing Machine">图灵机</strong>
+          <span class="course-project-card__summary" data-language-content="turing" data-language="zh">
+            与 AI coding agent 一起构建可运行、可检查的图灵机，用测试用例验证，并记录从输入到停机的完整过程。
+          </span>
+          <span class="course-project-card__summary" data-language-content="turing" data-language="en" hidden>
             Build a working, inspectable Turing machine with an AI coding agent, verify it with test cases, and record the complete run from input to halt.
           </span>
         </span>
         <span class="course-project-card__action" aria-hidden="true">
-          <span class="course-project-card__action-copy course-project-card__action-copy--open">Open full brief</span>
-          <span class="course-project-card__action-copy course-project-card__action-copy--close">Close brief</span>
+          <span class="course-project-card__action-copy course-project-card__action-copy--open" data-language-heading="turing" data-zh="展开项目详情" data-en="Open full brief">展开项目详情</span>
+          <span class="course-project-card__action-copy course-project-card__action-copy--close" data-language-heading="turing" data-zh="收起项目详情" data-en="Close brief">收起项目详情</span>
           <span class="course-project-card__chevron"><i class="fas fa-chevron-down"></i></span>
         </span>
       </summary>
 
       <div class="course-project-card__details">
+        <div class="course-project-card__language course-language-switcher" data-language-switcher data-language-target="turing" aria-label="Turing Machine project language">
+          <button type="button" data-language="zh" aria-pressed="false">中文</button>
+          <button type="button" class="is-active" data-language="en" aria-pressed="true">English</button>
+        </div>
         <div class="course-project-note">
           <i class="fas fa-info-circle" aria-hidden="true"></i>
-          <p>Use the prompt below, iterate with your coding agent, and submit a runnable HTML file, a short recording, and an illustrated iteration report.</p>
+          <p data-language-content="turing" data-language="zh">使用下方提示词与 coding agent 多轮迭代，并提交可运行 HTML、简短录屏和图文迭代报告。</p>
+          <p data-language-content="turing" data-language="en" hidden>Use the prompt below, iterate with your coding agent, and submit a runnable HTML file, a short recording, and an illustrated iteration report.</p>
         </div>
 
         <section class="course-task-panel" aria-labelledby="requirements-title">
           <div class="course-task-panel__heading">
             <div>
-              <p class="course-panel-label" data-requirements-heading="label">Project task</p>
-              <h4 id="requirements-title" data-requirements-heading="title">What to submit</h4>
-            </div>
-            <div class="course-language-switcher" data-language-switcher data-language-target="requirements" aria-label="Requirements language">
-              <button type="button" class="is-active" data-language="zh" aria-pressed="true">中文</button>
-              <button type="button" data-language="en" aria-pressed="false">English</button>
+              <p class="course-panel-label" data-language-heading="turing" data-zh="提交内容" data-en="What to submit">提交内容</p>
+              <h4 id="requirements-title" data-language-heading="turing" data-zh="完成你的图灵机项目" data-en="Complete your Turing Machine project">完成你的图灵机项目</h4>
             </div>
           </div>
 
-          <ol class="course-task-list" data-language-content="requirements" data-language="zh">
+          <ol class="course-task-list" data-language-content="turing" data-language="zh">
             <li><span class="course-task-list__number">01</span><div><strong>用 AI agent 完成图灵机。</strong><p>不要自己手写代码；通过与 AI coding agent 对话，做出一个能运行、能复现课堂指定算法的图灵机，并提交可直接运行的 HTML 文件。</p></div></li>
             <li><span class="course-task-list__number">02</span><div><strong>提交一段运行录屏。</strong><p>除 HTML 文件外，再提交一段简短录屏，展示输入、运行过程和最终结果。</p></div></li>
             <li><span class="course-task-list__number">03</span><div><strong>提交图文并茂的迭代报告。</strong><p>一次对话通常不够。请记录每一轮对话得到的结果、发现的问题、你再次输入的提示词，以及该轮解决了什么；尽量附上界面或运行截图。</p></div></li>
             <li class="course-task-list__item--bonus"><span class="course-task-list__number">04</span><div><strong>扩展功能可获得加分。</strong><p>完成基本功能即可获得基础分。在此基础上实现额外功能，例如扩展图灵机的能力、增加更丰富的交互或更多算法演示，可获得加分。</p></div></li>
           </ol>
 
-          <ol class="course-task-list" data-language-content="requirements" data-language="en" hidden>
+          <ol class="course-task-list" data-language-content="turing" data-language="en" hidden>
             <li><span class="course-task-list__number">01</span><div><strong>Build the Turing machine with an AI agent.</strong><p>Do not hand-code the project yourself. Work through conversations with an AI coding agent to create a runnable machine that reproduces the algorithm assigned in class, then submit the runnable HTML file.</p></div></li>
             <li><span class="course-task-list__number">02</span><div><strong>Submit a short run recording.</strong><p>Alongside the HTML file, submit a short screen recording that shows an input, the execution, and the final result.</p></div></li>
             <li><span class="course-task-list__number">03</span><div><strong>Submit an illustrated iteration report.</strong><p>One conversation is usually not enough. For every round, record the result, the problem you noticed, the next prompt you entered, and what that round solved; include interface or run screenshots wherever possible.</p></div></li>
@@ -83,14 +87,10 @@
         <section class="course-prompt-panel" aria-labelledby="starter-prompt-title">
           <div class="course-prompt-panel__heading">
             <div>
-              <p class="course-panel-label" data-prompt-heading="label">Agent starter prompt</p>
-              <h4 id="starter-prompt-title" data-prompt-heading="title">Give this prompt to your coding agent</h4>
+              <p class="course-panel-label" data-language-heading="turing" data-zh="Agent 提示词" data-en="Agent starter prompt">Agent 提示词</p>
+              <h4 id="starter-prompt-title" data-language-heading="turing" data-zh="把这段提示词交给你的 coding agent" data-en="Give this prompt to your coding agent">把这段提示词交给你的 coding agent</h4>
             </div>
             <div class="course-prompt-panel__actions">
-              <div class="course-language-switcher" data-language-switcher data-language-target="prompt" aria-label="Prompt language">
-                <button type="button" class="is-active" data-language="zh" aria-pressed="true">中文</button>
-                <button type="button" data-language="en" aria-pressed="false">English</button>
-              </div>
               <button type="button" class="course-copy-button" data-copy-prompt>
                 <span class="course-copy-button__icons" aria-hidden="true">
                   <i class="far fa-copy course-copy-button__copy-icon"></i>
@@ -100,7 +100,7 @@
               </button>
             </div>
           </div>
-          <pre data-language-content="prompt" data-language="zh"><code class="cs0502-starter-prompt">请生成一个可直接运行的图灵机模拟器网页，保存为一个单独的 HTML 文件。
+          <pre data-language-content="turing" data-language="zh"><code class="cs0502-starter-prompt">请生成一个可直接运行的图灵机模拟器网页，保存为一个单独的 HTML 文件。
 
 ## 最重要要求
 
@@ -183,7 +183,7 @@ Lucide 图标用内联 SVG 替代，不要引入图标库。
 - 为图灵机引擎写单元测试，覆盖三个示例的预期结果、负坐标移动、空白格读写、未定义规则、后退恢复和最大步数停止
 - 不要留下 TODO、占位按钮或不可用功能
 - 运行测试确认全部通过</code></pre>
-          <pre data-language-content="prompt" data-language="en" hidden><code class="cs0502-starter-prompt">Create a fully runnable interactive Turing Machine simulator as a single HTML file.
+          <pre data-language-content="turing" data-language="en" hidden><code class="cs0502-starter-prompt">Create a fully runnable interactive Turing Machine simulator as a single HTML file.
 
 ## Most important requirements
 
@@ -266,16 +266,18 @@ Support both a table editor and pasted textual rules such as q0,1 -&gt; q1,0,R. 
 - Write unit tests for the engine covering all three example results, negative-coordinate movement, blank reading and writing, undefined transitions, undo restoration, and maximum-step stopping.
 - Leave no TODOs, placeholder buttons, or nonfunctional controls.
 - Run the tests and confirm that all pass.</code></pre>
-          <p class="course-prompt-note"><i class="fas fa-lightbulb" aria-hidden="true"></i><span data-prompt-note>使用完整提示词作为起点，与 coding agent 多轮对话、测试并解释你最终完成的实现。</span></p>
+          <p class="course-prompt-note"><i class="fas fa-lightbulb" aria-hidden="true"></i><span data-language-content="turing" data-language="zh">使用完整提示词作为起点，与 coding agent 多轮对话、测试并解释你最终完成的实现。</span><span data-language-content="turing" data-language="en" hidden>Use this prompt as a starting point, continue the dialogue with your coding agent, then test and explain the implementation you produce.</span></p>
         </section>
 
         <section class="course-reference-links" aria-labelledby="reference-links-title">
           <div class="course-subsection-heading">
             <div>
-              <p class="course-panel-label">Three example results</p>
-              <h4 id="reference-links-title">Three example implementations</h4>
+              <p class="course-panel-label" data-language-content="turing" data-language="zh">三个示例结果</p>
+              <p class="course-panel-label" data-language-content="turing" data-language="en" hidden>Three example results</p>
+              <h4 id="reference-links-title" data-language-heading="turing" data-zh="三个示例实现" data-en="Three example implementations">三个示例实现</h4>
             </div>
-            <p>Use the prompt above, continue the dialogue with your coding agent, and build your own version.</p>
+            <p data-language-content="turing" data-language="zh">使用上方提示词，与 coding agent 继续对话，做出你自己的版本。</p>
+            <p data-language-content="turing" data-language="en" hidden>Use the prompt above, continue the dialogue with your coding agent, and build your own version.</p>
           </div>
 
           <div class="course-reference-links__grid">
@@ -296,8 +298,113 @@ Support both a table editor and pasted textual rules such as q0,1 -&gt; q1,0,R. 
       </div>
     </details>
 
+    <details class="course-project-card" id="project-data-structures">
+      <summary class="course-project-card__toggle">
+        <span class="course-project-card__number">02</span>
+        <span class="course-project-card__main">
+          <span class="course-project-card__meta">
+            <span data-language-heading="data-structures" data-zh="数据结构与算法" data-en="Data structures &amp; algorithms">数据结构与算法</span>
+            <span data-language-heading="data-structures" data-zh="开放式 Agent 项目" data-en="Open-ended agent project">开放式 Agent 项目</span>
+          </span>
+          <strong data-language-heading="data-structures" data-zh="校园寻路项目" data-en="Campus Pathfinding Project">校园寻路项目</strong>
+          <span class="course-project-card__summary" data-language-content="data-structures" data-language="zh">
+            使用校园地图项目资料，与 AI coding agent 对话，把它逐步改造成你自己的数据结构与寻路项目。
+          </span>
+          <span class="course-project-card__summary" data-language-content="data-structures" data-language="en" hidden>
+            Turn the campus-map project materials into your own data-structures and pathfinding studio, using conversations with an AI coding agent.
+          </span>
+        </span>
+        <span class="course-project-card__action" aria-hidden="true">
+          <span class="course-project-card__action-copy course-project-card__action-copy--open" data-language-heading="data-structures" data-zh="展开项目详情" data-en="Open full brief">展开项目详情</span>
+          <span class="course-project-card__action-copy course-project-card__action-copy--close" data-language-heading="data-structures" data-zh="收起项目详情" data-en="Close brief">收起项目详情</span>
+          <span class="course-project-card__chevron"><i class="fas fa-chevron-down"></i></span>
+        </span>
+      </summary>
+
+      <div class="course-project-card__details">
+        <div class="course-project-card__language course-language-switcher" data-language-switcher data-language-target="data-structures" aria-label="Campus Pathfinding Project language">
+          <button type="button" data-language="zh" aria-pressed="false">中文</button>
+          <button type="button" class="is-active" data-language="en" aria-pressed="true">English</button>
+        </div>
+        <div class="course-project-note">
+          <i class="fas fa-compass" aria-hidden="true"></i>
+          <p data-language-content="data-structures" data-language="zh">本项目提供项目网页、任务说明和建议提示词；请自行设计并迭代与 AI coding agent 的对话策略。没有参考实现。</p>
+          <p data-language-content="data-structures" data-language="en" hidden>This project provides a project web page, a task brief, and suggested prompts. Design and iterate on your own conversations with an AI coding agent; no reference implementation is provided.</p>
+        </div>
+
+        <section class="course-task-panel" aria-labelledby="data-structures-task-title">
+          <div class="course-task-panel__heading">
+            <div>
+              <p class="course-panel-label" data-language-heading="data-structures" data-zh="项目任务" data-en="Project task">项目任务</p>
+              <h4 id="data-structures-task-title" data-language-heading="data-structures" data-zh="完成校园寻路项目" data-en="Build the campus pathfinding project">完成校园寻路项目</h4>
+            </div>
+          </div>
+          <ol class="course-task-list course-task-list--single" data-language-content="data-structures" data-language="zh">
+            <li><span class="course-task-list__number">01</span><div><strong>完成核心数据结构。</strong><p>为校园地点实现数组、链表、二分查找和二叉搜索树。</p></div></li>
+            <li><span class="course-task-list__number">02</span><div><strong>完成图搜索与最短路。</strong><p>从提供的图数据建立邻接表，并完成 BFS 与 Dijkstra；可由 AI agent 自行实现或选用合适的图算法库。</p></div></li>
+            <li><span class="course-task-list__number">03</span><div><strong>在项目资料上迭代。</strong><p>保持地图数据不变，用自己的 AI agent 对话完成和改进项目。完整顺序见任务说明。</p></div></li>
+            <li class="course-task-list__item--bonus"><span class="course-task-list__number">+1</span><div><strong>扩展更高级算法。</strong><p>可实现哈希表、A* 等扩展算法；如实现 A*，在报告中与 Dijkstra 比较理论差异和实验结果。</p></div></li>
+            <li class="course-task-list__item--bonus"><span class="course-task-list__number">+2</span><div><strong>优化 Web app。</strong><p>对可视化、交互或整体使用体验做出实质改进，可获得额外加分。</p></div></li>
+          </ol>
+
+          <ol class="course-task-list course-task-list--single" data-language-content="data-structures" data-language="en" hidden>
+            <li><span class="course-task-list__number">01</span><div><strong>Implement the core data structures.</strong><p>Build array search, linked lists, binary search, and a binary search tree for campus places.</p></div></li>
+            <li><span class="course-task-list__number">02</span><div><strong>Implement graph search and shortest paths.</strong><p>Construct an adjacency list from the supplied data, then complete BFS and Dijkstra. Your AI agent may implement them or choose an appropriate graph-algorithm library.</p></div></li>
+            <li><span class="course-task-list__number">03</span><div><strong>Iterate from the project materials.</strong><p>Keep the map data unchanged, then use your own AI-agent conversations to build and improve the project. The brief gives the full sequence.</p></div></li>
+            <li class="course-task-list__item--bonus"><span class="course-task-list__number">+1</span><div><strong>Extend with advanced algorithms.</strong><p>Possible extensions include a hash table, A*, and more. If you implement A*, compare its theoretical differences and experimental results with Dijkstra.</p></div></li>
+            <li class="course-task-list__item--bonus"><span class="course-task-list__number">+2</span><div><strong>Improve the web app.</strong><p>Substantial improvements to the visualization, interactions, or overall experience can earn additional bonus credit.</p></div></li>
+          </ol>
+        </section>
+
+        <section class="course-task-panel course-submit-panel" aria-labelledby="data-structures-submit-title">
+          <div class="course-task-panel__heading">
+            <div>
+              <p class="course-panel-label" data-language-heading="data-structures" data-zh="提交内容" data-en="What to submit">提交内容</p>
+              <h4 id="data-structures-submit-title" data-language-heading="data-structures" data-zh="需要提交什么" data-en="What to submit">需要提交什么</h4>
+            </div>
+          </div>
+          <ol class="course-task-list" data-language-content="data-structures" data-language="zh">
+            <li><span class="course-task-list__number">01</span><div><strong>基础任务：可运行项目。</strong><p>提交完成后的完整网页文件夹或压缩包；无需提交代码仓库。它应能直接打开，并展示所有基础数据结构与 BFS、Dijkstra 功能。</p></div></li>
+            <li><span class="course-task-list__number">02</span><div><strong>基础任务：运行录屏。</strong><p>提交简短录屏，展示地点查找、起终点选择、寻路过程与结果。</p></div></li>
+            <li><span class="course-task-list__number">03</span><div><strong>基础任务：图文迭代报告。</strong><p>记录每轮与 AI agent 的对话结果、发现的问题、后续提示词、解决方案和关键截图；说明算法原理、各数据结构的优势、不同算法的比较，并用实验结果支撑结论。</p></div></li>
+            <li class="course-task-list__item--bonus"><span class="course-task-list__number">+1 / +2</span><div><strong>加分内容。</strong><p>可扩展哈希表、A* 等更高级算法；Web app 优化也可加分。所有加分内容都需在录屏和报告中清楚展示。</p></div></li>
+          </ol>
+          <ol class="course-task-list" data-language-content="data-structures" data-language="en" hidden>
+            <li><span class="course-task-list__number">01</span><div><strong>Core: runnable project.</strong><p>Submit the completed web folder or a ZIP—no code repository is required. It must open directly and demonstrate all core structures plus BFS and Dijkstra.</p></div></li>
+            <li><span class="course-task-list__number">02</span><div><strong>Core: run recording.</strong><p>Submit a short recording that shows place search, start/end selection, pathfinding, and the result.</p></div></li>
+            <li><span class="course-task-list__number">03</span><div><strong>Core: illustrated iteration report.</strong><p>For each AI-agent round, record the result, issue found, follow-up prompt, resolution, and key screenshots. Explain algorithmic principles, the advantages of each data structure, comparisons between algorithms, and conclusions supported by experimental results.</p></div></li>
+            <li class="course-task-list__item--bonus"><span class="course-task-list__number">+1 / +2</span><div><strong>Bonus work.</strong><p>Extend the project with advanced algorithms such as a hash table or A*; web-app improvements can also earn credit. Show all bonus work clearly in both the recording and report.</p></div></li>
+          </ol>
+        </section>
+
+        <div class="course-project-note course-project-note--warning">
+          <i class="fas fa-tools" aria-hidden="true"></i>
+          <p data-language-content="data-structures" data-language="zh">项目网页中的查找与寻路算法尚未实现。选择起终点后点击“运行寻路”，页面会明确提示“算法尚未实现”；这正是你需要完成的部分。</p>
+          <p data-language-content="data-structures" data-language="en" hidden>The project web page does not implement search or pathfinding algorithms yet. After selecting endpoints, clicking “Run pathfinding” clearly reports that the algorithm is not implemented; that is the work you will complete.</p>
+        </div>
+
+        <div class="course-data-actions" aria-label="Campus Pathfinding Project materials">
+          <a class="course-data-action course-data-action--primary" href="./projects/CS0502_pages/data-structure/CS0502-data-structure-starter.zip" download>
+            <i class="fas fa-download" aria-hidden="true"></i><span data-language-content="data-structures" data-language="zh">下载项目资料</span><span data-language-content="data-structures" data-language="en" hidden>Download project materials</span>
+          </a>
+          <a class="course-data-action" href="./projects/CS0502_pages/data-structure/STUDENT_TASKS.md" download>
+            <i class="far fa-file-alt" aria-hidden="true"></i><span data-language-content="data-structures" data-language="zh">任务说明</span><span data-language-content="data-structures" data-language="en" hidden>Task brief</span>
+          </a>
+          <a class="course-data-action" href="./projects/CS0502_pages/data-structure/PROMPT_SUGGESTIONS.md" download>
+            <i class="far fa-comment-dots" aria-hidden="true"></i><span data-language-content="data-structures" data-language="zh">建议提示词</span><span data-language-content="data-structures" data-language="en" hidden>Prompt guide</span>
+          </a>
+          <a class="course-data-action" href="./projects/CS0502_pages/data-structure/README.md" download>
+            <i class="far fa-file-code" aria-hidden="true"></i><span data-language-content="data-structures" data-language="zh">使用说明</span><span data-language-content="data-structures" data-language="en" hidden>README</span>
+          </a>
+          <a class="course-data-action course-data-action--primary" href="./projects/CS0502_pages/data-structure/web/index.html" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-map-marked-alt" aria-hidden="true"></i><span data-language-content="data-structures" data-language="zh">打开项目网页</span><span data-language-content="data-structures" data-language="en" hidden>Open project web</span><i class="fas fa-external-link-alt" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </details>
+
     <div class="course-next-projects">
-      <span>02+</span>
+      <span>03+</span>
       <div>
         <h3>More projects are coming.</h3>
         <p>Future project briefs will be added here as the course develops.</p>
