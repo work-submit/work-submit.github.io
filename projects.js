@@ -340,14 +340,14 @@ const directions = [
     },
     {
         id: 'cs0502',
-        title: 'CS0502 · Introduction to Computer Science',
+        title: 'CS0502 · Vibe Coding · Introduction to Computer Science',
         fullTitle: '<b>Xiaoyun Yuan</b>',
         direction: 'resources',
         directionLabel: 'Course Resources',
         status: 'Vibe Coding',
         image: './projects/CS0502_fig/course-card-gpt.png',
-        summary: 'Build, test, and explain computer science systems with modern AI coding agents.',
-        tags: ['Computer Science', 'AI Agents', 'Course Projects'],
+        summary: 'A Vibe Coding course: build, test, and explain computer science systems by directing modern AI coding agents.',
+        tags: ['Vibe Coding', 'Computer Science', 'AI Agents'],
         cardHref: './index.html?project=cs0502',
         links: [
         { label: 'Course Page', href: './index.html?project=cs0502', icon: 'fas fa-arrow-right' },
