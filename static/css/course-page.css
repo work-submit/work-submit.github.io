@@ -605,6 +605,16 @@
   background: var(--course-cyan-dark);
 }
 
+.course-data-action--disabled,
+.course-data-action--disabled:hover {
+  cursor: not-allowed;
+  transform: none;
+  color: #7c8a99;
+  border-color: #d8e0e5;
+  background: #f3f6f7;
+  box-shadow: none;
+}
+
 .course-evidence-list {
   display: grid;
   gap: 17px;

@@ -97,11 +97,44 @@
     });
   }
 
+  function initAiProjectDataLinks(root) {
+    var links = window.CS0502_AI_DATA_LINKS || {};
+    root.querySelectorAll('[data-ai-project-data]').forEach(function(button) {
+      var entry = links[button.dataset.aiProjectData];
+      var url = typeof entry === 'string' ? entry : entry && entry.url;
+      var extractionCode = typeof entry === 'object' && entry ? entry.extractionCode : '';
+      if (typeof url === 'string' && /^https?:\/\//.test(url)) {
+        button.href = url;
+        button.target = '_blank';
+        button.rel = 'noopener noreferrer';
+        button.removeAttribute('aria-disabled');
+        button.removeAttribute('title');
+        button.classList.remove('course-data-action--disabled');
+        button.querySelectorAll('[data-extraction-code]').forEach(function(codeLabel) {
+          if (extractionCode) {
+            codeLabel.textContent = extractionCode;
+            codeLabel.hidden = false;
+          }
+        });
+        return;
+      }
+
+      button.href = '#';
+      button.setAttribute('aria-disabled', 'true');
+      button.title = '教师尚未发布该数据下载链接';
+      button.classList.add('course-data-action--disabled');
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+      });
+    });
+  }
+
   window.initCS0502Course = function() {
     const root = document.querySelector('.course-page');
     if (!root || root.dataset.cs0502Initialized === 'true') return;
     root.dataset.cs0502Initialized = 'true';
     initLanguageSwitchers(root);
     initCopyPrompt(root);
+    initAiProjectDataLinks(root);
   };
 })();
