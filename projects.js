@@ -47,8 +47,8 @@ const directions = [
     },
     {
     id: 'resources',
-    title: 'Resources',
-    kicker: 'Courses, tools, and resources',
+    title: 'Resources & Teaching',
+    kicker: 'Resources, tools, and teaching',
     description: 'Course projects, educational tools, and interactive mini-games.'
     }
 ];

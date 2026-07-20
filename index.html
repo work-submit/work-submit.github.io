@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/index.css?v=20260720-gallery-nav-v1">
   <link rel="stylesheet" href="./static/css/course-page.css?v=20260719-vibe-title-v5">
   <link rel="stylesheet" href="./static/css/project-pages.css?v=20260703-shareverse-overview3">
 
@@ -33,14 +33,19 @@
       </button>
 
       <div class="nav-links" id="nav-links">
-        <!-- <a class="nav-link" href="./index.html">Projects</a> -->
         <a class="nav-link" href="https://pi.xiaoyunyuan.net/">PI</a>
+        <details class="nav-menu">
+          <summary class="nav-link">Research <span class="nav-menu__chevron" aria-hidden="true"></span></summary>
+          <div class="nav-menu__panel">
+            <a href="./index.html#ai-vision">Generative AI</a>
+            <a href="./index.html#intelligent-imaging">Intelligent Imaging</a>
+            <a href="./index.html#ai-optics">Optics + AI</a>
+            <a href="./index.html#datasets">Datasets</a>
+            <a href="./index.html#resources">Resources &amp; Teaching</a>
+          </div>
+        </details>
         <a class="nav-link" data-target="team" href="./index.html?project=team">Members</a>
-        <a class="nav-link" href="./index.html#ai-vision">Generative AI</a>
-        <a class="nav-link" href="./index.html#intelligent-imaging">Intelligent Imaging</a>
-        <a class="nav-link" href="./index.html#ai-optics">Optics + AI</a>
-        <a class="nav-link" href="./index.html#datasets">Datasets</a>
-        <a class="nav-link" href="./index.html#resources">Resources</a>
+        <a class="nav-link" href="./gallery.html">Gallery</a>
         <a class="nav-link" data-target="about" href="./index.html?project=about">News & Openings</a>
       </div>
     </div>
@@ -254,7 +259,11 @@
       });
 
       document.querySelectorAll('.nav-links a').forEach(function(link) {
-        link.addEventListener('click', closeMobileNav);
+        link.addEventListener('click', function() {
+          const parentMenu = link.closest('.nav-menu');
+          if (parentMenu) parentMenu.removeAttribute('open');
+          closeMobileNav();
+        });
       });
 
       const target = getProjectFromUrl();
