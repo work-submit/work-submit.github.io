@@ -9,6 +9,8 @@ const contentPaths = {
         'unstructuredcam': './projects/Gigapixel.html',
         'gigapixel': './projects/Gigapixel.html',
         '3m-ti': './projects/3MTI.html',
+        'beyondfusion': './projects/BeyondFusion.html',
+        'beyond-fusion': './projects/BeyondFusion.html',
         'dmdiff': './projects/DMDiff.html',
         'shareverse': './projects/ShareVerse.html?v=20260703-overview',
         'share-verse': './projects/ShareVerse.html?v=20260703-overview',
@@ -162,6 +164,22 @@ const directions = [
         links: [
         { label: 'Project', href: './index.html?project=3m-ti', icon: 'fas fa-arrow-right' },
         { label: 'Code', href: 'https://github.com/work-submit/3MTI', icon: 'fab fa-github' },
+        { label: 'arXiv', href: 'https://arxiv.org/abs/2511.19117', icon: 'ai ai-arxiv' }
+        ]
+    },
+    {
+        id: 'beyondfusion',
+        title: 'BeyondFusion: Self-Aligned Latent Diffusion for Calibration-Free Infrared Super-Resolution and Infrared-Visible Fusion',
+        fullTitle: 'Minchong Chen*, <b>Xiaoyun Yuan*</b><span style="font-size:1.6em; font-weight:bold;">&#9993;</span>, Minyu Cao, Jianing Zhang, Jun Zhang, Shuyang Liu<span style="font-size:1.6em; font-weight:bold;">&#9993;</span>, Xiaokang Yang',
+        direction: 'ai-vision',
+        directionLabel: 'Generative AI for Vision',
+        status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">arXiv</b> 2026',
+        image: './projects/BeyondFusion_fig/Fig1.png',
+        summary: 'Self-aligned latent diffusion for calibration-free infrared super-resolution and infrared-visible fusion under mobile cross-modal misalignment.',
+        tags: ['Infrared Imaging', 'Image Fusion', 'Diffusion', 'Cross-Modal Alignment'],
+        links: [
+        { label: 'Project', href: './index.html?project=beyondfusion', icon: 'fas fa-arrow-right' },
+        { label: 'Paper', href: './paper/BeyondFusion.pdf', icon: 'fas fa-file-pdf' },
         { label: 'arXiv', href: 'https://arxiv.org/abs/2511.19117', icon: 'ai ai-arxiv' }
         ]
     },

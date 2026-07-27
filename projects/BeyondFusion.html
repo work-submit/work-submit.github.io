@@ -1,0 +1,538 @@
+<style>
+.publication-title {
+      line-height: 1.12;
+    }
+
+    .publication-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .publication-links .link-block {
+      margin: 0;
+    }
+
+    figure {
+      margin: 2rem 0;
+    }
+
+    figure img {
+      height: auto;
+      width: 100%;
+    }
+
+    figcaption {
+      color: #555;
+      font-size: 0.95rem;
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+
+    .video-wrapper {
+      background: #111;
+      border-radius: 6px;
+      margin-top: 1rem;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .presentation-video {
+      aspect-ratio: 16 / 9;
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+
+    .table-wrapper {
+      margin: 1.75rem 0 2rem;
+      overflow-x: auto;
+    }
+
+    .table-caption {
+      color: #333;
+      font-weight: 600;
+      margin: 1.75rem 0 0.75rem;
+      text-align: center;
+    }
+
+    .paper-table {
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      min-width: 720px;
+      width: 100%;
+    }
+
+    .paper-table th,
+    .paper-table td {
+      border: 1px solid #d6d6d6;
+      padding: 0.5rem 0.65rem;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .paper-table th:first-child,
+    .paper-table td:first-child {
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .paper-table thead th {
+      background: #f3f6f8;
+      font-weight: 600;
+    }
+
+    .paper-table tbody tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    .paper-table .best {
+      background: #9fadb8;
+      color: #1f2933;
+      font-weight: 600;
+    }
+
+    .paper-table .second {
+      background: #e7edf2;
+      color: #28323c;
+      font-weight: 600;
+    }
+
+    pre {
+      overflow-x: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      .hero .hero-body {
+        padding: 2rem 1rem;
+      }
+
+      .columns {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .publication-title {
+        font-size: 2.1rem !important;
+        line-height: 1.15;
+        word-break: normal;
+      }
+
+      .publication-authors {
+        font-size: 1rem !important;
+        line-height: 1.35;
+      }
+
+      pre,
+      pre code {
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+    }
+</style>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <div class="navbar-item has-dropdown is-hoverable">
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span style="color: #5ab0c5;font-weight: bolder;">BeyondFusion</span>: Self-Aligned Latent Diffusion for Calibration-Free Infrared Super-Resolution and Infrared-Visible Fusion</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=UX2ZtJcAAAAJ&hl=zh-CN">Minchong Chen</a><sup>1,&dagger;</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://xiaoyunyuan.net/">Xiaoyun Yuan</a><sup>1,&dagger;,*</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Minyu Cao</a><sup>1</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Jianing Zhang</a><sup>2</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Jun Zhang</a><sup>2</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Shuyang Liu</a><sup>3,*</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Xiaokang Yang</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>MoE Key Lab of Artificial Intelligence, Institute of AI, School of Computer Science, Shanghai Jiao Tong University</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>Tsinghua University</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>3</sup>Institute of Modern Optics, Nankai University</span>
+            <br>
+            <span class="author-block"><sup>&dagger;</sup>Equal contribution&nbsp;&nbsp; <sup>*</sup>Corresponding authors</span>
+            <br>
+            <span class="email-link">
+              <a href="mailto:yuanxiaoyun@sjtu.edu.cn">yuanxiaoyun@sjtu.edu.cn</a>
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- <span class="link-block">
+                <a href="./paper/BeyondFusion.pdf"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>PDF</span>
+                </a>
+              </span> -->
+
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2511.19117"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/work-submit/3MTI"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://pan.sjtu.edu.cn/web/share/7df7f0df32ac4cd4eecc243f5ff95483"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-camera-retro"></i>
+                  </span>
+                  <span>Data and Model</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <img src="./projects/BeyondFusion_fig/Fig1.png" alt="Overview of BeyondFusion">
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Presentation Video</h2>
+        <div class="content">
+          <div class="video-wrapper">
+            <video class="presentation-video" controls preload="metadata">
+              <source src="./projects/BeyondFusion_video/BeyondFusion_tpami_presentation.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Mobile infrared-visible imaging typically pairs a compact infrared sensor with a high-resolution visible camera for complementary perception. However, cross-sensor misalignment caused by different optics, viewpoints, fields of view, and exposure timings hinders practical deployment. We propose BeyondFusion, a unified latent diffusion framework for calibration-free visible-guided infrared super-resolution and infrared-visible fusion. The framework supports task-specific training and joint training, where the two tasks are optimized and executed as two readouts of the same generative process. Instead of relying on explicit registration or geometric warping, BeyondFusion introduces a cross-modal self-aligning (CMSA) module into the denoising U-Net. CMSA reorganizes infrared and visible latent tokens into a shared attention space to learn content-adaptive cross-modal correspondence during denoising. Together with misalignment augmentation, the model exploits visible structural and semantic cues while preserving thermal consistency, enabling high-frequency infrared reconstruction and informative fused-image generation under uncalibrated conditions. Experiments on public benchmarks and a mobile infrared-visible imaging system show strong performance across aligned inputs, low-resolution infrared observations, synthetic misalignments, and real mobile captures with unsynchronized sensors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Framework Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            BeyondFusion formulates infrared super-resolution and infrared-visible fusion as two outputs of a shared latent generative framework. Visible and infrared inputs are encoded into the latent space of a pretrained one-step diffusion model.
+          </p>
+          <figure>
+            <img src="./projects/BeyondFusion_fig/Fig1.png" alt="BeyondFusion architecture">
+            <figcaption>Overview of BeyondFusion. CMSA enables visible and infrared tokens to interact in a shared latent attention space, and misalignment augmentation improves robustness under uncalibrated acquisition.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Mobile Infrared-Visible Imaging System</h2>
+        <div class="content has-text-justified">
+          <p>
+            The two sensors capture images without geometric calibration or hardware synchronization, naturally introducing viewpoint, field-of-view, resolution, and timing discrepancies. The infrared module has a native resolution of 64&times;64, while the smartphone visible camera captures high-resolution 512&times;512 images.
+          </p>
+          <figure>
+            <img src="./projects/BeyondFusion_fig/Fig2.png" alt="Mobile infrared-visible imaging system">
+            <figcaption>Mobile infrared-visible imaging system used to validate BeyondFusion under calibration-free and synchronization-free acquisition.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Infrared Image Super-Resolution</h2>
+        <div class="content has-text-justified">
+          <p>
+            BeyondFusion is evaluated against representative visible-guided, infrared-specific, and diffusion-based super-resolution baselines. On public infrared-visible benchmarks, BeyondFusion achieves the best LPIPS score and second-best PSNR, SSIM, MANIQA, and MUSIQ scores, demonstrating a strong balance between perceptual realism and structural fidelity.
+          </p>
+          <p class="table-caption">Table I. Quantitative comparison on infrared image super-resolution. Gray cells indicate the best result, and light gray cells indicate the second-best result for each metric.</p>
+          <div class="table-wrapper">
+            <table class="paper-table" aria-label="Quantitative comparison on infrared image super-resolution">
+              <thead>
+                <tr>
+                  <th>Methods</th>
+                  <th>PSNR &uarr;</th>
+                  <th>SSIM &uarr;</th>
+                  <th>LPIPS &darr;</th>
+                  <th>MANIQA &uarr;</th>
+                  <th>MUSIQ &uarr;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CoReFusion [9]</td>
+                  <td>30.11</td>
+                  <td>0.8588</td>
+                  <td>0.3214</td>
+                  <td>0.2771</td>
+                  <td>28.35</td>
+                </tr>
+                <tr>
+                  <td>CoReFusion w/ Augment</td>
+                  <td>30.30</td>
+                  <td>0.8634</td>
+                  <td>0.3174</td>
+                  <td>0.2748</td>
+                  <td>28.95</td>
+                </tr>
+                <tr>
+                  <td>CoRPLE [59]</td>
+                  <td class="best">30.47</td>
+                  <td class="best">0.8642</td>
+                  <td>0.3206</td>
+                  <td>0.2833</td>
+                  <td>30.46</td>
+                </tr>
+                <tr>
+                  <td>SwinFuSR [10]</td>
+                  <td>29.85</td>
+                  <td>0.8549</td>
+                  <td>0.3085</td>
+                  <td>0.2740</td>
+                  <td>29.86</td>
+                </tr>
+                <tr>
+                  <td>SwinFuSR w/ Augment</td>
+                  <td>29.98</td>
+                  <td>0.8581</td>
+                  <td>0.3134</td>
+                  <td>0.2753</td>
+                  <td>30.33</td>
+                </tr>
+                <tr>
+                  <td>SwinPaste [29]</td>
+                  <td>29.83</td>
+                  <td>0.8545</td>
+                  <td>0.3075</td>
+                  <td>0.2719</td>
+                  <td>29.63</td>
+                </tr>
+                <tr>
+                  <td>SwinPaste w/ Augment</td>
+                  <td>29.91</td>
+                  <td>0.8575</td>
+                  <td>0.3084</td>
+                  <td>0.2745</td>
+                  <td>30.66</td>
+                </tr>
+                <tr>
+                  <td>SeeSR [43]</td>
+                  <td>29.41</td>
+                  <td>0.8495</td>
+                  <td>0.1828</td>
+                  <td>0.4278</td>
+                  <td>35.22</td>
+                </tr>
+                <tr>
+                  <td>OSEDiff [45]</td>
+                  <td>28.05</td>
+                  <td>0.8422</td>
+                  <td>0.2113</td>
+                  <td>0.4014</td>
+                  <td>36.30</td>
+                </tr>
+                <tr>
+                  <td>DifIISR [46]</td>
+                  <td>28.28</td>
+                  <td>0.8207</td>
+                  <td>0.2754</td>
+                  <td class="best">0.5629</td>
+                  <td class="best">47.87</td>
+                </tr>
+                <tr>
+                  <td>BeyondFusion w/o Augment</td>
+                  <td>30.31</td>
+                  <td>0.8632</td>
+                  <td class="second">0.1820</td>
+                  <td>0.4154</td>
+                  <td>35.40</td>
+                </tr>
+                <tr>
+                  <td>BeyondFusion w/ Augment</td>
+                  <td class="second">30.38</td>
+                  <td class="second">0.8638</td>
+                  <td class="best">0.1658</td>
+                  <td class="second">0.4536</td>
+                  <td class="second">37.48</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <figure>
+            <img src="./projects/BeyondFusion_fig/Fig3.png" alt="Qualitative infrared super-resolution comparison on the test set">
+            <figcaption>Qualitative comparison for infrared image super-resolution on the test set. BeyondFusion reconstructs sharper structures and more faithful infrared patterns.</figcaption>
+          </figure>
+          <figure>
+            <img src="./projects/BeyondFusion_fig/Fig4.png" alt="Qualitative infrared super-resolution comparison on real mobile data">
+            <figcaption>Qualitative infrared super-resolution comparison on the real-world mobile dataset. BeyondFusion generalizes to uncalibrated captures and imperfect visible references.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Infrared-Visible Image Fusion</h2>
+        <div class="content has-text-justified">
+          <p>
+            BeyondFusion also supports infrared-visible image fusion within the same latent formulation. We evaluate fusion under three conditions: aligned inputs with controlled infrared resolution gaps, simulated misaligned inputs, and real mobile captures. Compared with CDDFuse, Mask-Difuser, and C-OPDR, BeyondFusion preserves clearer visible structures and thermal saliency, while reducing ghosting and misplaced highlights under low-resolution or misaligned infrared inputs.
+          </p>
+          <figure>
+            <img src="./projects/BeyondFusion_fig/Fig7.png" alt="Qualitative infrared-visible fusion comparison on real mobile data">
+            <figcaption>Qualitative infrared-visible image fusion comparison on the real-world smartphone dataset. BeyondFusion shows strong robustness under naturally misaligned infrared images.</figcaption>
+          </figure>
+          <figure>
+            <img src="./projects/BeyondFusion_fig/Fig5.png" alt="Qualitative comparison for aligned and misaligned fusion inputs">
+            <figcaption>Qualitative comparison on the test set. BeyondFusion maintains sharp edges and texture details even when infrared inputs are downsampled or misaligned.</figcaption>
+          </figure>
+          <figure>
+            <img src="./projects/BeyondFusion_fig/Fig6.png" alt="Qualitative comparison under simulated unregistered inputs">
+            <figcaption>Qualitative comparison under simulated unregistered inputs. BeyondFusion better preserves thermal saliency and visible structures under spatial misalignment and infrared resolution degradation.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Downstream Applications</h2>
+        <div class="content has-text-justified">
+          <p>
+            We also evaluate pedestrian detection on fused images using the pretrained Grounded-SAM model in a zero-shot setting. BeyondFusion improves mAP across IoU thresholds compared with aligned fusion baselines and the unregistered fusion baseline, indicating that fewer fusion artifacts and clearer pedestrian structures benefit downstream perception.
+          </p>
+          <figure>
+            <img src="./projects/BeyondFusion_fig/Fig9.png" alt="Detection comparison against CDDFuse and Mask-Difuser">
+            <figcaption>Detection visualization against CDDFuse and Mask-Difuser. Green boxes indicate correct detections and red boxes indicate incorrect detections.</figcaption>
+          </figure>
+          <figure>
+            <img src="./projects/BeyondFusion_fig/Fig10.png" alt="Detection comparison against C-OPDR">
+            <figcaption>Detection visualization against C-OPDR. BeyondFusion preserves more coherent pedestrian boundaries under misaligned infrared-visible inputs.</figcaption>
+          </figure>
+          <figure>
+            <img src="./projects/BeyondFusion_fig/Fig8.png" alt="Precision-recall curves for pedestrian detection">
+            <figcaption>Precision-recall curve comparison for pedestrian detection with IoU thresholds of 0.3, 0.5, and 0.7.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{chen2026beyondfusion,
+  title={BeyondFusion: Self-Aligned Latent Diffusion for Calibration-Free Infrared Super-Resolution and Infrared-Visible Fusion},
+  author={Minchong Chen and Xiaoyun Yuan and Minyu Cao and Jianing Zhang and Jun Zhang and Shuyang Liu and Xiaokang Yang},
+  year={2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+        href="./paper/BeyondFusion.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/work-submit/3MTI" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            We thank <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies</a> for their amazing template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
