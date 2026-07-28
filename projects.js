@@ -180,7 +180,8 @@ const directions = [
         links: [
         { label: 'Project', href: './index.html?project=beyondfusion', icon: 'fas fa-arrow-right' },
         { label: 'Paper', href: './paper/BeyondFusion.pdf', icon: 'fas fa-file-pdf' },
-        { label: 'arXiv', href: 'https://arxiv.org/abs/2511.19117', icon: 'ai ai-arxiv' }
+        { label: 'Data and Model', href: 'https://pan.sjtu.edu.cn/web/share/365c881396aeeafd63269b1ca4ca1f6f', icon: 'fas fa-database' },
+        { label: 'arXiv', href: 'https://arxiv.org/abs/2607.24110', icon: 'ai ai-arxiv' }
         ]
     },
     {
