@@ -147,6 +147,7 @@ const directions = [
         { label: 'Project', href: './index.html?project=lucid', icon: 'fas fa-arrow-right' },
         { label: 'Code', href: 'https://github.com/frakenation/LUCID', icon: 'fab fa-github' },
         { label: 'Model', href: 'https://huggingface.co/OpticAI/LUCID', icon: 'fas fa-database' },
+        { label: 'Paper', href: 'https://dl.acm.org/doi/10.1145/3799902.3811133', icon: 'fas fa-file-pdf' },
         { label: 'HF Paper', href: 'https://huggingface.co/papers/2606.06901', icon: 'fas fa-smile' },
         { label: 'arXiv', href: 'https://arxiv.org/abs/2606.06901', icon: 'ai ai-arxiv' }
         ]
@@ -164,6 +165,7 @@ const directions = [
         links: [
         { label: 'Project', href: './index.html?project=3m-ti', icon: 'fas fa-arrow-right' },
         { label: 'Code', href: 'https://github.com/work-submit/3MTI', icon: 'fab fa-github' },
+        { label: 'Paper', href: 'https://openaccess.thecvf.com/content/CVPR2026/html/Chen_3M-TI_High-Quality_Mobile_Thermal_Imaging_via_Calibration-free_Multi-Camera_Cross-Modal_Diffusion_CVPR_2026_paper.html', icon: 'fas fa-file-pdf' },
         { label: 'arXiv', href: 'https://arxiv.org/abs/2511.19117', icon: 'ai ai-arxiv' }
         ]
     },
@@ -179,6 +181,7 @@ const directions = [
         tags: ['Infrared Imaging', 'Image Fusion', 'Diffusion', 'Cross-Modal Alignment'],
         links: [
         { label: 'Project', href: './index.html?project=beyondfusion', icon: 'fas fa-arrow-right' },
+        { label: 'Code', href: 'https://github.com/work-submit/3MTI', icon: 'fab fa-github' },
         { label: 'Data and Model', href: 'https://pan.sjtu.edu.cn/web/share/365c881396aeeafd63269b1ca4ca1f6f', icon: 'fas fa-database' },
         { label: 'arXiv', href: 'https://arxiv.org/abs/2607.24110', icon: 'ai ai-arxiv' }
         ]
