@@ -38,8 +38,8 @@
     },
     {
       title: 'Mobile Thermal Imaging',
-      venue: 'CVPR 2026',
-      caption: 'Calibration-free RGB-thermal diffusion improves mobile thermal perception.',
+      venue: 'CVPR 2026 / arXiv 2026',
+      caption: '3M-TI and BeyondFusion advance calibration-free RGB-thermal mobile perception.',
       mediaType: 'image',
       media: './projects/3MTI_fig/fig_abs.jpg',
       href: './index.html?project=3m-ti'
