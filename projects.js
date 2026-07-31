@@ -361,7 +361,7 @@ const directions = [
     },
     {
         id: 'cs0502',
-        title: 'CS0502 · Vibe Coding · Introduction to Computer Science',
+        title: 'CS0502 · Vibe Coding · Introduction to AI and Computer Science',
         fullTitle: '<b>Xiaoyun Yuan</b>',
         direction: 'resources',
         directionLabel: 'Course Resources',
