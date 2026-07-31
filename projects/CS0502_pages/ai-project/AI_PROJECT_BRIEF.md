@@ -28,17 +28,17 @@
 
 加分：比较两种以上网络配置，分析参数量、训练时间、准确率或混淆变化；增加错误样本可视化、类别筛选、错误样本库或导出结果。
 
-### 项目 C：微型语言模型的通知结构化
+### 项目 C：MiniMind 实践——部署、多模态与新闻 LoRA
 
-使用教师提供的 CampusNotice-ActionCard 数据集和 MiniMind-3（64M）基础权重，完成 Python + HTML 小应用。对已有基础权重做小规模 SFT；输入中文校园通知，输出 JSON 行动卡片：事件类型、活动名称、开始时间、地点、面向对象、截止时间、是否需要报名、学生行动。原文未出现的信息必须为 `null` 或空数组，不能猜测。
+使用教师提供的 MiniMind 学生任务材料包，在下列三个独立任务中任选 **两个** 完成。每项均须满足“运行成功、提交证据、简短分析”；仅展示安装过程、未展示模型实际输出不计为完成。
 
-基础要求：
+1. **基础 MiniMind-3 部署**：运行不含课程新闻 LoRA 的官方 MiniMind-3；完成至少三类输入，其中包括一条“只能输出一个词／类别”的格式约束题，并保留原始输出。
+2. **MiniMind-O 多模态部署**：启动本地 WebUI，完成至少两种输入模态的交互（推荐文本＋图片）；提交网页截图、所用输入文件和每种模态的原始输出。
+3. **LoRA 新闻主题微调**：基于 MiniMind-3 完成“财经／体育／游戏”新闻主题分类 LoRA；完成数据检查，提交训练配置、最佳验证 checkpoint、锁定后的最终测试报告和至少十条预测案例。最终测试集不得用于反复调参。
 
-1. 使用教师提供的数据完成 MiniMind-3 的小规模 SFT；
-2. 在测试集上比较微调前后输出，展示 JSON 合法率、字段正确情况和一类错误案例；
-3. 分析模型在哪些通知类型上表现较好或较差，并展示错误案例。
+共同提交：每个完成的任务建立独立文件夹，包含 `README.md`（环境与复现）、`evidence/`（可见原始输出的截图）、`outputs/`（输出、指标或日志）和按模板填写的 `report.md`。任务 3 不得将完整 TNEWS 原始数据公开上传；报告应说明严格准确率和归一化准确率的统计口径。
 
-加分：测试多时间、无需报名、延期、取消或信息缺失等困难通知；比较训练轮数、数据量或输出模板，或优化 JSON 差异、空字段、下载与错误提示界面。
+加分：完成全部三个任务，或给出更扎实的实验分析。可以改进界面、提示词或推理参数，但须在报告中说明改动。
 
 ### 共同提交内容
 
@@ -67,13 +67,17 @@ Core: train both models on the provided train/test split; compare accuracy, conf
 
 Bonus: compare two or more network configurations and analyze parameters, training time, accuracy, or confusion; add error-sample visualization, class filtering, an error library, or result export.
 
-### Project C: Mini Language Model for Notice Structuring
+### Project C: MiniMind Practice — Deployment, Multimodality, and News LoRA
 
-Use the instructor-provided CampusNotice-ActionCard data and MiniMind-3 (64M) base weights to build a Python + HTML app. Perform small-scale SFT on the existing base model. A Chinese campus notice should produce a JSON action card with event type, activity name, start time, location, audience, deadline, registration requirement, and student action. Missing information must be `null` or an empty array—never guessed.
+Use the instructor-provided MiniMind student task package. Complete **any two** of the following three independent tasks. Every task requires a successful run, evidence, and a short analysis; installation screenshots without actual model output do not count.
 
-Core: fine-tune MiniMind-3 with the provided data; compare baseline and fine-tuned output on the test set using JSON validity, field correctness, and one error class; analyze where the model performs well or poorly.
+1. **Base MiniMind-3 deployment:** run the official MiniMind-3 without the course news LoRA; complete at least three input types, including one one-word/category-only constrained prompt, and retain the raw outputs.
+2. **MiniMind-O multimodal deployment:** start the local WebUI and complete interactions in at least two input modalities (text + image recommended); submit a WebUI screenshot, the input files used, and raw output for every modality.
+3. **LoRA news-topic fine-tuning:** build a finance/sports/gaming news classifier LoRA on MiniMind-3; pass the data check and submit the training configuration, best validation checkpoint, final locked-test report, and at least ten predictions. Do not tune repeatedly on the final test set.
 
-Bonus: test difficult notices such as multiple times, no registration, delay, cancellation, or missing information; compare epochs, data volume, or output templates, or improve JSON differences, empty-field display, download, and error messages.
+For every completed task, submit a separate folder with `README.md` (environment and reproduction), `evidence/` (screenshots showing raw outputs), `outputs/` (outputs, metrics, or logs), and a templated `report.md`. For task 3, never publish the full TNEWS raw data; state whether strict and normalized accuracy are both reported and define each metric.
+
+Bonus: complete all three tasks or provide especially rigorous experimental analysis. You may improve the interface, prompts, or inference settings, but document all changes in the report.
 
 ### Common submission requirements
 
