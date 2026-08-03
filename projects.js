@@ -17,7 +17,6 @@ const contentPaths = {
         'Dante': './projects/DANTE.html',
         'dante': './projects/DANTE.html',
         'lucid': './projects/LUCID.html',
-        'cs0502': './projects/CS0502.html',
         'about': './about.html',
         'team': './team.html',
     };
@@ -369,9 +368,9 @@ const directions = [
         image: './projects/CS0502_fig/course-card-gpt.png',
         summary: 'A Vibe Coding course: build, test, and explain computer science systems by directing modern AI coding agents.',
         tags: ['Vibe Coding', 'Computer Science', 'AI Agents'],
-        cardHref: './index.html?project=cs0502',
+        cardHref: 'https://yuanxy92.github.io/sjtu-cs0502-vibe-coding/',
         links: [
-        { label: 'Course Page', href: './index.html?project=cs0502', icon: 'fas fa-arrow-right' },
+        { label: 'Course Page', href: 'https://yuanxy92.github.io/sjtu-cs0502-vibe-coding/', icon: 'fas fa-arrow-right' },
         ]
     },
     ];

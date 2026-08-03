@@ -206,6 +206,11 @@
       }
 
       function loadContent(target) {
+        if (target === 'cs0502') {
+          window.location.replace('https://yuanxy92.github.io/sjtu-cs0502-vibe-coding/');
+          return;
+        }
+
         const filePath = contentPaths[target];
 
         if (!filePath) {
