@@ -11,6 +11,7 @@ const contentPaths = {
         '3m-ti': './projects/3MTI.html',
         'beyondfusion': './projects/BeyondFusion.html',
         'beyond-fusion': './projects/BeyondFusion.html',
+        'engram-e2vid': './projects/Engram_E2VID.html',
         'dmdiff': './projects/DMDiff.html',
         'shareverse': './projects/ShareVerse.html?v=20260703-overview',
         'share-verse': './projects/ShareVerse.html?v=20260703-overview',
@@ -183,6 +184,21 @@ const directions = [
         { label: 'Code', href: 'https://github.com/work-submit/3MTI/tree/extension', icon: 'fab fa-github' },
         { label: 'Data and Model', href: 'https://pan.sjtu.edu.cn/web/share/365c881396aeeafd63269b1ca4ca1f6f', icon: 'fas fa-database' },
         { label: 'arXiv', href: 'https://arxiv.org/abs/2607.24110', icon: 'ai ai-arxiv' }
+        ]
+    },
+    {
+        id: 'engram-e2vid',
+        title: 'Engram-E2VID: Reference-Based Event-to-Video Reconstruction via Generative Activation of Appearance Engrams',
+        fullTitle: 'Feiyu Ji, Xiang Li, Hao Ma, Tianxiang Huang, Qingxin Lu, Mengqi Ji, Lei Han, Xiaokang Yang, <b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">&#9993;</span>',
+        direction: 'ai-vision',
+        directionLabel: 'Generative AI for Vision',
+        status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">arXiv</b> 2026',
+        image: './projects/Engram_E2VID_fig/Figure_1.png',
+        summary: 'Reference-based event-to-video reconstruction through target-time structural scaffolds and generative activation of reference appearance engrams.',
+        tags: ['Event Camera', 'Video Reconstruction', 'Diffusion', 'Reference-Based Reconstruction'],
+        links: [
+        { label: 'Project', href: './index.html?project=engram-e2vid', icon: 'fas fa-arrow-right' },
+        { label: 'PDF', href: './paper/Engram_E2VID.pdf', icon: 'fas fa-file-pdf' }
         ]
     },
     {
