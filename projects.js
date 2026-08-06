@@ -193,7 +193,7 @@ const directions = [
         direction: 'ai-vision',
         directionLabel: 'Generative AI for Vision',
         status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">arXiv</b> 2026',
-        image: './projects/Engram_E2VID_fig/Figure_1.png',
+        image: './projects/Engram_E2VID_fig/teaser_card.png',
         summary: 'Reference-based event-to-video reconstruction through target-time structural scaffolds and generative activation of reference appearance engrams.',
         tags: ['Event Camera', 'Video Reconstruction', 'Diffusion', 'Reference-Based Reconstruction'],
         links: [
