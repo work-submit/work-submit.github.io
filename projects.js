@@ -198,7 +198,8 @@ const directions = [
         tags: ['Event Camera', 'Video Reconstruction', 'Diffusion', 'Reference-Based Reconstruction'],
         links: [
         { label: 'Project', href: './index.html?project=engram-e2vid', icon: 'fas fa-arrow-right' },
-        { label: 'PDF', href: './paper/Engram_E2VID.pdf', icon: 'fas fa-file-pdf' }
+        { label: 'PDF', href: './paper/Engram_E2VID.pdf', icon: 'fas fa-file-pdf' },
+        { label: 'arXiv', href: 'https://arxiv.org/abs/2608.05728', icon: 'ai ai-arxiv' }
         ]
     },
     {
@@ -297,7 +298,8 @@ const directions = [
         tags: ['Optics + AI', 'Image Restoration', 'Metalens'],
         links: [
         { label: 'Project', href: './index.html?project=dmdiff', icon: 'fas fa-arrow-right' },
-        { label: 'Dataset', href: 'https://pan.sjtu.edu.cn/web/share/ebafd0ff28a601db09b58744a5b914d1', icon: 'fas fa-database' }
+        { label: 'Dataset', href: 'https://pan.sjtu.edu.cn/web/share/ebafd0ff28a601db09b58744a5b914d1', icon: 'fas fa-database' },
+        { label: 'arXiv', href: 'https://arxiv.org/abs/2506.22753', icon: 'ai ai-arxiv' }
         ]
     },
     {
@@ -312,7 +314,8 @@ const directions = [
         tags: ['Image Restoration', 'Visual-Infrared'],
         links: [
         { label: 'Project', href: './index.html?project=3m-ti', icon: 'fas fa-arrow-right' },
-        { label: 'Dataset', href: 'https://pan.sjtu.edu.cn/web/share/7df7f0df32ac4cd4eecc243f5ff95483', icon: 'fas fa-database' }
+        { label: 'Dataset', href: 'https://pan.sjtu.edu.cn/web/share/7df7f0df32ac4cd4eecc243f5ff95483', icon: 'fas fa-database' },
+        { label: 'arXiv', href: 'https://arxiv.org/abs/2511.19117', icon: 'ai ai-arxiv' }
         ]
     },
     {
