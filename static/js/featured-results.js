@@ -52,6 +52,17 @@
       media: './projects/DMDiff_fig/images/teaser.jpg',
       href: './index.html?project=dmdiff'
     }
+    /*
+    ,{
+      title: 'PAGS Autofocusing PACT',
+      venue: 'arXiv 2026',
+      caption: 'Sparse Gaussian sources and a compact spherical-harmonic probe grid continuously model the pressure and anisotropic propagation fields for blind PACT autofocus.',
+      mediaType: 'video',
+      media: './projects/PAGS_video/video.mp4',
+      poster: './projects/PAGS_fig/teaser.webp',
+      href: './index.html?project=pags'
+    },
+    */
   ];
 
   let featuredTimer = null;

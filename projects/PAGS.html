@@ -1,0 +1,161 @@
+<section class="hero pact-hero pags-hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="pact-hero-panel">
+            <h1 class="title is-1 publication-title">PAGS: Autofocusing Photoacoustic Tomography via Speed-of-Sound-Adaptive Gaussian Splatting</h1>
+
+            <div class="is-size-5 publication-authors pact-author-list">
+              <span class="author-block">Jiarui Ge<sup>1</sup></span>
+              <span class="author-block">Jintao Ma<sup>2</sup></span>
+              <span class="author-block">Bangxu Fan<sup>2</sup></span>
+              <span class="author-block">Jinyan Zhang<sup>2</sup></span>
+              <span class="author-block">Xiaokang Yang<sup>1</sup></span>
+              <span class="author-block"><a href="mailto:shuai@pku.edu.cn">Shuai Na</a><sup>2,3,4,5,*</sup></span>
+              <span class="author-block"><a href="https://xiaoyunyuan.net/">Xiaoyun Yuan</a><sup>1,*</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>MoE Key Lab of Artificial Intelligence, Institute of AI, School of Computer Science, Shanghai Jiao Tong University</span><br>
+              <span class="author-block"><sup>2</sup>National Biomedical Imaging Center, College of Future Technology, Peking University</span><br>
+              <span class="author-block"><sup>3</sup>Academy for Advanced Interdisciplinary Studies, Peking University</span><br>
+              <span class="author-block"><sup>4</sup>Key Laboratory of Machine Perception, Ministry of Education</span><br>
+              <span class="author-block"><sup>5</sup>PKU–Nanjing Institute of Translational Medicine</span><br>
+              <span class="author-block"><sup>*</sup>Corresponding authors</span>
+            </div>
+
+            <div class="is-size-4 publication-title">
+              <span class="pact-venue">arXiv 2026</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/YYMM.NNNNN" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/work-submit/PAGS" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#video" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-play"></i></span>
+                    <span>Video</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+            <figure class="pact-teaser">
+              <img src="./projects/PAGS_fig/teaser.webp" alt="Comparison of conventional photoacoustic reconstruction and PAGS differentiable autofocus">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pact-section" id="overview">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            Photoacoustic computed tomography can lose focus when heterogeneous tissue perturbs acoustic time of flight. PAGS addresses this problem without calibrated speed-of-sound priors by combining sparse Gaussian photoacoustic sources with a compact continuous propagation field. Instead of optimizing a dense voxel-wise medium or an independent value for every source–transducer path, PAGS places spherical-harmonic probes on a sparsely sampled 3D voxel grid and recovers the anisotropic path-averaged speed of sound continuously through spatial and angular interpolation. This parameter-efficient field directly corrects arrival-time alignment while the source and propagation parameters are jointly optimized from measured signals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pact-section" id="method">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Speed-of-Sound-Adaptive Gaussian Splatting</h2>
+        <div class="content has-text-justified">
+          <p>
+            The core of PAGS is a sparse probe representation of a continuous anisotropic path-averaged speed-of-sound field. Each grid probe stores only nine second-order spherical-harmonic coefficients. For every Gaussian source–transducer path, PAGS first interpolates coefficients from the eight neighboring probes and then evaluates their directional spherical-harmonic response. In a representative setting with 100K sources and 4.6K transducers, a direct path table would require 460M learnable values; a 16 × 16 × 16 probe grid requires only 36.9K coefficients—about 12,500× fewer—while remaining independent of source splitting, pruning, and motion.
+          </p>
+        </div>
+
+        <figure class="pact-figure">
+          <img src="./projects/PAGS_fig/method.webp" alt="PAGS reconstruction model, anisotropic speed-of-sound field, and interpolation scheme">
+          <figcaption><strong>Method.</strong> Gaussian photoacoustic sources, spherical-harmonic speed-of-sound probes, and measured signals are coupled through a closed-form differentiable acoustic model.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pact-section" id="results">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Autofocusing in Simulation and Physical Measurements</h2>
+        <div class="content has-text-justified">
+          <p>
+            On heterogeneous in-silico data, PAGS reconstructs sharper, more continuous vasculature than uniform-speed UBP and vanilla SlingBAG, reaching 30.3 dB PSNR and 0.537 SSIM. On the physical phantom, the learned propagation correction improves local contrast and separates nearby absorbers more clearly, without requiring the tissue–water boundary used by the prior-informed Dual-SoS baseline.
+          </p>
+        </div>
+
+        <figure class="pact-figure">
+          <img src="./projects/PAGS_fig/simulation.webp" alt="In-silico comparison of UBP, Dual-SoS UBP, SlingBAG, and PAGS">
+          <figcaption><strong>In silico.</strong> PAGS corrects heterogeneous-medium defocus without calibrated speed-of-sound priors and recovers vessel structures closest to the reference.</figcaption>
+        </figure>
+
+        <figure class="pact-figure">
+          <img src="./projects/PAGS_fig/physical_phantom.webp" alt="Physical phantom comparison and line-profile measurements">
+          <figcaption><strong>Physical phantom.</strong> Global views, zoomed regions, and line profiles show sharper boundaries and improved local contrast after blind speed-of-sound adaptation.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pact-section" id="video">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">3D Results and Sparse-View Robustness</h2>
+        <div class="content has-text-justified">
+          <p>
+            The supplementary video presents rotating 3D comparisons of vanilla UBP, Dual-SoS UBP, SlingBAG, and PAGS, followed by PAGS reconstructions with progressively fewer detector channels. Major vascular trunks and branch connectivity remain visible down to 12.5% sampling. The sparse Gaussian source prior and smoothly interpolated low-order spherical-harmonic field together keep the reconstruction stable as the number of measurements decreases.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pact-video-card">
+      <div class="pact-video-label">Supplementary Video / Reconstruction comparisons</div>
+      <div class="pact-video-wrapper">
+        <video controls preload="metadata" playsinline>
+          <source src="./projects/PAGS_video/video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pact-section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre class="pact-bibtex"><code>@misc{ge2026pags,
+  title={PAGS: Autofocusing Photoacoustic Tomography via Speed-of-Sound-Adaptive Gaussian Splatting},
+  author={Ge, Jiarui and Ma, Jintao and Fan, Bangxu and Zhang, Jinyan and Yang, Xiaokang and Na, Shuai and Yuan, Xiaoyun},
+  year={2026},
+  note={arXiv preprint},
+  url={https://arxiv.org/abs/YYMM.NNNNN}
+}</code></pre>
+  </div>
+</section>

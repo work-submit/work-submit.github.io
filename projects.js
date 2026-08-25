@@ -1,4 +1,6 @@
 const contentPaths = {
+        'pags': './projects/PAGS.html?v=20260825',
+        'PAGS': './projects/PAGS.html?v=20260825',
         'fsdvs': './projects/FS_DVS.html',
         // backward-compatible old id
         'ii-2606-06856': './projects/FS_DVS.html',
@@ -59,6 +61,22 @@ const directions = [
 
     const projects = [
     // Intelligent Imaging
+    {
+        id: 'pags',
+        title: 'PAGS: Autofocusing Photoacoustic Tomography via Speed-of-Sound-Adaptive Gaussian Splatting',
+        fullTitle: 'Jiarui Ge, Jintao Ma, Bangxu Fan, Jinyan Zhang, Xiaokang Yang, Shuai Na<span style="font-size:1.6em; font-weight:bold;">&#9993;</span>, <b>Xiaoyun Yuan</b><span style="font-size:1.6em; font-weight:bold;">&#9993;</span>',
+        direction: 'intelligent-imaging',
+        directionLabel: 'Photoacoustic Tomography',
+        status: '<b style="color: #1a202c; border-bottom: 1.5px solid #438993; padding-bottom: 1px;">arXiv</b> 2026',
+        image: './projects/PAGS_fig/teaser.webp',
+        summary: 'Blind PACT autofocusing with sparse Gaussian PA sources and a sparsely sampled spherical-harmonic probe grid that represents a continuous anisotropic path-averaged speed-of-sound field with few parameters.',
+        tags: ['Photoacoustic Tomography', 'Gaussian Splatting', 'Autofocusing'],
+        links: [
+        { label: 'Project', href: './index.html?project=pags', icon: 'fas fa-arrow-right' },
+        { label: 'Code', href: 'https://github.com/work-submit/PAGS', icon: 'fab fa-github' },
+        { label: 'arXiv', href: 'https://arxiv.org/abs/YYMM.NNNNN', icon: 'ai ai-arxiv' }
+        ]
+    },
     {
         id: 'fsdvs',
         title: 'FS-DVS: A Frequency-Selective Dynamic Visual Sensing Paradigm for Enhancing Information Completeness',
