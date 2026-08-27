@@ -74,7 +74,7 @@ const directions = [
         links: [
         { label: 'Project', href: './index.html?project=pags', icon: 'fas fa-arrow-right' },
         { label: 'Code', href: 'https://github.com/work-submit/PAGS', icon: 'fab fa-github' },
-        { label: 'arXiv', href: 'https://arxiv.org/abs/YYMM.NNNNN', icon: 'ai ai-arxiv' }
+        { label: 'arXiv', href: 'https://arxiv.org/abs/2608.25472', icon: 'ai ai-arxiv' }
         ]
     },
     {
